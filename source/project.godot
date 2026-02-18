@@ -11,9 +11,19 @@ config_version=5
 [application]
 
 config/name="Felporimbo"
+<<<<<<< Updated upstream
 run/main_scene="uid://bbu80t1tk5ch"
+=======
+run/main_scene="uid://ddv4vc2m8hsmj"
+>>>>>>> Stashed changes
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
 
 [physics]
 
