@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://bbu80t1tk5ch"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_w51fh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l84js"]
+albedo_color = Color(0, 1, 1, 1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_7172d"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_d5yd0"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_7m821"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_omil7"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_5r06g"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_4houj"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[node name="Office" type="Node3D" unique_id=410607449]
+
+[node name="Room" type="StaticBody3D" parent="." unique_id=1956628786]
+transform = Transform3D(1.92, 0, 0, 0, 1, 0, 0, 0, 1.15, 0, 0, 0)
+
+[node name="wallDoor" type="MeshInstance3D" parent="Room" unique_id=1121834718]
+transform = Transform3D(-1, -8.742278e-08, 3.821371e-15, 0, -4.371139e-08, -1, 8.742278e-08, -1, 4.371139e-08, 0, 1, 1)
+mesh = SubResource("PlaneMesh_w51fh")
+surface_material_override/0 = SubResource("StandardMaterial3D_l84js")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room" unique_id=962057661]
+transform = Transform3D(-1, -8.742278e-08, 3.821371e-15, 0, -4.371139e-08, -1, 8.742278e-08, -1, 4.371139e-08, 0, 1, 1)
+shape = SubResource("ConcavePolygonShape3D_7172d")
+
+[node name="wallGabinet" type="MeshInstance3D" parent="Room" unique_id=773149300]
+transform = Transform3D(-4.371139e-08, -1, 0, -4.371139e-08, 1.9106855e-15, -1, 1, -4.371139e-08, -4.371139e-08, 1, 1, 0)
+mesh = SubResource("PlaneMesh_w51fh")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Room" unique_id=2103125332]
+transform = Transform3D(-4.371139e-08, -1, 0, -4.371139e-08, 1.9106855e-15, -1, 1, -4.371139e-08, -4.371139e-08, 1, 1, 0)
+shape = SubResource("ConcavePolygonShape3D_d5yd0")
+
+[node name="wallBoard" type="MeshInstance3D" parent="Room" unique_id=39263337]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, -1, 1, 0)
+mesh = SubResource("PlaneMesh_w51fh")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Room" unique_id=521376080]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, -1, 1, 0)
+shape = SubResource("ConcavePolygonShape3D_7m821")
+
+[node name="wallDesk" type="MeshInstance3D" parent="Room" unique_id=1919699597]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1, -1)
+mesh = SubResource("PlaneMesh_w51fh")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Room" unique_id=506013614]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1, -1)
+shape = SubResource("ConcavePolygonShape3D_omil7")
+
+[node name="Floor" type="MeshInstance3D" parent="Room" unique_id=1788336649]
+mesh = SubResource("PlaneMesh_w51fh")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Room" unique_id=1100268285]
+shape = SubResource("ConcavePolygonShape3D_5r06g")
+
+[node name="Roof" type="MeshInstance3D" parent="Room" unique_id=1676412663]
+transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 2, 0)
+mesh = SubResource("PlaneMesh_w51fh")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="Room" unique_id=1850953448]
+transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 2, 0)
+shape = SubResource("ConcavePolygonShape3D_4houj")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=737837076]
+transform = Transform3D(-0.99965733, 0, -0.026176952, 0, 1, 0, 0.026176952, 0, -0.99965733, 0, 1.0936497, 0)
