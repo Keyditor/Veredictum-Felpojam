@@ -99,6 +99,9 @@ shape = SubResource("CylinderShape3D_7172d")
 transform = Transform3D(2.005, 0, 0, 0, 2.83, 0, 0, 0, 2.005, 0, 3.065472, 0)
 mesh = SubResource("CapsuleMesh_d5yd0")
 
-[node name="Camera3D" type="Camera3D" parent="Player" unique_id=737837076]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.86299, 0)
+[node name="Head" type="Node3D" parent="Player" unique_id=792276747]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.9887676, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Player/Head" unique_id=737837076]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.38899612, 0)
 fov = 60.0
