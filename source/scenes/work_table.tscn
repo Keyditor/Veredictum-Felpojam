@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://db3qqbnandkyn"]
 
 [ext_resource type="PackedScene" uid="uid://det5l3ly1anns" path="res://scenes/objects/package.tscn" id="1_62i00"]
+[ext_resource type="PackedScene" uid="uid://dymbuj6xarucr" path="res://scenes/objects/stamp.tscn" id="2_7idc7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_62i00"]
 size = Vector2(20, 648)
@@ -20,6 +21,7 @@ position = Vector2(760, 191)
 position = Vector2(506, 194)
 
 [node name="Table" type="Node2D" parent="." unique_id=1756185794]
+position = Vector2(0, 1)
 
 [node name="TableWall" type="StaticBody2D" parent="Table" unique_id=310181186]
 position = Vector2(1152, 0)
@@ -50,3 +52,6 @@ rotation = 1.5707964
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Table/TableWall4" unique_id=1646825573]
 position = Vector2(643.0003, 436)
 shape = SubResource("RectangleShape2D_vkig8")
+
+[node name="Stamp" parent="." unique_id=1567015258 instance=ExtResource("2_7idc7")]
+position = Vector2(276, 274)

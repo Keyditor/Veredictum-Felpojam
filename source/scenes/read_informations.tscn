@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://ce0ruboig2kan"]
+
+[ext_resource type="Script" uid="uid://b16ul785ts5i" path="res://scripts/read_informations.gd" id="1_qceu6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xxeko"]
+bg_color = Color(0.003921569, 0.003921569, 0.023529412, 1)
+border_width_left = 16
+border_width_top = 16
+border_width_right = 16
+border_width_bottom = 16
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Animation" id="Animation_xxeko"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:transform")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Transform2D(1, 0, 0, 1, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qceu6"]
+resource_name = "open_informations"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:transform")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Transform2D(1.45, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kvt3f"]
+_data = {
+&"RESET": SubResource("Animation_xxeko"),
+&"open_informations": SubResource("Animation_qceu6")
+}
+
+[node name="ReadInformations" type="CanvasLayer" unique_id=1549146152]
+script = ExtResource("1_qceu6")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1130211509]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -392.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=705276791]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xxeko")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer" unique_id=328906827]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/PanelContainer/MarginContainer" unique_id=1805551816]
+layout_mode = 2
+text = "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos, corporis consectetur! Necessitatibus ab sapiente facilis iusto asperiores deleniti iure id vel nulla quasi, soluta beatae fuga est animi sequi repudiandae!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos, corporis consectetur! Necessitatibus ab sapiente facilis iusto asperiores deleniti iure id vel nulla quasi, soluta beatae fuga est animi sequi repudiandae!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos, corporis consectetur! Necessitatibus ab sapiente facilis iusto asperiores deleniti iure id vel nulla quasi, soluta beatae fuga est animi sequi repudiandae!Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos, corporis consectetur! Necessitatibus ab sapiente facilis iusto asperiores deleniti iure id vel nulla quasi, soluta beatae fuga est animi sequi repudiandae!"
+fit_content = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=826071583]
+libraries/ = SubResource("AnimationLibrary_kvt3f")
+autoplay = &"open_informations"

@@ -1,7 +1,6 @@
 extends RigidBody2D
 
 var is_holding: bool = false
-
 var grab_offset := Vector2.ZERO
 
 var max_speed = 2000

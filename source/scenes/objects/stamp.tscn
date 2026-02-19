@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dymbuj6xarucr"]
+
+[ext_resource type="Script" uid="uid://ccr45op5ovxqi" path="res://scripts/stamp.gd" id="1_psfrv"]
+
+[node name="Stamp" type="Node2D" unique_id=1069247919]
+script = ExtResource("1_psfrv")
+
+[node name="StampImage" type="Polygon2D" parent="." unique_id=323506222]
+position = Vector2(-10, -40)
+polygon = PackedVector2Array(0, 0, 20, 0, 20, 40, 0, 40)
+
+[node name="Button" type="Button" parent="StampImage" unique_id=652634290]
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 20.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=855665836]
+position = Vector2(-10, -40)
+color = Color(0.9076337, 0.41880777, 5.198121e-06, 1)
+polygon = PackedVector2Array(0, 0, 20, 0, 10, -10)
+
+[node name="press_stamp" type="Button" parent="Polygon2D" unique_id=1669188075]
+self_modulate = Color(1, 1, 1, 0)
+offset_top = -10.0
+offset_right = 20.0
+metadata/_edit_use_anchors_ = true
+
+[connection signal="button_down" from="StampImage/Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="StampImage/Button" to="." method="_on_button_button_up"]
+[connection signal="button_down" from="Polygon2D/press_stamp" to="." method="_on_press_stamp_button_down"]

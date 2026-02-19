@@ -15,10 +15,16 @@ run/main_scene="uid://ddv4vc2m8hsmj"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Data="*uid://rcvgswykc4fx"
+Enums="*uid://c5lj1agbxrkx2"
+
 [display]
 
-window/size/viewport_width=1280
-window/size/viewport_height=720
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=3
 window/stretch/mode="canvas_items"
 
 [physics]
