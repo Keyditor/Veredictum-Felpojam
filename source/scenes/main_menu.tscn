@@ -1,16 +1,43 @@
 [gd_scene format=3 uid="uid://ddv4vc2m8hsmj"]
 
 [ext_resource type="Script" uid="uid://drag1sjumdgi7" path="res://scripts/main_menu.gd" id="1_ekxnf"]
-[ext_resource type="Script" uid="uid://bumllq2p2170a" path="res://scripts/settings.gd" id="1_l6cm7"]
+[ext_resource type="PackedScene" uid="uid://75o0x1mclj63" path="res://scenes/settings.tscn" id="2_ekxnf"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_ekxnf"]
-font_size = 30
+[sub_resource type="Animation" id="Animation_5p8wc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0009999999),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(10, -742), Vector2(18, -709)]
+}
 
-[sub_resource type="LabelSettings" id="LabelSettings_wu84c"]
-font_size = 22
+[sub_resource type="Animation" id="Animation_ekxnf"]
+resource_name = "fall"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.67, 0.98),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(10, -742), Vector2(10, -49), Vector2(10, -21)]
+}
 
-[sub_resource type="LabelSettings" id="LabelSettings_bqqt6"]
-font_size = 22
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6wm04"]
+_data = {
+&"RESET": SubResource("Animation_5p8wc"),
+&"fall": SubResource("Animation_ekxnf")
+}
 
 [node name="main_menu" type="Control" unique_id=144060758]
 layout_mode = 3
@@ -22,102 +49,67 @@ grow_vertical = 2
 script = ExtResource("1_ekxnf")
 metadata/_edit_lock_ = true
 
-[node name="settings" type="VBoxContainer" parent="." unique_id=1815629052 node_paths=PackedStringArray("music", "sounds", "fullscreen")]
+[node name="settings" type="Control" parent="." unique_id=930456592]
+visible = false
+custom_minimum_size = Vector2(300, 300)
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -346.5
-offset_top = -147.75
-offset_right = 346.5
-offset_bottom = 147.75
+anchors_preset = 0
+offset_left = 734.0
+offset_top = 384.0
+offset_right = 1256.0
+offset_bottom = 684.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="settings" unique_id=722218892]
+libraries/ = SubResource("AnimationLibrary_6wm04")
+
+[node name="ColorRect" type="ColorRect" parent="settings" unique_id=1901792251]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -742.0
+offset_right = 10.0
+offset_bottom = -742.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset_ratio = Vector2(0.5, 0.5)
-script = ExtResource("1_l6cm7")
-music = NodePath("Control/music")
-sounds = NodePath("Control2/sounds")
-fullscreen = NodePath("tela_cheia/fullscreen")
+color = Color(0.77254903, 0.77254903, 0.6862745, 1)
 
-[node name="Options_label" type="Label" parent="settings" unique_id=1472482825]
-custom_minimum_size = Vector2(200, 80)
-layout_mode = 2
+[node name="settings" parent="settings/ColorRect" unique_id=395766283 instance=ExtResource("2_ekxnf")]
+layout_mode = 1
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Jogar" type="Button" parent="." unique_id=466024853]
+layout_mode = 0
+offset_left = 246.0
+offset_top = 373.0
+offset_right = 403.0
+offset_bottom = 464.0
+theme_override_font_sizes/font_size = 60
+text = "Jogar"
+flat = true
+
+[node name="Options" type="Button" parent="." unique_id=1862329585]
+layout_mode = 0
+offset_left = 209.0
+offset_top = 467.0
+offset_right = 432.0
+offset_bottom = 558.0
+theme_override_font_sizes/font_size = 60
 text = "Opções"
-label_settings = SubResource("LabelSettings_ekxnf")
-horizontal_alignment = 1
-vertical_alignment = 1
+flat = true
 
-[node name="musica" type="Label" parent="settings" unique_id=2042804778]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-text = "Música"
-label_settings = SubResource("LabelSettings_wu84c")
-horizontal_alignment = 1
+[node name="Fechar" type="Button" parent="." unique_id=1682645718]
+layout_mode = 0
+offset_left = 213.0
+offset_top = 567.0
+offset_right = 436.0
+offset_bottom = 658.0
+theme_override_font_sizes/font_size = 60
+text = "Fechar"
+flat = true
 
-[node name="Control" type="Control" parent="settings" unique_id=1056350746]
-custom_minimum_size = Vector2(200, 32)
-layout_mode = 2
-
-[node name="music" type="HSlider" parent="settings/Control" unique_id=2021109078]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 84.0
-offset_right = -89.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 6
-
-[node name="sons" type="Label" parent="settings" unique_id=1306780500]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-text = "Sons"
-label_settings = SubResource("LabelSettings_bqqt6")
-horizontal_alignment = 1
-
-[node name="Control2" type="Control" parent="settings" unique_id=1488669645]
-custom_minimum_size = Vector2(200, 32)
-layout_mode = 2
-
-[node name="sounds" type="HSlider" parent="settings/Control2" unique_id=397621690]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 83.0
-offset_right = -90.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 6
-
-[node name="tela_cheia" type="Label" parent="settings" unique_id=853465755]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-text = "Tela Cheia"
-label_settings = SubResource("LabelSettings_bqqt6")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="fullscreen" type="CheckBox" parent="settings/tela_cheia" unique_id=1043836956]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 87.0
-offset_top = 6.0
-offset_right = 111.0
-offset_bottom = 30.0
-grow_horizontal = 2
-size_flags_horizontal = 4
-size_flags_vertical = 6
-
-[connection signal="value_changed" from="settings/Control/music" to="settings" method="music_volume"]
-[connection signal="value_changed" from="settings/Control2/sounds" to="settings" method="sounds_volume"]
-[connection signal="toggled" from="settings/tela_cheia/fullscreen" to="settings" method="fullscreen_toggled"]
+[connection signal="pressed" from="Jogar" to="." method="_on_jogar_pressed"]
+[connection signal="pressed" from="Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Fechar" to="." method="_on_fechar_pressed"]

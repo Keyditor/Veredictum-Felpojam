@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://75o0x1mclj63"]
+
+[ext_resource type="Script" uid="uid://bumllq2p2170a" path="res://scripts/settings.gd" id="1_5p8wc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ekxnf"]
+font_size = 30
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_wu84c"]
+font_size = 22
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bqqt6"]
+font_size = 22
+font_color = Color(0, 0, 0, 1)
+
+[node name="settings" type="VBoxContainer" unique_id=395766283 node_paths=PackedStringArray("music", "sounds", "fullscreen")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+script = ExtResource("1_5p8wc")
+music = NodePath("Control/music")
+sounds = NodePath("Control2/sounds")
+fullscreen = NodePath("tela_cheia/fullscreen")
+
+[node name="Options_label" type="Label" parent="." unique_id=1707095078]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+text = "Opções"
+label_settings = SubResource("LabelSettings_ekxnf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="musica" type="Label" parent="." unique_id=1572453257]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Música"
+label_settings = SubResource("LabelSettings_wu84c")
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="." unique_id=1334219768]
+custom_minimum_size = Vector2(200, 32)
+layout_mode = 2
+
+[node name="music" type="HSlider" parent="Control" unique_id=231046700]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 84.0
+offset_right = -89.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="sons" type="Label" parent="." unique_id=199203667]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Sons"
+label_settings = SubResource("LabelSettings_bqqt6")
+horizontal_alignment = 1
+
+[node name="Control2" type="Control" parent="." unique_id=1954649583]
+custom_minimum_size = Vector2(200, 32)
+layout_mode = 2
+
+[node name="sounds" type="HSlider" parent="Control2" unique_id=1507730789]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 83.0
+offset_right = -90.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="tela_cheia" type="Label" parent="." unique_id=90214630]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Tela Cheia"
+label_settings = SubResource("LabelSettings_bqqt6")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="fullscreen" type="CheckBox" parent="tela_cheia" unique_id=889725535]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 87.0
+offset_top = 6.0
+offset_right = 111.0
+offset_bottom = 30.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[connection signal="value_changed" from="Control/music" to="." method="music_volume"]
+[connection signal="value_changed" from="Control2/sounds" to="." method="sounds_volume"]
+[connection signal="toggled" from="tela_cheia/fullscreen" to="." method="fullscreen_toggled"]

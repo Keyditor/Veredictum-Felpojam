@@ -14,6 +14,11 @@ config/name="Felporimbo"
 run/main_scene="uid://ddv4vc2m8hsmj"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+<<<<<<<Updatedupstreamrun/main_scene="uid://bbu80t1tk5ch"
+
+[autoload]
+
+GAME="*uid://bydxtt1h6f671"
 
 [autoload]
 
