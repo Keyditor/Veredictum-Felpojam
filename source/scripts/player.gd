@@ -1,6 +1,7 @@
 extends CharacterBody3D
 @onready var cam = $Head/Camera3D
 @onready var head = $Head
+@onready var useRange = $Head/Camera3D/RayCast3D
 
 @export var bob_freq = 2.0  # Frequência bobbing(velocidade do balanço)
 @export var bob_amp = 0.08  # Amplitude bobbing(força/altura do balanço)
@@ -28,8 +29,10 @@ func _physics_process(delta: float) -> void:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	if Input.is_action_just_pressed("pause"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
+	if Input.is_action_just_pressed("action"):
+		var target = useRange.get_collider()
+		print(target.name)
+		
 	var input_dir := Input.get_vector("left", "right", "up", "down")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:

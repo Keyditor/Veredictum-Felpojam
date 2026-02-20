@@ -112,9 +112,9 @@ spot_angle = 82.69
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.4801626, 0, -0.009351492)
 mesh = ExtResource("1_l84js")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="SimpleDesk" unique_id=801792593]
+[node name="Mesa" type="StaticBody3D" parent="SimpleDesk" unique_id=801792593]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SimpleDesk/StaticBody3D" unique_id=2107584217]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SimpleDesk/Mesa" unique_id=2107584217]
 shape = SubResource("ConvexPolygonShape3D_d5yd0")
 
 [node name="Player" type="CharacterBody3D" parent="." unique_id=1027673665]
@@ -139,3 +139,7 @@ fov = 60.0
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player/Head/Camera3D" unique_id=210219980]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.54582554)
 mesh = SubResource("QuadMesh_omil7")
+
+[node name="RayCast3D" type="RayCast3D" parent="Player/Head/Camera3D" unique_id=917638273]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+target_position = Vector3(0, -6, 0)
