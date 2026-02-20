@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckkvohtpem7y2"
-path="res://.godot/imported/table2.png-9d4af3c74a3ee0447ca214cf32123da6.ctex"
+uid="uid://dt0r5eud2affx"
+path="res://.godot/imported/placeholder_esteira.png-ec487996a6596812ffb34157f4580cfd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/table2.png"
-dest_files=["res://.godot/imported/table2.png-9d4af3c74a3ee0447ca214cf32123da6.ctex"]
+source_file="res://assets/placeholders/placeholder_esteira.png"
+dest_files=["res://.godot/imported/placeholder_esteira.png-ec487996a6596812ffb34157f4580cfd.ctex"]
 
 [params]
 

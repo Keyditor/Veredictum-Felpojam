@@ -55,6 +55,8 @@ func move_to_position(pos: Vector2):
 
 func stop_moving():
 	is_moving = false
+	print("Saiu")
+	print(is_moving)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
