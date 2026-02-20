@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://d24mmdamtwpaj"]
+
+[ext_resource type="Script" uid="uid://bd72ee525ov63" path="res://assets/voxels/vaso.gd" id="1_a6r3v"]
+[ext_resource type="ArrayMesh" uid="uid://bs158jpmlegge" path="res://assets/voxels/vasobonito.vox" id="2_yyeb1"]
+[ext_resource type="ArrayMesh" uid="uid://he5fjahutj6p" path="res://assets/voxels/vasoquasebonito.vox" id="3_qb2qp"]
+[ext_resource type="ArrayMesh" uid="uid://dkodukb7jmi8s" path="res://assets/voxels/vasoquasequebrado.vox" id="4_pm5j3"]
+[ext_resource type="ArrayMesh" uid="uid://v7qoqoqe5bey" path="res://assets/voxels/vasoquebrado.vox" id="5_yf4gn"]
+
+[node name="Vaso" type="Node3D" unique_id=683685456]
+script = ExtResource("1_a6r3v")
+
+[node name="Vasobonito" type="MeshInstance3D" parent="." unique_id=802683920]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15200019, 0, 1.6492851)
+mesh = ExtResource("2_yyeb1")
+
+[node name="Vasoquasebonito" type="MeshInstance3D" parent="." unique_id=1100352895]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15200019, 1.1920929e-07, 1.6492851)
+visible = false
+mesh = ExtResource("3_qb2qp")
+
+[node name="Vasoquasequebrado" type="MeshInstance3D" parent="." unique_id=834781136]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15200019, 0, 1.6492851)
+visible = false
+mesh = ExtResource("4_pm5j3")
+
+[node name="Vasoquebrado" type="MeshInstance3D" parent="." unique_id=1787461574]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15200019, 0, 1.6492851)
+visible = false
+mesh = ExtResource("5_yf4gn")

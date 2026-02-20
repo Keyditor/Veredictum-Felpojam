@@ -2,14 +2,12 @@
 
 [ext_resource type="ArrayMesh" uid="uid://db73q2ufmt5oc" path="res://assets/testeOffice/SimpleDesk.vox" id="1_l84js"]
 [ext_resource type="Script" uid="uid://dxcs4t3dx6ipq" path="res://scripts/player.gd" id="2_7172d"]
+[ext_resource type="Shader" uid="uid://caisi7k67rcvc" path="res://scenes/shaders/pixelate.gdshader" id="3_d5yd0"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_w51fh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l84js"]
 albedo_color = Color(0, 1, 1, 1)
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_7172d"]
-data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_d5yd0"]
 data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
@@ -26,65 +24,89 @@ data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_4houj"]
 data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
 
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_j6fj6"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_7172d"]
 height = 1.9999999
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_d5yd0"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7m821"]
+render_priority = 0
+shader = ExtResource("3_d5yd0")
+shader_parameter/pixel_size = 8.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_omil7"]
+material = SubResource("ShaderMaterial_7m821")
+
 [node name="Office" type="Node3D" unique_id=410607449]
 
 [node name="Room" type="StaticBody3D" parent="." unique_id=1956628786]
-transform = Transform3D(10, 0, 0, 0, 5, 0, 0, 0, 8, 0, 0, 0)
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0)
 
 [node name="wallDoor" type="MeshInstance3D" parent="Room" unique_id=1121834718]
-transform = Transform3D(-1, -8.742278e-08, 3.821371e-15, 0, -4.371139e-08, -1, 8.742278e-08, -1, 4.371139e-08, 0, 1, 1)
+transform = Transform3D(-1, -1.509958e-07, 3.861138e-15, 0, -4.371139e-08, -0.585, 1.509958e-07, -1, 2.5571161e-08, 0, 0.58, 1)
 mesh = SubResource("PlaneMesh_w51fh")
 surface_material_override/0 = SubResource("StandardMaterial3D_l84js")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room" unique_id=962057661]
-transform = Transform3D(-1, -8.742278e-08, 3.821371e-15, 0, -4.371139e-08, -1, 8.742278e-08, -1, 4.371139e-08, 0, 1, 1)
-shape = SubResource("ConcavePolygonShape3D_7172d")
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/wallDoor" unique_id=1649319229]
 
-[node name="wallGabinet" type="MeshInstance3D" parent="Room" unique_id=773149300]
-transform = Transform3D(-4.371139e-08, -1, 0, -4.371139e-08, 1.9106855e-15, -1, 1, -4.371139e-08, -4.371139e-08, 1, 1, 0)
-mesh = SubResource("PlaneMesh_w51fh")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Room" unique_id=2103125332]
-transform = Transform3D(-4.371139e-08, -1, 0, -4.371139e-08, 1.9106855e-15, -1, 1, -4.371139e-08, -4.371139e-08, 1, 1, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/wallDoor/StaticBody3D" unique_id=137636527]
 shape = SubResource("ConcavePolygonShape3D_d5yd0")
 
-[node name="wallBoard" type="MeshInstance3D" parent="Room" unique_id=39263337]
-transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, -1, 1, 0)
+[node name="wallGabinet" type="MeshInstance3D" parent="Room" unique_id=773149300]
+transform = Transform3D(-4.371139e-08, -1, 2.5571161e-08, 0, -4.371139e-08, -0.585, 1, -4.371139e-08, 1.1177509e-15, 1, 0.58, 0)
 mesh = SubResource("PlaneMesh_w51fh")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="Room" unique_id=521376080]
-transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, -1, 1, 0)
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/wallGabinet" unique_id=1533004859]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/wallGabinet/StaticBody3D" unique_id=2027530880]
 shape = SubResource("ConcavePolygonShape3D_7m821")
 
-[node name="wallDesk" type="MeshInstance3D" parent="Room" unique_id=1919699597]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1, -1)
+[node name="wallBoard" type="MeshInstance3D" parent="Room" unique_id=39263337]
+transform = Transform3D(-4.371139e-08, 1, -2.5571161e-08, 0, -4.371139e-08, -0.585, -1, -4.371139e-08, 1.1177509e-15, -1, 0.58, 0)
 mesh = SubResource("PlaneMesh_w51fh")
 
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="Room" unique_id=506013614]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1, -1)
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/wallBoard" unique_id=1695953487]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/wallBoard/StaticBody3D" unique_id=1035282065]
 shape = SubResource("ConcavePolygonShape3D_omil7")
+
+[node name="wallDesk" type="MeshInstance3D" parent="Room" unique_id=1919699597]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -0.585, 0, 1, -2.5571161e-08, 0, 0.58, -1)
+mesh = SubResource("PlaneMesh_w51fh")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/wallDesk" unique_id=2071716310]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/wallDesk/StaticBody3D" unique_id=751706753]
+shape = SubResource("ConcavePolygonShape3D_5r06g")
 
 [node name="Floor" type="MeshInstance3D" parent="Room" unique_id=1788336649]
 mesh = SubResource("PlaneMesh_w51fh")
 
-[node name="CollisionShape3D5" type="CollisionShape3D" parent="Room" unique_id=1100268285]
-shape = SubResource("ConcavePolygonShape3D_5r06g")
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/Floor" unique_id=1148271926]
 
-[node name="Roof" type="MeshInstance3D" parent="Room" unique_id=1676412663]
-transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 2, 0)
-mesh = SubResource("PlaneMesh_w51fh")
-
-[node name="CollisionShape3D6" type="CollisionShape3D" parent="Room" unique_id=1850953448]
-transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 2, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Floor/StaticBody3D" unique_id=1957778859]
 shape = SubResource("ConcavePolygonShape3D_4houj")
 
+[node name="Roof" type="MeshInstance3D" parent="Room" unique_id=1676412663]
+transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 1.16, 0)
+mesh = SubResource("PlaneMesh_w51fh")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/Roof" unique_id=758279142]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Roof/StaticBody3D" unique_id=503392253]
+shape = SubResource("ConcavePolygonShape3D_j6fj6")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Room" unique_id=1128236442]
+transform = Transform3D(0.099999994, 0, 0, 0, -5.4639226e-09, 0.19999999, 0, -0.125, -3.4149519e-09, 0, 2.2019851, 0)
+spot_range = 28.187
+spot_attenuation = 0.21
+spot_angle = 82.69
+
 [node name="SimpleDesk" type="MeshInstance3D" parent="." unique_id=1086693309]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8.493925, 0, -0.009351492)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.4801626, 0, -0.009351492)
 mesh = ExtResource("1_l84js")
 
 [node name="Player" type="CharacterBody3D" parent="." unique_id=1027673665]
@@ -105,3 +127,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.9887676, 0)
 [node name="Camera3D" type="Camera3D" parent="Player/Head" unique_id=737837076]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.38899612, 0)
 fov = 60.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player/Head/Camera3D" unique_id=210219980]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.54582554)
+mesh = SubResource("QuadMesh_omil7")
