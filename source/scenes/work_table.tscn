@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dymbuj6xarucr" path="res://scenes/objects/stamp.tscn" id="2_7idc7"]
 [ext_resource type="PackedScene" uid="uid://exkiiwlxhri3" path="res://scenes/objects/conveyor.tscn" id="4_m0cos"]
 [ext_resource type="Texture2D" uid="uid://dcoymbj3xqmu" path="res://assets/folhaespadasaojorgecu.png" id="5_oybn5"]
+[ext_resource type="Script" uid="uid://b1l7cf83ax6uy" path="res://scripts/camera.gd" id="6_oeah5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_62i00"]
 size = Vector2(20, 610)
@@ -19,7 +20,6 @@ size = Vector2(20, 1906)
 texture_filter = 1
 
 [node name="Table" type="Node2D" parent="." unique_id=1756185794]
-position = Vector2(0, 1)
 
 [node name="TableWall" type="StaticBody2D" parent="Table" unique_id=310181186]
 position = Vector2(1901, 407)
@@ -88,3 +88,7 @@ stamp_mark_kind = 1
 position = Vector2(1418, 164)
 scale = Vector2(18, 18)
 texture = ExtResource("5_oybn5")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1043786255]
+position = Vector2(959, 538)
+script = ExtResource("6_oeah5")
