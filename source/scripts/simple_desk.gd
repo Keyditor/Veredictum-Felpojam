@@ -11,5 +11,5 @@ func _process(delta: float) -> void:
 	pass
 func use():
 	print("FUNCIONA")
-	return [cena_2d, "cena"]
+	return ["work_table",cena_2d, "cena"]
 	#get_tree().change_scene_to_file("res://scenes/work_table.tscn")

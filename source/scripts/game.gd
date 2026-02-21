@@ -11,7 +11,6 @@ func _process(delta: float) -> void:
 	if on_2d != on_2d_last:
 		on_2d_last = on_2d
 		print("Mudou on_2d = ",on_2d)
-	print(on_dialog)
-	if str(on_dialog) != str(on_dialog_last):
+	if on_dialog != on_dialog_last:
 		on_dialog_last = on_dialog
 		print("Mudou on_dialog = ",on_dialog)
