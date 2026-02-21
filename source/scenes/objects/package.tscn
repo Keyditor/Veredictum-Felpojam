@@ -18,3 +18,13 @@ texture = ExtResource("2_uyqbv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2081468693]
 shape = SubResource("RectangleShape2D_psfrv")
+
+[node name="Button" type="Button" parent="." unique_id=398149951]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -64.0
+offset_top = -63.0
+offset_right = 64.0
+offset_bottom = 63.0
+
+[connection signal="button_down" from="Button" to="." method="_on_click_down"]
+[connection signal="button_up" from="Button" to="." method="_on_click_up"]

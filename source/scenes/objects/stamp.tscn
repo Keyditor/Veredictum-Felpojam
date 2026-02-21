@@ -24,6 +24,7 @@ polygon = PackedVector2Array(0, 0, 20, 0, 10, -10)
 self_modulate = Color(1, 1, 1, 0)
 offset_top = -10.0
 offset_right = 20.0
+mouse_default_cursor_shape = 2
 metadata/_edit_use_anchors_ = true
 
 [connection signal="button_down" from="StampImage/Button" to="." method="_on_button_button_down"]
