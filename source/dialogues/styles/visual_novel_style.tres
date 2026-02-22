@@ -37,11 +37,11 @@ script = ExtResource("2_dvg6f")
 scene = ExtResource("6_b8xv7")
 overrides = {
 "box_animation_in": "1",
-"box_animation_out": "1",
+"box_color_custom": "Color(0, 0, 0, 0.8627451)",
 "box_color_use_global": "false",
 "box_margin_bottom": "50.0",
 "box_panel": "\"res://dialogues/styles/DialogueBox/vn_textbox_default_panel.tres\"",
-"box_size": "Vector2(800, 300)",
+"box_size": "Vector2(1800, 300)",
 "name_label_box_offset": "Vector2(0, -30)",
 "name_label_box_use_global_color": "false",
 "name_label_custom_font_size": "40.0",

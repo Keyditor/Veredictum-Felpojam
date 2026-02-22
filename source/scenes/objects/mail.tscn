@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://det5l3ly1anns"]
+
+[ext_resource type="Script" uid="uid://djeufs532pu4c" path="res://scripts/mail.gd" id="1_uyqbv"]
+[ext_resource type="Resource" uid="uid://dw3vrddqa4p5q" path="res://resources/Letters/letter1.tres" id="2_imqj4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5yo0u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b613k"]
+
+[node name="Mail" type="RigidBody2D" unique_id=1467660884 groups=["objects"]]
+z_index = 1
+input_pickable = true
+gravity_scale = 0.0
+lock_rotation = true
+continuous_cd = 2
+script = ExtResource("1_uyqbv")
+mail_info = ExtResource("2_imqj4")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=54721400]
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=2053500721]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1250310019]
+shape = SubResource("RectangleShape2D_5yo0u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2081468693]
+shape = SubResource("RectangleShape2D_b613k")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

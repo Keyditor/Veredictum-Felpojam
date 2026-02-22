@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://bqya2r6h8v17o" path="res://scripts/work_table.gd" id="1_n46fc"]
 [ext_resource type="Texture2D" uid="uid://bm4mule7co870" path="res://assets/testeOffice/table.png" id="2_vyfnv"]
 [ext_resource type="PackedScene" uid="uid://exkiiwlxhri3" path="res://scenes/objects/conveyor.tscn" id="3_02l05"]
-[ext_resource type="PackedScene" uid="uid://det5l3ly1anns" path="res://scenes/objects/package.tscn" id="4_tx0s2"]
 [ext_resource type="PackedScene" uid="uid://dymbuj6xarucr" path="res://scenes/objects/stamp.tscn" id="5_w7jxw"]
 [ext_resource type="Texture2D" uid="uid://dcoymbj3xqmu" path="res://assets/folhaespadasaojorgecu.png" id="6_peth1"]
 [ext_resource type="Script" uid="uid://b1l7cf83ax6uy" path="res://scripts/camera.gd" id="7_7p044"]
@@ -53,7 +52,7 @@ shape = SubResource("RectangleShape2D_vkig8")
 
 [node name="TableBackGround" type="Sprite2D" parent="Table" unique_id=1946924296]
 z_index = -1
-position = Vector2(958, 415)
+position = Vector2(958.00006, 423)
 scale = Vector2(19, 19)
 texture = ExtResource("2_vyfnv")
 
@@ -62,21 +61,12 @@ position = Vector2(185, -154.68236)
 
 [node name="Conveyor" parent="Conveyors" unique_id=1039227752 instance=ExtResource("3_02l05")]
 position = Vector2(-3, -0.3176422)
+priority = -1
 orientation = 1
 
 [node name="Conveyor2" parent="Conveyors" unique_id=94246486 instance=ExtResource("3_02l05")]
 position = Vector2(1600, -0.3176422)
-
-[node name="Package" parent="." unique_id=1467660884 instance=ExtResource("4_tx0s2")]
-position = Vector2(760, 191)
-
-[node name="Package2" parent="." unique_id=1470897021 instance=ExtResource("4_tx0s2")]
-position = Vector2(152, -6)
-mail = 1
-
-[node name="Package3" parent="." unique_id=439797199 instance=ExtResource("4_tx0s2")]
-position = Vector2(802, 499)
-mail = 2
+priority = -1
 
 [node name="GoodStamp" parent="." unique_id=1567015258 instance=ExtResource("5_w7jxw")]
 position = Vector2(1307, 274)

@@ -2,31 +2,36 @@
 
 [ext_resource type="Script" uid="uid://ccr45op5ovxqi" path="res://scripts/stamp.gd" id="1_psfrv"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_psfrv"]
+size = Vector2(20, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p0y5k"]
+size = Vector2(20, 10)
+
 [node name="Stamp" type="Node2D" unique_id=1069247919]
+z_index = 2
 script = ExtResource("1_psfrv")
 
-[node name="StampImage" type="Polygon2D" parent="." unique_id=323506222]
+[node name="StampBody" type="Area2D" parent="." unique_id=2034445562]
+
+[node name="StampImage" type="Polygon2D" parent="StampBody" unique_id=323506222]
 position = Vector2(-10, -40)
 polygon = PackedVector2Array(0, 0, 20, 0, 20, 40, 0, 40)
 
-[node name="Button" type="Button" parent="StampImage" unique_id=652634290]
-self_modulate = Color(1, 1, 1, 0)
-offset_right = 20.0
-offset_bottom = 40.0
-metadata/_edit_use_anchors_ = true
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StampBody" unique_id=899183415]
+position = Vector2(0, -20)
+shape = SubResource("RectangleShape2D_psfrv")
 
-[node name="Polygon2D" type="Polygon2D" parent="." unique_id=855665836]
+[node name="Area2D2" type="Area2D" parent="." unique_id=1269259949]
+
+[node name="Polygon2D" type="Polygon2D" parent="Area2D2" unique_id=855665836]
 position = Vector2(-10, -40)
 color = Color(0.9076337, 0.41880777, 5.198121e-06, 1)
 polygon = PackedVector2Array(0, 0, 20, 0, 10, -10)
 
-[node name="press_stamp" type="Button" parent="Polygon2D" unique_id=1669188075]
-self_modulate = Color(1, 1, 1, 0)
-offset_top = -10.0
-offset_right = 20.0
-mouse_default_cursor_shape = 2
-metadata/_edit_use_anchors_ = true
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=908691338]
+position = Vector2(0, -45)
+shape = SubResource("RectangleShape2D_p0y5k")
 
-[connection signal="button_down" from="StampImage/Button" to="." method="_on_button_button_down"]
-[connection signal="button_up" from="StampImage/Button" to="." method="_on_button_button_up"]
-[connection signal="button_down" from="Polygon2D/press_stamp" to="." method="_on_press_stamp_button_down"]
+[connection signal="input_event" from="StampBody" to="." method="_on_stamp_body_input_event"]
+[connection signal="input_event" from="Area2D2" to="." method="_on_stamp_head_input_event"]

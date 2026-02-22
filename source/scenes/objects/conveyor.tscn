@@ -8,10 +8,11 @@ atlas = ExtResource("1_rukxg")
 region = Rect2(19.315, 0, 0, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m0cos"]
-size = Vector2(251.41734, 493.68237)
+size = Vector2(251.41734, 968.8412)
 
 [node name="Conveyor" type="Area2D" unique_id=1039227752]
 script = ExtResource("1_ooh5n")
+time_gap = 20.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=879157455]
 rotation = 1.5707964
@@ -19,7 +20,7 @@ scale = Vector2(0.5053983, 1.8570608)
 texture = SubResource("AtlasTexture_oybn5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1557683374]
-position = Vector2(-23.291328, 238)
+position = Vector2(-23.291328, 0.42059326)
 shape = SubResource("RectangleShape2D_m0cos")
 
 [node name="Ascending" type="Marker2D" parent="." unique_id=384314671]

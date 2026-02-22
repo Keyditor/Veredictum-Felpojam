@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="MailItem" format=3 uid="uid://dw3vrddqa4p5q"]
+
+[ext_resource type="Script" uid="uid://kejexgcvkqyk" path="res://resources/mail_item.gd" id="1_04c0k"]
+
+[resource]
+script = ExtResource("1_04c0k")
+mail_type = 1
+sender_name = "Julia"
+receiver_name = "Donisvalda"
+metadata/_custom_type_script = "uid://kejexgcvkqyk"

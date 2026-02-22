@@ -2,11 +2,11 @@ extends Node
 
 class_name Enum
 
-enum Characters {Player, Boss}
+enum MailTypes {Package, Letter}
 
-enum MailKinds {Package, Letter}
+enum Packages { Package1, Package2, Package3 }
 
-enum ObjectsInScene { Package1, Package2, Package3 }
+enum Letters { Letter1, Letter2 }
 
 enum StampMarks {Good, Bad, Neuter, Invalid}
 
