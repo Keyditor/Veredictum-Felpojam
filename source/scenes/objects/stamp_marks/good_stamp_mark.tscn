@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cpy03mffo7ckq"]
+
+[node name="StampMark" type="Sprite2D" unique_id=132920016]
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=226131202]
+position = Vector2(-10, -10)
+color = Color(0, 0.62352943, 0.18039216, 1)
+polygon = PackedVector2Array(0, 0, 20, 0, 20, 20, 0, 20)

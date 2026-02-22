@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="MailItem" format=3 uid="uid://c6wxfop367lmb"]
+
+[ext_resource type="Script" uid="uid://kejexgcvkqyk" path="res://resources/mail_item.gd" id="1_bsuj5"]
+[ext_resource type="Texture2D" uid="uid://biymh3oyw5dhp" path="res://icon.svg" id="2_dpxtg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_psfrv"]
+size = Vector2(127, 127)
+
+[resource]
+script = ExtResource("1_bsuj5")
+sender_name = "Antônio"
+receiver_name = "Eduarda LIma"
+texture = ExtResource("2_dpxtg")
+collider_shape = SubResource("RectangleShape2D_psfrv")
+metadata/_custom_type_script = "uid://kejexgcvkqyk"

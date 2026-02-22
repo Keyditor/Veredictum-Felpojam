@@ -1,57 +1,86 @@
 [gd_scene format=3 uid="uid://db3qqbnandkyn"]
 
-[ext_resource type="PackedScene" uid="uid://det5l3ly1anns" path="res://scenes/objects/package.tscn" id="1_62i00"]
-[ext_resource type="PackedScene" uid="uid://dymbuj6xarucr" path="res://scenes/objects/stamp.tscn" id="2_7idc7"]
+[ext_resource type="Script" uid="uid://bqya2r6h8v17o" path="res://scripts/work_table.gd" id="1_n46fc"]
+[ext_resource type="Texture2D" uid="uid://bm4mule7co870" path="res://assets/testeOffice/table.png" id="2_vyfnv"]
+[ext_resource type="PackedScene" uid="uid://exkiiwlxhri3" path="res://scenes/objects/conveyor.tscn" id="3_02l05"]
+[ext_resource type="PackedScene" uid="uid://dymbuj6xarucr" path="res://scenes/objects/stamp.tscn" id="5_w7jxw"]
+[ext_resource type="Texture2D" uid="uid://dcoymbj3xqmu" path="res://assets/folhaespadasaojorgecu.png" id="6_peth1"]
+[ext_resource type="Script" uid="uid://b1l7cf83ax6uy" path="res://scripts/camera.gd" id="7_7p044"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_62i00"]
-size = Vector2(20, 648)
+size = Vector2(20, 610)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7idc7"]
-size = Vector2(20, 900)
+size = Vector2(20, 1340)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vkig8"]
-size = Vector2(20, 1136)
+size = Vector2(20, 1906)
 
 [node name="WorkTable" type="Node2D" unique_id=525587958]
-
-[node name="Package" parent="." unique_id=1467660884 instance=ExtResource("1_62i00")]
-position = Vector2(760, 191)
-
-[node name="Package2" parent="." unique_id=1470897021 instance=ExtResource("1_62i00")]
-position = Vector2(506, 194)
+texture_filter = 1
+script = ExtResource("1_n46fc")
 
 [node name="Table" type="Node2D" parent="." unique_id=1756185794]
-position = Vector2(0, 1)
 
 [node name="TableWall" type="StaticBody2D" parent="Table" unique_id=310181186]
-position = Vector2(1152, 0)
+position = Vector2(1901, 407)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Table/TableWall" unique_id=1016259200]
-position = Vector2(-6, 318)
 shape = SubResource("RectangleShape2D_62i00")
 
 [node name="TableWall2" type="StaticBody2D" parent="Table" unique_id=1929331839]
-position = Vector2(11, 0)
+position = Vector2(16, 407)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Table/TableWall2" unique_id=194657001]
-position = Vector2(-6, 318)
 shape = SubResource("RectangleShape2D_62i00")
 
 [node name="TableWall3" type="StaticBody2D" parent="Table" unique_id=504021680]
-position = Vector2(1013, 0)
+position = Vector2(968, 106)
 rotation = 1.5707964
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Table/TableWall3" unique_id=82687265]
-position = Vector2(-6, 318)
+position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_7idc7")
 
 [node name="TableWall4" type="StaticBody2D" parent="Table" unique_id=2076958334]
-position = Vector2(1013, 0)
+position = Vector2(1013, 723)
 rotation = 1.5707964
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Table/TableWall4" unique_id=1646825573]
-position = Vector2(643.0003, 436)
+position = Vector2(0, 53)
 shape = SubResource("RectangleShape2D_vkig8")
 
-[node name="Stamp" parent="." unique_id=1567015258 instance=ExtResource("2_7idc7")]
-position = Vector2(276, 274)
+[node name="TableBackGround" type="Sprite2D" parent="Table" unique_id=1946924296]
+z_index = -1
+position = Vector2(958.00006, 423)
+scale = Vector2(19, 19)
+texture = ExtResource("2_vyfnv")
+
+[node name="Conveyors" type="Node2D" parent="." unique_id=522650683]
+position = Vector2(185, -154.68236)
+
+[node name="Conveyor" parent="Conveyors" unique_id=1039227752 instance=ExtResource("3_02l05")]
+position = Vector2(-3, -0.3176422)
+priority = -1
+orientation = 1
+
+[node name="Conveyor2" parent="Conveyors" unique_id=94246486 instance=ExtResource("3_02l05")]
+position = Vector2(1600, -0.3176422)
+priority = -1
+
+[node name="GoodStamp" parent="." unique_id=1567015258 instance=ExtResource("5_w7jxw")]
+position = Vector2(1307, 274)
+
+[node name="BadStamp2" parent="." unique_id=1069247919 instance=ExtResource("5_w7jxw")]
+modulate = Color(1, 0.22745098, 1, 1)
+position = Vector2(1144, 274)
+stamp_mark_kind = 1
+
+[node name="Folhaespadasaojorgecu" type="Sprite2D" parent="." unique_id=459168739]
+position = Vector2(1418, 164)
+scale = Vector2(18, 18)
+texture = ExtResource("6_peth1")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1043786255]
+position = Vector2(959, 538)
+script = ExtResource("7_7p044")
