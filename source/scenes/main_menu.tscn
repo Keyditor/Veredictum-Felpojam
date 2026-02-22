@@ -60,7 +60,7 @@ handle_input_locally = false
 size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
-[node name="Office" parent="SubViewportContainer/SubViewport" unique_id=410607449 instance=ExtResource("2_bqqt6")]
+[node name="OfficeMenu" parent="SubViewportContainer/SubViewport" unique_id=410607449 instance=ExtResource("2_bqqt6")]
 
 [node name="settings" type="Control" parent="." unique_id=930456592]
 visible = false
