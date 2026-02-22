@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://c5ej6tflnwdiw"]
+
+[ext_resource type="Script" uid="uid://dxcs4t3dx6ipq" path="res://scripts/player.gd" id="1_epbrm"]
+[ext_resource type="Shader" uid="uid://caisi7k67rcvc" path="res://scenes/shaders/pixelate.gdshader" id="2_hhrw0"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_7172d"]
+height = 1.9999999
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_d5yd0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7m821"]
+render_priority = 0
+shader = ExtResource("2_hhrw0")
+shader_parameter/pixel_size = 6.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_omil7"]
+material = SubResource("ShaderMaterial_7m821")
+
+[node name="Player" type="CharacterBody3D" unique_id=879881357]
+script = ExtResource("1_epbrm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=21108334]
+transform = Transform3D(2.005, 0, 0, 0, 2, 0, 0, 0, 2.005, 0, 3.065472, 0)
+shape = SubResource("CylinderShape3D_7172d")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=825026598]
+transform = Transform3D(2.005, 0, 0, 0, 2.83, 0, 0, 0, 2.005, 0, 3.065472, 0)
+mesh = SubResource("CapsuleMesh_d5yd0")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1520136409]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer" unique_id=672179310]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer" unique_id=2045385630]
+handle_input_locally = false
+size = Vector2i(1920, 1080)
+render_target_update_mode = 0
+
+[node name="Head" type="Node3D" parent="." unique_id=1020596260]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.9887676, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=1713165288]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.38899612, 0)
+fov = 60.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Head/Camera3D" unique_id=1703093159]
+transform = Transform3D(1.13, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.54582554)
+mesh = SubResource("QuadMesh_omil7")
+
+[node name="RayCast3D" type="RayCast3D" parent="Head/Camera3D" unique_id=1876789158]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+target_position = Vector3(0, -6, 0)

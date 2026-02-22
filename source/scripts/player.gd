@@ -16,6 +16,7 @@ var look_dir: Vector2
 var camSense = 0.002
 
 func _ready() -> void:
+	self.visible = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _physics_process(delta: float) -> void:
