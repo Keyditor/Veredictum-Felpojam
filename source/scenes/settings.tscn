@@ -14,7 +14,7 @@ font_color = Color(0, 0, 0, 1)
 font_size = 22
 font_color = Color(0, 0, 0, 1)
 
-[node name="settings" type="VBoxContainer" unique_id=395766283 node_paths=PackedStringArray("music", "sounds", "fullscreen")]
+[node name="settings" type="VBoxContainer" unique_id=395766283 node_paths=PackedStringArray("music", "sounds", "fullscreen", "resolution")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -25,6 +25,7 @@ script = ExtResource("1_5p8wc")
 music = NodePath("Control/music")
 sounds = NodePath("Control2/sounds")
 fullscreen = NodePath("tela_cheia/fullscreen")
+resolution = NodePath("Control3/OptionResolution")
 
 [node name="Options_label" type="Label" parent="." unique_id=1707095078]
 custom_minimum_size = Vector2(200, 80)
@@ -103,6 +104,43 @@ grow_horizontal = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 
+[node name="resolution" type="Label" parent="." unique_id=187004211]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Resolução"
+label_settings = SubResource("LabelSettings_wu84c")
+horizontal_alignment = 1
+
+[node name="Control3" type="Control" parent="." unique_id=821719112]
+custom_minimum_size = Vector2(200, 32)
+layout_mode = 2
+
+[node name="OptionResolution" type="OptionButton" parent="Control3" unique_id=795969779]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -202.5
+offset_top = -15.5
+offset_right = 202.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+selected = 0
+item_count = 4
+popup/item_0/text = "1280x720"
+popup/item_0/id = 0
+popup/item_1/text = "1366x768"
+popup/item_1/id = 3
+popup/item_2/text = "1600x900"
+popup/item_2/id = 1
+popup/item_3/text = "1920x1080"
+popup/item_3/id = 2
+
 [connection signal="value_changed" from="Control/music" to="." method="music_volume"]
 [connection signal="value_changed" from="Control2/sounds" to="." method="sounds_volume"]
 [connection signal="toggled" from="tela_cheia/fullscreen" to="." method="fullscreen_toggled"]
+[connection signal="item_selected" from="Control3/OptionResolution" to="." method="change_resolution"]
