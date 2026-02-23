@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bj1rl27q6n0ri"]
+
+[ext_resource type="Script" uid="uid://cmcrku2tvm6qx" path="res://scripts/clock_office_interact.gd" id="1_utwj1"]
+
+[node name="ClockInteract" type="Node2D" unique_id=1571136136]
+script = ExtResource("1_utwj1")

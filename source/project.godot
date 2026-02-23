@@ -29,6 +29,7 @@ directories/dch_directory={
 "player": "res://dialogues/characters/player.dch"
 }
 directories/dtl_directory={
+"clock3dStart": "res://dialogues/timelines/dialog3D/clock3dStart.dtl",
 "intro": "res://dialogues/timelines/intro.dtl"
 }
 layout/style_directory={
@@ -36,7 +37,10 @@ layout/style_directory={
 }
 layout/style_list=["res://dialogues/styles/visual_novel_style.tres"]
 layout/default_style=""
-variables={}
+variables={
+"clockState": "early",
+"clockTime": "08:00"
+}
 glossary/default_case_sensitive=true
 text/letter_speed=0.05
 text/initial_text_reveal_skippable=true
@@ -92,6 +96,17 @@ window/stretch/mode="canvas_items"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/MagicaVoxel_Importer_with_Extensions/plugin.cfg", "res://addons/dialogic/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://addons/": "pink",
+"res://assets/": "orange",
+"res://dialogues/": "blue",
+"res://resources/": "green",
+"res://scenes/": "purple",
+"res://scripts/": "red"
+}
 
 [input]
 

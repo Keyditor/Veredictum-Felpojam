@@ -8,11 +8,11 @@ extends DialogicEvent
 ### Settings
 
 ## The time in seconds that the event will stop before continuing.
-@export var time: float = 1.0
+var time: float = 1.0
 ## If true the text box will be hidden while the event waits.
-@export var hide_text := true
+var hide_text := true
 ## If true the wait can be skipped with user input
-@export var skippable := false
+var skippable := false
 
 var _tween: Tween
 

@@ -16,6 +16,7 @@ var look_dir: Vector2
 var camSense = 0.002
 
 func _ready() -> void:
+	Dialogic.signal_event.connect(_on_dialogic_signal)
 	self.visible = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
@@ -52,6 +53,10 @@ func _physics_process(delta: float) -> void:
 			if action_type == "cena":
 				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 				open_overlay(overlay_id,cena_2d)
+			if action_type == "dialogo":
+				Dialogic.start("clock3dStart")
+				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+				#open_overlay(overlay_id,cena_2d,action_type)
 		else: 
 			print("no use")
 			
@@ -78,7 +83,7 @@ func _physics_process(delta: float) -> void:
 		t_bob = 0.0 
 	cam.transform.origin = cam.transform.origin.lerp(target_cam_pos, delta * 10.0)
 
-func open_overlay(id:String,packed_scene: PackedScene): #Instancia e torna a cena 2d visível
+func open_overlay(id:String,packed_scene: PackedScene,action_type = "cena"): #Instancia e torna a cena 2d visível
 	if not overlays.has(id):
 		var instancia = packed_scene.instantiate()
 		overlays[id] = instancia
@@ -94,6 +99,13 @@ func close_overlay(id: String): #Torna a cena 2d invisivel
 		overlays[id].hide()
 	GAME.on_2d = false
 	render2d.visible = false # Torna o SubViewportContainer invisível
+
+func _on_dialogic_signal(arg):
+	print("overs : ",str(overlays))
+	close_overlay(arg)
+	print("overs : ",str(overlays))
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	pass
 
 func _unhandled_input(event):
 	# Verifica se a entrada é um movimento do mouse

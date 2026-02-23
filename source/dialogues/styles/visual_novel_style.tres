@@ -15,6 +15,9 @@
 [sub_resource type="Resource" id="Resource_jxm2s"]
 script = ExtResource("2_dvg6f")
 scene = ExtResource("1_gnvdt")
+overrides = {
+"follow_viewport": "true"
+}
 
 [sub_resource type="Resource" id="Resource_pp4wp"]
 script = ExtResource("2_dvg6f")
@@ -83,4 +86,4 @@ layer_info = {
 "16": SubResource("Resource_h6xfj"),
 "17": SubResource("Resource_41x3g")
 }
-metadata/_latest_layer = "13"
+metadata/_latest_layer = "10"
