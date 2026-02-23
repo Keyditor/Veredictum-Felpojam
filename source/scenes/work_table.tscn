@@ -40,11 +40,11 @@ rotation = -0.31415927
 priority = -1
 
 [node name="GoodStamp" parent="." unique_id=1567015258 instance=ExtResource("5_w7jxw")]
-position = Vector2(1307, 274)
+position = Vector2(1307, 422)
 
 [node name="BadStamp2" parent="." unique_id=1069247919 instance=ExtResource("5_w7jxw")]
 modulate = Color(1, 0.22745098, 1, 1)
-position = Vector2(1144, 274)
+position = Vector2(1144, 418)
 stamp_mark_kind = 1
 
 [node name="Folhaespadasaojorgecu" type="Sprite2D" parent="." unique_id=459168739]

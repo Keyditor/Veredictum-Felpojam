@@ -54,7 +54,7 @@ func create_mail_object(resource, spawn_point: Vector2, spawn_gap_time: float):
 	new_mail.global_position = spawn_point
 	get_tree().get_first_node_in_group("work_table").add_child(new_mail)
 
-func add_to_in_scene_mail(mail_scene: RigidBody2D):
-	in_scene_mail.append(mail_scene)
-func remove_from_in_scene_mail(mail_scene: RigidBody2D):
-	in_scene_mail.erase(mail_scene)
+func add_to_in_scene_mail(mail_item: MailItem):
+	in_scene_mail.append(mail_item)
+func remove_from_in_scene_mail(mail_item: MailItem):
+	in_scene_mail.erase(mail_item)

@@ -47,9 +47,13 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 		# var force = direction * stiffness - state.linear_velocity * damping
 		state.linear_velocity = direction * 30
 	else:
-		state.linear_velocity = Vector2.ZERO
+		#state.linear_velocity = Vector2.ZERO
 		if state.linear_velocity.length() > max_speed:
 			state.linear_velocity = state.linear_velocity.normalized() * max_speed
+			
+		if global_position == final_pos and conveyor_orientation == Enum.ConveyorOrientation.Desc:
+				print("entrou aqui")
+				state.linear_velocity = Vector2.RIGHT * 3000
 
 func _physics_process(delta: float) -> void:
 	if is_moving:
@@ -76,18 +80,18 @@ func hide_information():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	if global_position == final_pos:
-		Data.add_to_in_scene_mail(self)
-		print(Data.in_scene_mail)
-		
+func _process(_delta: float) -> void:	
 	# Declarar variáveis do Resource
 	sprite_2d.texture = mail_info.texture
 	collision_shape_2d.shape = mail_info.collider_shape
 	collision_shape_2d.position = mail_info.collider_position
 	collision_shape_2d_mouse.shape = mail_info.collider_shape
 	collision_shape_2d_mouse.position = mail_info.collider_position
-
+	
+	if global_position == final_pos and not is_holding:
+		if conveyor_orientation == Enum.ConveyorOrientation.Asc:
+			Data.add_to_in_scene_mail(self.mail_info)
+			animation_player.play("pop_out")
 
 
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
