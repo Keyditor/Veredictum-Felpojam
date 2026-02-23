@@ -3,6 +3,7 @@
 [ext_resource type="ArrayMesh" uid="uid://bh0yrj0etkhmx" path="res://assets/testeOffice/Office.vox" id="1_8ee8a"]
 [ext_resource type="ArrayMesh" uid="uid://bensbgxvm3t6b" path="res://assets/testeOffice/Chair.vox" id="2_3l1y6"]
 [ext_resource type="ArrayMesh" uid="uid://db73q2ufmt5oc" path="res://assets/testeOffice/SimpleDesk.vox" id="3_6cudc"]
+[ext_resource type="ArrayMesh" uid="uid://c70cj3tdit8la" path="res://assets/testeOffice/Conveyors.vox" id="3_8ee8a"]
 [ext_resource type="Script" uid="uid://bhy7keftbsy6f" path="res://scripts/simple_desk.gd" id="4_pru6a"]
 [ext_resource type="PackedScene" uid="uid://db3qqbnandkyn" path="res://scenes/work_table.tscn" id="5_0yqkj"]
 [ext_resource type="Shader" uid="uid://caisi7k67rcvc" path="res://scenes/shaders/pixelate.gdshader" id="7_pcd5d"]
@@ -54,6 +55,10 @@ mesh = ExtResource("2_3l1y6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Chair/StaticBody3D" unique_id=573539017]
 shape = SubResource("ConvexPolygonShape3D_4houj")
+
+[node name="Conveyors" type="MeshInstance3D" parent="." unique_id=1977261352]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.4801626, 0, -0.009351492)
+mesh = ExtResource("3_8ee8a")
 
 [node name="SimpleDesk" type="MeshInstance3D" parent="." unique_id=1086693309]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.4801626, 0, 0.054585695)
