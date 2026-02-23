@@ -1,21 +1,12 @@
 [gd_scene format=3 uid="uid://db3qqbnandkyn"]
 
 [ext_resource type="Script" uid="uid://bqya2r6h8v17o" path="res://scripts/work_table.gd" id="1_n46fc"]
-[ext_resource type="Texture2D" uid="uid://bm4mule7co870" path="res://assets/testeOffice/table.png" id="2_vyfnv"]
+[ext_resource type="Texture2D" uid="uid://d0btx3x5mla6p" path="res://assets/worktable.png" id="2_t5bnd"]
 [ext_resource type="PackedScene" uid="uid://exkiiwlxhri3" path="res://scenes/objects/conveyor.tscn" id="3_02l05"]
 [ext_resource type="PackedScene" uid="uid://dymbuj6xarucr" path="res://scenes/objects/stamp.tscn" id="5_w7jxw"]
 [ext_resource type="Texture2D" uid="uid://dcoymbj3xqmu" path="res://assets/folhaespadasaojorgecu.png" id="6_peth1"]
 [ext_resource type="Script" uid="uid://b1l7cf83ax6uy" path="res://scripts/camera.gd" id="7_7p044"]
 [ext_resource type="Script" uid="uid://buomknkwu85ph" path="res://scripts/information_canvas.gd" id="7_t5bnd"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_62i00"]
-size = Vector2(20, 610)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7idc7"]
-size = Vector2(20, 1340)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vkig8"]
-size = Vector2(20, 1906)
 
 [sub_resource type="Gradient" id="Gradient_oeah5"]
 offsets = PackedFloat32Array(1)
@@ -30,50 +21,22 @@ script = ExtResource("1_n46fc")
 
 [node name="Table" type="Node2D" parent="." unique_id=1756185794]
 
-[node name="TableWall" type="StaticBody2D" parent="Table" unique_id=310181186]
-position = Vector2(1901, 407)
+[node name="Worktable" type="Sprite2D" parent="Table" unique_id=464976524]
+position = Vector2(961, -26)
+texture = ExtResource("2_t5bnd")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Table/TableWall" unique_id=1016259200]
-shape = SubResource("RectangleShape2D_62i00")
-
-[node name="TableWall2" type="StaticBody2D" parent="Table" unique_id=1929331839]
-position = Vector2(16, 407)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Table/TableWall2" unique_id=194657001]
-shape = SubResource("RectangleShape2D_62i00")
-
-[node name="TableWall3" type="StaticBody2D" parent="Table" unique_id=504021680]
-position = Vector2(968, 106)
-rotation = 1.5707964
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Table/TableWall3" unique_id=82687265]
-position = Vector2(0, 4)
-shape = SubResource("RectangleShape2D_7idc7")
-
-[node name="TableWall4" type="StaticBody2D" parent="Table" unique_id=2076958334]
-position = Vector2(1013, 723)
-rotation = 1.5707964
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Table/TableWall4" unique_id=1646825573]
-position = Vector2(0, 53)
-shape = SubResource("RectangleShape2D_vkig8")
-
-[node name="TableBackGround" type="Sprite2D" parent="Table" unique_id=1946924296]
-z_index = -1
-position = Vector2(958.00006, 423)
-scale = Vector2(19, 19)
-texture = ExtResource("2_vyfnv")
-
-[node name="Conveyors" type="Node2D" parent="." unique_id=522650683]
+[node name="Conveyors" type="Node2D" parent="Table" unique_id=522650683]
 position = Vector2(185, -154.68236)
 
-[node name="Conveyor" parent="Conveyors" unique_id=1039227752 instance=ExtResource("3_02l05")]
-position = Vector2(-3, -0.3176422)
+[node name="Conveyor" parent="Table/Conveyors" unique_id=1039227752 instance=ExtResource("3_02l05")]
+position = Vector2(53.000015, 753.68243)
+rotation = 0.31415927
 priority = -1
 orientation = 1
 
-[node name="Conveyor2" parent="Conveyors" unique_id=94246486 instance=ExtResource("3_02l05")]
-position = Vector2(1600, -0.3176422)
+[node name="Conveyor2" parent="Table/Conveyors" unique_id=94246486 instance=ExtResource("3_02l05")]
+position = Vector2(1512.0002, 753.682)
+rotation = -0.31415927
 priority = -1
 
 [node name="GoodStamp" parent="." unique_id=1567015258 instance=ExtResource("5_w7jxw")]
