@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ddv4vc2m8hsmj"]
 
 [ext_resource type="Script" uid="uid://drag1sjumdgi7" path="res://scripts/main_menu.gd" id="1_ekxnf"]
+[ext_resource type="PackedScene" uid="uid://rjx1euem3aj7" path="res://scenes/office/OfficeMenu.tscn" id="2_bqqt6"]
 [ext_resource type="PackedScene" uid="uid://75o0x1mclj63" path="res://scenes/settings.tscn" id="2_ekxnf"]
 
 [sub_resource type="Animation" id="Animation_5p8wc"]
@@ -49,15 +50,27 @@ grow_vertical = 2
 script = ExtResource("1_ekxnf")
 metadata/_edit_lock_ = true
 
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1335792685]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=684248575]
+handle_input_locally = false
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="OfficeMenu" parent="SubViewportContainer/SubViewport" unique_id=410607449 instance=ExtResource("2_bqqt6")]
+
 [node name="settings" type="Control" parent="." unique_id=930456592]
 visible = false
 custom_minimum_size = Vector2(300, 300)
 layout_mode = 1
 anchors_preset = 0
-offset_left = 734.0
-offset_top = 384.0
-offset_right = 1256.0
-offset_bottom = 684.0
+offset_left = 920.0
+offset_top = 361.0
+offset_right = 1442.0
+offset_bottom = 661.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="settings" unique_id=722218892]
 libraries/ = SubResource("AnimationLibrary_6wm04")
@@ -70,7 +83,7 @@ anchor_bottom = 1.0
 offset_left = 10.0
 offset_top = -742.0
 offset_right = 10.0
-offset_bottom = -742.0
+offset_bottom = -695.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.77254903, 0.77254903, 0.6862745, 1)

@@ -29,7 +29,6 @@ var in_scene_mail = []
 func spawn_mail(night_index: int, spawn_point: Vector2, spawn_gap_time: float):
 	var first = true
 	for mail in nights[night_index]["Mail"]:
-		print("iterou")
 		# Para que ele tenha um delay mais curto na primeira iteração
 		if first:
 			await get_tree().create_timer(1.5).timeout
@@ -52,9 +51,9 @@ func create_mail_object(resource, spawn_point: Vector2, spawn_gap_time: float):
 	var new_mail = mail_scene.instantiate()
 	new_mail.mail_info = mail_resource
 	new_mail.global_position = spawn_point
-	get_tree().current_scene.add_child(new_mail)
+	get_tree().get_first_node_in_group("work_table").add_child(new_mail)
 
-func add_to_in_scene_mail(mail_scene: RigidBody2D):
-	in_scene_mail.append(mail_scene)
-func remove_from_in_scene_mail(mail_scene: RigidBody2D):
-	in_scene_mail.erase(mail_scene)
+func add_to_in_scene_mail(mail_item: MailItem):
+	in_scene_mail.append(mail_item)
+func remove_from_in_scene_mail(mail_item: MailItem):
+	in_scene_mail.erase(mail_item)
