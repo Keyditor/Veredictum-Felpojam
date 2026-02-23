@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dymbuj6xarucr" path="res://scenes/objects/stamp.tscn" id="5_w7jxw"]
 [ext_resource type="Texture2D" uid="uid://dcoymbj3xqmu" path="res://assets/folhaespadasaojorgecu.png" id="6_peth1"]
 [ext_resource type="Script" uid="uid://b1l7cf83ax6uy" path="res://scripts/camera.gd" id="7_7p044"]
+[ext_resource type="Script" uid="uid://buomknkwu85ph" path="res://scripts/canvas_button.gd" id="7_t5bnd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_62i00"]
 size = Vector2(20, 610)
@@ -15,6 +16,13 @@ size = Vector2(20, 1340)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vkig8"]
 size = Vector2(20, 1906)
+
+[sub_resource type="Gradient" id="Gradient_oeah5"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.34117684, 0.29784605, 0.26692143, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_t5bnd"]
+gradient = SubResource("Gradient_oeah5")
 
 [node name="WorkTable" type="Node2D" unique_id=525587958 groups=["work_table"]]
 texture_filter = 1
@@ -84,3 +92,49 @@ texture = ExtResource("6_peth1")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1043786255]
 position = Vector2(959, 538)
 script = ExtResource("7_7p044")
+
+[node name="Floor" type="Sprite2D" parent="." unique_id=871016371]
+z_index = -2
+position = Vector2(968, 540)
+scale = Vector2(31.25, 17.875)
+texture = SubResource("GradientTexture2D_t5bnd")
+
+[node name="InformationCanvas" type="CanvasLayer" parent="." unique_id=460395412]
+visible = false
+
+[node name="Panel" type="Panel" parent="InformationCanvas" unique_id=1818904398]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="InformationCanvas/Panel" unique_id=1488967320]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="InformationCanvas/Panel" unique_id=53904760]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -300.0
+offset_top = 140.0
+offset_right = -236.0
+offset_bottom = 272.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 90
+text = "X"
+script = ExtResource("7_t5bnd")
+
+[connection signal="button_down" from="InformationCanvas/Panel/Button" to="InformationCanvas/Panel/Button" method="_on_button_down"]
