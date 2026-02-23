@@ -57,6 +57,7 @@ func fullscreen_toggled(toggled_on: bool) -> void:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		get_window().move_to_center()
 	pass # Replace with function body.
 
 func change_resolution(index: int) -> void:
@@ -66,4 +67,6 @@ func change_resolution(index: int) -> void:
 	var res = RESOLUTIONS[index]
 	#DisplayServer.window_set_size(res)
 	get_window().size=res
+	get_window().move_to_center()
+	
 	pass # Replace with function body.
