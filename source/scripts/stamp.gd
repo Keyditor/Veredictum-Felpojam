@@ -7,6 +7,8 @@ var grab_offset := Vector2.ZERO
 
 var stamp_mark_load
 
+var hited_object: Node2D
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	stamp_mark_load = load(Data.StampsMarks[stamp_mark_kind])
@@ -27,30 +29,14 @@ func _on_stamp_body_input_event(viewport: Node, event: InputEvent, shape_idx: in
 				grab_offset = get_global_mouse_position() - global_position
 			else:
 				is_holding = false
-	
-#
-#func _on_button_button_up() -> void:
-	#is_holding = false
-	
-
 
 func _on_stamp_head_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
-			if event.pressed:
+			if event.pressed and hited_object:
 				var stamp_mark = stamp_mark_load.instantiate()
-				var object_hited = point_hits_object(global_position)
+				var object_hited = hited_object
 				set_stamp_mark(stamp_mark, object_hited, global_position, stamp_mark_kind)
-
-#func _input(event):
-	#if event is InputEventMouseButton and event.pressed:
-		#if get_rect().has_point(to_local(event.position)):
-			#print("Clicou!")
-
-#func _on_press_stamp_button_down() -> void:
-	#var stamp_mark = stamp_mark_load.instantiate()
-	#var object_hited = point_hits_object(global_position)
-	#set_stamp_mark(stamp_mark, object_hited, global_position, stamp_mark_kind)
 
 func set_stamp_mark(mark: Node2D, parent_object: Node2D, pos: Vector2, StampMarkKind):
 	if parent_object.is_in_group("objects"):
@@ -67,21 +53,13 @@ func set_stamp_mark(mark: Node2D, parent_object: Node2D, pos: Vector2, StampMark
 			parent_object.mail_info.stamped = StampMarkKind
 		else:
 			parent_object.mail_info.stamped = Enum.StampMarks.Invalid
-func point_hits_object(point: Vector2) -> Node2D:
-	var space_state = get_world_2d().direct_space_state
-	
-	var query = PhysicsPointQueryParameters2D.new()
-	query.position = point
-	query.collide_with_areas = true
-	query.collide_with_bodies = true
-	
-	var result = space_state.intersect_point(query)
-	
-	for hit in result:
-		var node = hit.collider
-		while node:
-			if node.is_in_group("objects"):
-				print(hit.collider)
-				return node
-			node = node.get_parent()
-	return Node2D.new()
+
+func _on_stamp_area_body_entered(body: Node2D) -> void:
+	if body.is_in_group("objects"):
+		hited_object = body
+
+
+
+func _on_stamp_area_body_exited(body: Node2D) -> void:
+	if body.is_in_group("objects"):
+		hited_object = Node2D.new()

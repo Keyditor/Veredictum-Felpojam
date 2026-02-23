@@ -15,7 +15,7 @@
 &"display_name": "Player",
 &"mirror": false,
 &"nicknames": [""],
-&"offset": Vector2(0, -340),
+&"offset": Vector2(-150, -340),
 &"portraits": {
 "idle": {
 "export_overrides": {

@@ -1,6 +1,6 @@
 extends CharacterBody3D
 @onready var cam = $Head/Camera3D
-@onready var render2d = $CanvasLayer/SubViewportContainer/SubViewport
+@onready var render2d = $CanvasLayer
 @onready var head = $Head
 @onready var useRange = $Head/Camera3D/RayCast3D
 
@@ -16,6 +16,8 @@ var look_dir: Vector2
 var camSense = 0.002
 
 func _ready() -> void:
+	Dialogic.signal_event.connect(_on_dialogic_signal)
+	self.visible = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _physics_process(delta: float) -> void:
@@ -51,6 +53,10 @@ func _physics_process(delta: float) -> void:
 			if action_type == "cena":
 				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 				open_overlay(overlay_id,cena_2d)
+			if action_type == "dialogo":
+				Dialogic.start("clock3dStart")
+				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+				#open_overlay(overlay_id,cena_2d,action_type)
 		else: 
 			print("no use")
 			
@@ -77,13 +83,13 @@ func _physics_process(delta: float) -> void:
 		t_bob = 0.0 
 	cam.transform.origin = cam.transform.origin.lerp(target_cam_pos, delta * 10.0)
 
-func open_overlay(id:String,packed_scene: PackedScene): #Instancia e torna a cena 2d visível
+func open_overlay(id:String,packed_scene: PackedScene,action_type = "cena"): #Instancia e torna a cena 2d visível
 	if not overlays.has(id):
 		var instancia = packed_scene.instantiate()
 		overlays[id] = instancia
 		render2d.add_child(overlays[id])
 	else: overlays[id].show()
-	render2d.get_parent().visible = true # Torna o SubViewportContainer visível
+	render2d.visible = true # Torna o SubViewportContainer visível
 	GAME.on_2d = true
 
 func close_overlay(id: String): #Torna a cena 2d invisivel
@@ -92,7 +98,14 @@ func close_overlay(id: String): #Torna a cena 2d invisivel
 		print("encontrou cena")
 		overlays[id].hide()
 	GAME.on_2d = false
-	render2d.get_parent().visible = false # Torna o SubViewportContainer invisível
+	render2d.visible = false # Torna o SubViewportContainer invisível
+
+func _on_dialogic_signal(arg):
+	print("overs : ",str(overlays))
+	close_overlay(arg)
+	print("overs : ",str(overlays))
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	pass
 
 func _unhandled_input(event):
 	# Verifica se a entrada é um movimento do mouse
