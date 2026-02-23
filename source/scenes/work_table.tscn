@@ -48,7 +48,7 @@ position = Vector2(1144, 418)
 stamp_mark_kind = 1
 
 [node name="Folhaespadasaojorgecu" type="Sprite2D" parent="." unique_id=459168739]
-position = Vector2(1418, 164)
+position = Vector2(631, 314)
 scale = Vector2(18, 18)
 texture = ExtResource("6_peth1")
 

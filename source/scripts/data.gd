@@ -29,7 +29,6 @@ var in_scene_mail = []
 func spawn_mail(night_index: int, spawn_point: Vector2, spawn_gap_time: float):
 	var first = true
 	for mail in nights[night_index]["Mail"]:
-		print("iterou")
 		# Para que ele tenha um delay mais curto na primeira iteração
 		if first:
 			await get_tree().create_timer(1.5).timeout

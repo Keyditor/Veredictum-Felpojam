@@ -24,7 +24,6 @@ func _on_stamp_body_input_event(viewport: Node, event: InputEvent, shape_idx: in
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if event.pressed:
-				print(event.pressed)
 				is_holding = event.pressed
 				grab_offset = get_global_mouse_position() - global_position
 			else:

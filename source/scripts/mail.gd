@@ -52,7 +52,6 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 			state.linear_velocity = state.linear_velocity.normalized() * max_speed
 			
 		if global_position == final_pos and conveyor_orientation == Enum.ConveyorOrientation.Desc:
-				print("entrou aqui")
 				state.linear_velocity = Vector2.RIGHT * 3000
 
 func _physics_process(delta: float) -> void:
@@ -72,7 +71,6 @@ func stop_moving():
 
 func show_information():
 	information_canvas.get_node("Panel/TextureRect").texture = mail_info.info
-	print(information_canvas.get_node("Panel/TextureRect"))
 	information_canvas.visible = true
 
 func hide_information():
