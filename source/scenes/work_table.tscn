@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dymbuj6xarucr" path="res://scenes/objects/stamp.tscn" id="5_w7jxw"]
 [ext_resource type="Texture2D" uid="uid://dcoymbj3xqmu" path="res://assets/folhaespadasaojorgecu.png" id="6_peth1"]
 [ext_resource type="Script" uid="uid://b1l7cf83ax6uy" path="res://scripts/camera.gd" id="7_7p044"]
-[ext_resource type="Script" uid="uid://buomknkwu85ph" path="res://scripts/canvas_button.gd" id="7_t5bnd"]
+[ext_resource type="Script" uid="uid://buomknkwu85ph" path="res://scripts/information_canvas.gd" id="7_t5bnd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_62i00"]
 size = Vector2(20, 610)
@@ -101,6 +101,7 @@ texture = SubResource("GradientTexture2D_t5bnd")
 
 [node name="InformationCanvas" type="CanvasLayer" parent="." unique_id=460395412]
 visible = false
+script = ExtResource("7_t5bnd")
 
 [node name="Panel" type="Panel" parent="InformationCanvas" unique_id=1818904398]
 anchors_preset = 15
@@ -122,6 +123,7 @@ offset_right = 32.0
 offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 0
 
 [node name="Button" type="Button" parent="InformationCanvas/Panel" unique_id=53904760]
 layout_mode = 1
@@ -135,6 +137,6 @@ offset_bottom = 272.0
 grow_horizontal = 0
 theme_override_font_sizes/font_size = 90
 text = "X"
-script = ExtResource("7_t5bnd")
 
-[connection signal="button_down" from="InformationCanvas/Panel/Button" to="InformationCanvas/Panel/Button" method="_on_button_down"]
+[connection signal="gui_input" from="InformationCanvas/Panel" to="InformationCanvas" method="_on_panel_gui_input"]
+[connection signal="button_down" from="InformationCanvas/Panel/Button" to="InformationCanvas" method="_on_button_button_down"]
