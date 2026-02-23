@@ -16,6 +16,8 @@ z_index = 2
 script = ExtResource("1_psfrv")
 
 [node name="StampBody" type="Area2D" parent="." unique_id=2034445562]
+z_index = 1
+priority = 2
 
 [node name="StampImage" type="Polygon2D" parent="StampBody" unique_id=323506222]
 position = Vector2(-10, -40)
@@ -26,6 +28,8 @@ position = Vector2(0, -20)
 shape = SubResource("RectangleShape2D_psfrv")
 
 [node name="StampButton" type="Area2D" parent="." unique_id=1269259949]
+z_index = 1
+priority = 2
 
 [node name="Polygon2D" type="Polygon2D" parent="StampButton" unique_id=855665836]
 position = Vector2(-10, -40)
@@ -37,6 +41,8 @@ position = Vector2(0, -45)
 shape = SubResource("RectangleShape2D_p0y5k")
 
 [node name="StampArea" type="Area2D" parent="." unique_id=1240028794]
+z_index = 1
+priority = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StampArea" unique_id=1421569542]
 shape = SubResource("RectangleShape2D_mckan")

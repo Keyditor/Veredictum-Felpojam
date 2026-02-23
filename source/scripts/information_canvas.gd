@@ -1,5 +1,6 @@
-extends Button
+extends CanvasLayer
 
+var is_mouse_over_texture: bool
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,5 +12,12 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_button_down() -> void:
-	get_parent().get_parent().visible = false
+func _on_button_button_down() -> void:
+	hide()
+
+
+
+
+func _on_panel_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.pressed:
+		hide()
