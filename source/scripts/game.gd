@@ -1,6 +1,6 @@
 extends Node
-var on_2d = false
-var on_dialog = false
+var on_2d = true
+var on_dialog = true
 var on_2d_last = false
 var on_dialog_last = false
 var dayStart = false
@@ -15,11 +15,7 @@ func change_scene(path:String):
 	get_tree().change_scene_to_file(path)
 	
 func _process(delta: float) -> void:
-	if on_2d and gameStart:
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	elif gameStart :
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	
+	#print("game2d:",on_2d)
 	if on_2d != on_2d_last:
 		on_2d_last = on_2d
 		print("Mudou on_2d = ",on_2d)

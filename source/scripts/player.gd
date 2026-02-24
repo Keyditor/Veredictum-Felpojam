@@ -22,8 +22,9 @@ var look_dir: Vector2
 var camSense = 0.002
 
 func _ready() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	#set_process_unhandled_input(true)
 	fade_anim.play("fade_out")
-	await fade_anim.animation_finished
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	self.visible = true
 	if !GAME.on_2d:
@@ -132,6 +133,8 @@ func _physics_process(delta: float) -> void:
 
 func open_overlay(id:String,packed_scene: PackedScene,action_type = "cena"): #Instancia e torna a cena 2d visível
 	if not overlays.has(id):
+		#if id == "work_table":
+			
 		var instancia = packed_scene.instantiate()
 		overlays[id] = instancia
 		render2d.add_child(overlays[id])
@@ -148,16 +151,25 @@ func close_overlay(id: String): #Torna a cena 2d invisivel
 		render2d.visible = false # Torna o SubViewportContainer invisível
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	else: print("Sinal nao era cena!")
+	if id == "clock" :Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _on_dialogic_signal(arg):
+	if arg == "mouseGet":
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		GAME.on_2d = false
+		GAME.on_dialog = false
 	if arg == "fadeIN":
+		#fade_rect.visible = true
 		fade_anim.play("fade_in")
 		await fade_anim.animation_finished
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		#fade_rect.visible = false
 	elif arg == "fadeOUT":
+		#fade_rect.visible = true
 		fade_anim.play("fade_out")
 		await fade_anim.animation_finished
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		#fade_rect.visible = false
 	if arg == "expedientEnd":
 		close_overlay("work_table")
 	else:
@@ -167,8 +179,10 @@ func _on_dialogic_signal(arg):
 		pass
 
 func _unhandled_input(event):
+	#print("PORRA")
 	# Verifica se a entrada é um movimento do mouse
 	if event is InputEventMouseMotion and not GAME.on_2d:
+		#print("PQP")
 		# Rotação horizontal: rotaciona o corpo inteiro no eixo Y
 		rotate_y(-event.relative.x * camSense)
 		

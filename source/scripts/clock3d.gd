@@ -14,5 +14,5 @@ func _process(delta: float) -> void:
 func use(_use:bool):
 	if _use:
 		var Nome = "Checar as horas?"
-		return ["clock",cena_2d, "dialogo", Nome]
+	return ["clock",cena_2d, "dialogo", Nome]
 	#get_tree().change_scene_to_file("res://scenes/work_table.tscn")
