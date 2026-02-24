@@ -85,6 +85,7 @@ translation/intern/file_mode=1
 translation/intern/translation_folder="res://dialogues/lang"
 translation/id_counter=19
 translation/locales=["pt_BR"]
+extensions_folder="res://addons/dialogic_additions"
 
 [display]
 
