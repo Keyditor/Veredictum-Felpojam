@@ -5,6 +5,8 @@ extends CharacterBody3D
 @onready var useRange = $Head/Camera3D/RayCast3D
 @onready var actionText = $CanvasLayer/RichTextLabel
 @onready var debug = $CanvasLayer/Debug
+@onready var fade_anim = $CanvasLayer/AnimationPlayer
+@onready var fade_rect = $CanvasLayer/ColorRect
 var lastActionText = ""
 
 var overlays := {}  # dicionário para guardar instâncias
@@ -20,9 +22,14 @@ var look_dir: Vector2
 var camSense = 0.002
 
 func _ready() -> void:
+	fade_anim.play("fade_out")
+	await fade_anim.animation_finished
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	self.visible = true
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	if !GAME.on_2d:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	else:
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	actionText.visible_ratio = 0
 
 func _physics_process(delta: float) -> void:
@@ -143,6 +150,14 @@ func close_overlay(id: String): #Torna a cena 2d invisivel
 	else: print("Sinal nao era cena!")
 
 func _on_dialogic_signal(arg):
+	if arg == "fadeIN":
+		fade_anim.play("fade_in")
+		await fade_anim.animation_finished
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	elif arg == "fadeOUT":
+		fade_anim.play("fade_out")
+		await fade_anim.animation_finished
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	if arg == "expedientEnd":
 		close_overlay("work_table")
 	else:
@@ -162,7 +177,7 @@ func _unhandled_input(event):
 		
 		# Limita a visão para cima/baixo para o jogador não virar contorsionista (entre -89 e 89 graus)
 		head.rotation.x = clamp(head.rotation.x, deg_to_rad(-89), deg_to_rad(89))
-		
+
 func _headbob(time: float) -> Vector3:
 	var pos = Vector3.ZERO
 	# Balanço vertical usando Seno
