@@ -1,8 +1,10 @@
 extends CharacterBody3D
 @onready var cam = $Head/Camera3D
-@onready var render2d = $CanvasLayer
+@onready var render2d = $CanvasLayer/CanvasLayer
 @onready var head = $Head
 @onready var useRange = $Head/Camera3D/RayCast3D
+@onready var actionText = $CanvasLayer/RichTextLabel
+var lastActionText = ""
 
 var overlays := {}  # dicionário para guardar instâncias
 
@@ -11,6 +13,7 @@ var overlays := {}  # dicionário para guardar instâncias
 var t_bob = 0.0             # Acumulador de tempo contínuo
 
 const SPEED = 5.0
+const RUN = 1.6
 const JUMP_VELOCITY = 4.5
 var look_dir: Vector2
 var camSense = 0.002
@@ -19,6 +22,7 @@ func _ready() -> void:
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	self.visible = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	actionText.visible_ratio = 0
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -39,16 +43,42 @@ func _physics_process(delta: float) -> void:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		GAME.on_2d = false
 	
+	var target = useRange.get_collider()
+	if target and !GAME.on_2d:
+		if target.has_method("use"):
+			var result = target.use()
+			actionText.text = result[3]
+			lastActionText = actionText.text
+			var i = 0
+			while i < str(actionText).length():
+				actionText.visible_ratio += 0.001
+				i += 1
+		else :
+			var i = 0
+			while i < str(lastActionText).length():
+				if actionText.visible_ratio > 0 :
+					actionText.visible_ratio -= 0.001 
+				i += 1
+			actionText.text = ""
+	
+	if !target and lastActionText != "":
+		var i = 0
+		while i < str(lastActionText).length():
+			if actionText.visible_ratio > 0 :
+				actionText.visible_ratio -= 0.001 
+			i += 1
+		actionText.text = ""
+	
 	if Input.is_action_just_pressed("action") and not GAME.on_2d:
-		var target = useRange.get_collider()
+		actionText.text = ""
 		if target:
 			print(target.name)
 		if target and target.has_method("use"):
 			print("has use")
-			var result = target.use()
-			var overlay_id = result[0]
-			var cena_2d:PackedScene = result[1]
-			var action_type = result[2]
+			var resultA = target.use()
+			var overlay_id = resultA[0]
+			var cena_2d:PackedScene = resultA[1]
+			var action_type = resultA[2]
 			print("Action: ",action_type)
 			if action_type == "cena":
 				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -64,8 +94,13 @@ func _physics_process(delta: float) -> void:
 	var input_dir := Input.get_vector("left", "right", "up", "down")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction and not GAME.on_2d:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
+		if Input.is_action_pressed("run"):
+			var rSPEED = SPEED * RUN
+			velocity.x = direction.x * rSPEED
+			velocity.z = direction.z * rSPEED
+		else:
+			velocity.x = direction.x * SPEED
+			velocity.z = direction.z * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
@@ -97,8 +132,9 @@ func close_overlay(id: String): #Torna a cena 2d invisivel
 	if overlays.has(id):
 		print("encontrou cena")
 		overlays[id].hide()
-	GAME.on_2d = false
-	render2d.visible = false # Torna o SubViewportContainer invisível
+		GAME.on_2d = false
+		render2d.visible = false # Torna o SubViewportContainer invisível
+	else: print("Sinal nao era cena!")
 
 func _on_dialogic_signal(arg):
 	print("overs : ",str(overlays))

@@ -1,5 +1,36 @@
 set {GAME.on_dialog} = true
 join player left
-player: Teste bem testado, já que tudo precisa ser testado #id:11
-player: Outro aqui pra teste também #id:12
+player: Bom... #id:11
+player: como é que eu devo trabalhar agora? #id:12
+player: Ninguém se importou em me ensinar a fazer nada por aqui e olha que é o primeiro dia hein
+boss: Olá, vejo que já encontrou sua mesa de trabalho!
+[signal arg="boss_arrive"]
+player: Chefe?!?!?!
+player: O senhor por aqui?
+player: Eu já ia procurar alguém pra me ajudar a entender minha função exatamente, porque na entrevista...
+leave player [animation="Slide To Left"]
+[signal arg="boss_stay_calm"]
+boss: Oh meu jovem, não se preocupe!
+[signal arg="boss_index_finger"]
+boss: É pra isso que estou aqui!
+boss: Deixe-me explicar-lhe sua função na nossa renomada empresa.
+boss: Você está responsável por validar as encomendas que chegarão nessa esteira a sua esquerda! Nela, virão todo tipo de itens! Sua função é usar de quaisquer métodos a sua escolha para determinar se esses itens devem ser entregues
+[signal arg="boss_finger_tenting"]
+boss: Você tem a sua disposição dois carimbos!
+boss: Um carimbo de [color=green][b]Aprovado[/b][/color], com ele você decidirá o item que vai ser entregue.
+boss: E um carimbo de [color=red][b]Reprovado[/b][/color], com que você decidirá o item que não será entregue.
+boss: Após ter feito sua escolha, carimbe a correspondência de acordo com ela!
+[signal arg="boss_arms_crossed"]
+boss: É isso. Apenas isso
+join player left [animation="Slide From Left"]
+player: Pera.. Eu não deveria... Assim... Ter algum método mais objetivo pra decidir o que deve ser aprovado, além da minha opinião?
+boss: Temo que isso não será necessário! Eu [b]confio[/b] na sua escolha.
+player: Ok...
+[signal arg="boss_pocket_watch"]
+boss: Bom, se isso é tudo, irei retirar-me! O tempo voa, não é mesmo?
+boss: E tempo é dinheiro!
+[signal arg="boss_leave"]
+[wait time="1.0"]
+player: Que estranho! Mas quem sou eu pra questionar?
+player: Tô precisando de um emprego mesmo, então mãos à obra!
 set {GAME.on_dialog} = false

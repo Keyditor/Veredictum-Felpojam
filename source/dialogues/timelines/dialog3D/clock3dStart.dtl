@@ -1,9 +1,11 @@
 set {GAME.on_dialog} = true
+set {GAME.on_2d} = true
 join player left [animation="Fade In Up" wait="true"]
 player: Deixe-me ver que horas são...
 if {clockState} == "early":
 	player: Ainda são {clockTime}
 elif {clockState} == "late":
 	player: Nossa! São {clockTime}
-set {GAME.on_dialog} = false
+set {GAME.on_dialog} = true
+set {GAME.on_2d} = true
 [signal arg="clock"]

@@ -26,6 +26,7 @@ Dialogic="*uid://ds2q0uclmolvu"
 [dialogic]
 
 directories/dch_directory={
+"boss": "res://dialogues/characters/boss.dch",
 "player": "res://dialogues/characters/player.dch"
 }
 directories/dtl_directory={
@@ -38,6 +39,7 @@ layout/style_directory={
 layout/style_list=["res://dialogues/styles/visual_novel_style.tres"]
 layout/default_style=""
 variables={
+"NewVar": "",
 "clockState": "early",
 "clockTime": "08:00"
 }
@@ -85,11 +87,13 @@ translation/intern/file_mode=1
 translation/intern/translation_folder="res://dialogues/lang"
 translation/id_counter=19
 translation/locales=["pt_BR"]
+extensions_folder="res://addons/dialogic_additions"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/mode=3
 window/stretch/mode="canvas_items"
 
 [editor_plugins]
@@ -154,6 +158,11 @@ dialogic_default_action={
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":32,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":88,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
+]
+}
+run={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194325,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }
 
