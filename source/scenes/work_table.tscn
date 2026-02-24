@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://db3qqbnandkyn"]
 
 [ext_resource type="Script" uid="uid://bqya2r6h8v17o" path="res://scripts/work_table.gd" id="1_n46fc"]
+[ext_resource type="PackedScene" uid="uid://cttsiahivia82" path="res://scenes/characters/boss.tscn" id="2_imci4"]
 [ext_resource type="Texture2D" uid="uid://d0btx3x5mla6p" path="res://assets/worktable.png" id="2_t5bnd"]
 [ext_resource type="PackedScene" uid="uid://exkiiwlxhri3" path="res://scenes/objects/conveyor.tscn" id="3_02l05"]
 [ext_resource type="Texture2D" uid="uid://bnaxl4vhyehh1" path="res://assets/Esteira animaçãoo/esteira animação1 - Copia.png" id="3_yc7xh"]
@@ -35,6 +36,9 @@ animations = [{
 texture_filter = 1
 script = ExtResource("1_n46fc")
 
+[node name="Boss" parent="." unique_id=1027935484 instance=ExtResource("2_imci4")]
+position = Vector2(953, -529)
+
 [node name="Table" type="Node2D" parent="." unique_id=1756185794]
 
 [node name="Worktable" type="Sprite2D" parent="Table" unique_id=464976524]
@@ -50,7 +54,7 @@ position = Vector2(776, 703.6824)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Table/Conveyors/ConveyorAnimation" unique_id=603863657]
 sprite_frames = SubResource("SpriteFrames_poale")
 autoplay = "default"
-frame_progress = 0.3591829
+frame_progress = 0.31365183
 
 [node name="Conveyor" parent="Table/Conveyors" unique_id=1039227752 instance=ExtResource("3_02l05")]
 position = Vector2(53.000015, 753.68243)
@@ -78,7 +82,7 @@ position = Vector2(1144, 418)
 stamp_mark_kind = 1
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1043786255]
-position = Vector2(959, 538)
+position = Vector2(959, -569)
 script = ExtResource("7_7p044")
 
 [node name="InformationCanvas" type="CanvasLayer" parent="." unique_id=460395412]
