@@ -3,11 +3,10 @@ extends RigidBody2D
 var is_holding: bool = false
 var grab_offset := Vector2.ZERO
 
-var is_moving = false
-var target_position: Vector2
+var is_moving: bool = false
+var is_on_conveyor: bool = true
 var conveyor_speed: float
 var max_speed = 2000
-var mail_roof: float = 200
 
 var initial_pos: Vector2
 var final_pos: Vector2
@@ -56,17 +55,19 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 
 func _physics_process(delta: float) -> void:
 	if is_moving:
-		if not is_holding:
+		if not is_holding and is_on_conveyor:
 			position = position.move_toward(final_pos, conveyor_speed * delta)
 
 func move_to_position(orientation: Enum.ConveyorOrientation, speed, final: Vector2):
 	is_moving = true
+	is_on_conveyor = true
 	conveyor_orientation = orientation
 	conveyor_speed = speed
 	final_pos = final
 
 func stop_moving():
 	is_moving = false
+	is_on_conveyor = false
 
 
 func show_information():
@@ -90,6 +91,8 @@ func _process(_delta: float) -> void:
 		if conveyor_orientation == Enum.ConveyorOrientation.Asc:
 			Data.add_to_in_scene_mail(self.mail_info)
 			animation_player.play("pop_out")
+	if is_on_conveyor:
+		is_moving = true
 
 
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:

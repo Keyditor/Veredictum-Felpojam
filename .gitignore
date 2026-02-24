@@ -19,3 +19,6 @@ obj/
 .DS_Store
 Thumbs.db
 
+# Arquivos .import
+.import/
+*.import
