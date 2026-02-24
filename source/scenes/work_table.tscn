@@ -39,6 +39,12 @@ position = Vector2(1512.0002, 753.682)
 rotation = -0.31415927
 priority = -1
 
+[node name="Walls" type="StaticBody2D" parent="Table" unique_id=2042575324]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Table/Walls" unique_id=444381601]
+build_mode = 1
+polygon = PackedVector2Array(264, 93, -1, 898, 254, 975, 256, 1022, 1649, 1022, 1689, 978, 1903, 902, 1641, 96, 1403, 161, 1409, 321, 505, 321, 507, 163)
+
 [node name="GoodStamp" parent="." unique_id=1567015258 instance=ExtResource("5_w7jxw")]
 position = Vector2(1307, 422)
 
