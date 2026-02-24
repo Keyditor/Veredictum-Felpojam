@@ -1,8 +1,10 @@
 extends CharacterBody3D
 @onready var cam = $Head/Camera3D
-@onready var render2d = $CanvasLayer
+@onready var render2d = $CanvasLayer/CanvasLayer
 @onready var head = $Head
 @onready var useRange = $Head/Camera3D/RayCast3D
+@onready var actionText = $CanvasLayer/RichTextLabel
+var lastActionText = ""
 
 var overlays := {}  # dicionário para guardar instâncias
 
@@ -19,6 +21,7 @@ func _ready() -> void:
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	self.visible = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	actionText.visible_ratio = 0
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -39,16 +42,42 @@ func _physics_process(delta: float) -> void:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		GAME.on_2d = false
 	
+	var target = useRange.get_collider()
+	if target and !GAME.on_2d:
+		if target.has_method("use"):
+			var result = target.use()
+			actionText.text = result[3]
+			lastActionText = actionText.text
+			var i = 0
+			while i < str(actionText).length():
+				actionText.visible_ratio += 0.001
+				i += 1
+		else :
+			var i = 0
+			while i < str(lastActionText).length():
+				if actionText.visible_ratio > 0 :
+					actionText.visible_ratio -= 0.001 
+				i += 1
+			actionText.text = ""
+	
+	if !target and lastActionText != "":
+		var i = 0
+		while i < str(lastActionText).length():
+			if actionText.visible_ratio > 0 :
+				actionText.visible_ratio -= 0.001 
+			i += 1
+		actionText.text = ""
+	
 	if Input.is_action_just_pressed("action") and not GAME.on_2d:
-		var target = useRange.get_collider()
+		actionText.text = ""
 		if target:
 			print(target.name)
 		if target and target.has_method("use"):
 			print("has use")
-			var result = target.use()
-			var overlay_id = result[0]
-			var cena_2d:PackedScene = result[1]
-			var action_type = result[2]
+			var resultA = target.use()
+			var overlay_id = resultA[0]
+			var cena_2d:PackedScene = resultA[1]
+			var action_type = resultA[2]
 			print("Action: ",action_type)
 			if action_type == "cena":
 				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
