@@ -1,6 +1,7 @@
 extends StaticBody3D
+
 @export var cena_2d: PackedScene
-@export var Nome: String
+@export var Nome = "Trabalhar?"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -10,7 +11,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
 func use():
 	#print("FUNCIONA")
+	var Nome = "Sair?"
 	return ["work_table",cena_2d, "cena", Nome]
-	#get_tree().change_scene_to_file("res://scenes/work_table.tscn")
