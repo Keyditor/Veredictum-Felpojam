@@ -139,6 +139,7 @@ func close_overlay(id: String): #Torna a cena 2d invisivel
 		overlays[id].hide()
 		GAME.on_2d = false
 		render2d.visible = false # Torna o SubViewportContainer invisível
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	else: print("Sinal nao era cena!")
 
 func _on_dialogic_signal(arg):
@@ -148,7 +149,6 @@ func _on_dialogic_signal(arg):
 		print("overs : ",str(overlays))
 		close_overlay(arg)
 		print("overs : ",str(overlays))
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		pass
 
 func _unhandled_input(event):
