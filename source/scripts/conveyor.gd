@@ -12,7 +12,8 @@ var spawn_point
 func _ready() -> void:
 	spawn_point = asc_marker.global_position
 	if orientation == Enum.ConveyorOrientation.Desc:
-		Data.spawn_mail(0, spawn_point, 5)
+		#Data.spawn_mail(0, spawn_point, 5)
+		pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

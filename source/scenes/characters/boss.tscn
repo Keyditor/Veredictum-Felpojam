@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cttsiahivia82"]
 
+[ext_resource type="Script" uid="uid://cnnet88kwqk0e" path="res://scripts/boss.gd" id="1_4yo74"]
 [ext_resource type="Texture2D" uid="uid://dlni1ccrhe2pn" path="res://assets/Chefe sprites/chefe_idle.png" id="1_imw47"]
 [ext_resource type="Texture2D" uid="uid://xa6dtyqxfohm" path="res://assets/Chefe sprites/chefe_evil_open_left_hand.png" id="2_r8uym"]
 [ext_resource type="Texture2D" uid="uid://ctkepy7h038f4" path="res://assets/Chefe sprites/chefe_evil_open_right_hand.png" id="3_p2gyk"]
@@ -768,6 +769,7 @@ _data = {
 
 [node name="Boss" type="Node2D" unique_id=1027935484]
 texture_filter = 1
+script = ExtResource("1_4yo74")
 
 [node name="ChefeIdle" type="Sprite2D" parent="." unique_id=332048276]
 scale = Vector2(8, 8)

@@ -32,14 +32,226 @@ animations = [{
 "speed": 4.0
 }]
 
+[sub_resource type="Animation" id="Animation_imci4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Boss:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2545, -512)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Table:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 17)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GoodStamp:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1307, 439)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BadStamp2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1144, 435)]
+}
+
+[sub_resource type="Animation" id="Animation_mhmjk"]
+resource_name = "boss_leave"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Boss:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(953, 570), Vector2(2545, 570)]
+}
+
+[sub_resource type="Animation" id="Animation_poale"]
+resource_name = "boss_show_up"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Boss:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2545, 570), Vector2(953, 570)]
+}
+
+[sub_resource type="Animation" id="Animation_xulj3"]
+resource_name = "camera_down"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Boss:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2545, 570), Vector2(2545, -512)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Table:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 1099), Vector2(0, 17)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GoodStamp:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1307, 1521), Vector2(1307, 439)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BadStamp2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1144, 1517), Vector2(1144, 435)]
+}
+
+[sub_resource type="Animation" id="Animation_x31l6"]
+resource_name = "camera_up"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Boss:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2545, -512), Vector2(2545, 570)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Table:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 17), Vector2(0, 1099)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GoodStamp:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1307, 439), Vector2(1307, 1521)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BadStamp2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1144, 435), Vector2(1144, 1517)]
+}
+
+[sub_resource type="Animation" id="Animation_swmut"]
+resource_name = "intro_cutscene"
+length = 10.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["intro"],
+"method": &"play_dialogue"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_swmut"]
+_data = {
+&"RESET": SubResource("Animation_imci4"),
+&"boss_leave": SubResource("Animation_mhmjk"),
+&"boss_show_up": SubResource("Animation_poale"),
+&"camera_down": SubResource("Animation_xulj3"),
+&"camera_up": SubResource("Animation_x31l6"),
+&"intro_cutscene": SubResource("Animation_swmut")
+}
+
 [node name="WorkTable" type="Node2D" unique_id=525587958 groups=["work_table"]]
 texture_filter = 1
 script = ExtResource("1_n46fc")
 
 [node name="Boss" parent="." unique_id=1027935484 instance=ExtResource("2_imci4")]
-position = Vector2(953, -529)
+position = Vector2(2545, -512)
 
 [node name="Table" type="Node2D" parent="." unique_id=1756185794]
+position = Vector2(0, 17)
 
 [node name="Worktable" type="Sprite2D" parent="Table" unique_id=464976524]
 position = Vector2(961, -26)
@@ -74,15 +286,15 @@ build_mode = 1
 polygon = PackedVector2Array(264, 93, -1, 898, 254, 975, 256, 1022, 1649, 1022, 1689, 978, 1903, 902, 1641, 96, 1403, 161, 1409, 321, 505, 321, 507, 163)
 
 [node name="GoodStamp" parent="." unique_id=1567015258 instance=ExtResource("5_w7jxw")]
-position = Vector2(1307, 422)
+position = Vector2(1307, 439)
 
 [node name="BadStamp2" parent="." unique_id=1069247919 instance=ExtResource("5_w7jxw")]
 modulate = Color(1, 0.22745098, 1, 1)
-position = Vector2(1144, 418)
+position = Vector2(1144, 435)
 stamp_mark_kind = 1
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1043786255]
-position = Vector2(959, -569)
+position = Vector2(961, 533)
 script = ExtResource("7_7p044")
 
 [node name="InformationCanvas" type="CanvasLayer" parent="." unique_id=460395412]
@@ -123,6 +335,10 @@ offset_bottom = 272.0
 grow_horizontal = 0
 theme_override_font_sizes/font_size = 90
 text = "X"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1385179545]
+libraries/ = SubResource("AnimationLibrary_swmut")
+autoplay = &"intro_cutscene"
 
 [connection signal="gui_input" from="InformationCanvas/Panel" to="InformationCanvas" method="_on_panel_gui_input"]
 [connection signal="button_down" from="InformationCanvas/Panel/Button" to="InformationCanvas" method="_on_button_button_down"]

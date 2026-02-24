@@ -9,8 +9,7 @@ func start_shake(intensity, duration):
 	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Dialogic.start("intro")
-
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

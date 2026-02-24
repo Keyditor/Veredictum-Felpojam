@@ -26,6 +26,7 @@ Dialogic="*uid://ds2q0uclmolvu"
 [dialogic]
 
 directories/dch_directory={
+"boss": "res://dialogues/characters/boss.dch",
 "player": "res://dialogues/characters/player.dch"
 }
 directories/dtl_directory={
@@ -38,6 +39,7 @@ layout/style_directory={
 layout/style_list=["res://dialogues/styles/visual_novel_style.tres"]
 layout/default_style=""
 variables={
+"NewVar": "",
 "clockState": "early",
 "clockTime": "08:00"
 }
