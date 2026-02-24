@@ -1,10 +1,11 @@
 extends StaticBody3D
 
 @export var cena_2d: PackedScene
-@export var Nome = "Trabalhar?"
+@export var Nome : String
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Dialogic.signal_event.connect(_on_dialogic_signal)
 	pass # Replace with function body.
 
 
@@ -12,7 +13,12 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func use():
-	#print("FUNCIONA")
-	var Nome = "Sair?"
-	return ["work_table",cena_2d, "cena", Nome]
+func use(_use:bool = false):
+	if _use:
+		Dialogic.start("officeExit")
+	return ["work_table",cena_2d, "trazicao", Nome]
+	
+func _on_dialogic_signal(arg):
+	if arg == "exitOffice":
+		GAME.lastScene = "res://scenes/office/Office.tscn"
+		GAME.change_scene("res://scenes/apartments/Apartments.tscn")

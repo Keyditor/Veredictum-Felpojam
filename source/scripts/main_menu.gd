@@ -3,7 +3,7 @@ extends Control
 @onready var settings = $settings
 @onready var animator = $settings/AnimationPlayer
 func _on_jogar_pressed() -> void:
-	GAME.change_scene("res://scenes/office/Office.tscn")
+	GAME.change_scene("res://scenes/apartments/Apartments.tscn")
 	pass # Replace with function body.
 
 func _on_options_pressed() -> void:

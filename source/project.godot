@@ -30,8 +30,13 @@ directories/dch_directory={
 "player": "res://dialogues/characters/player.dch"
 }
 directories/dtl_directory={
+"apartmentsExit": "res://dialogues/timelines/dialog3D/apartmentsExit.dtl",
+"backHome": "res://dialogues/timelines/dialog3D/backHome.dtl",
 "clock3dStart": "res://dialogues/timelines/dialog3D/clock3dStart.dtl",
-"intro": "res://dialogues/timelines/intro.dtl"
+"expedintEnd": "res://dialogues/timelines/dialog3D/expedintEnd.dtl",
+"intro": "res://dialogues/timelines/intro.dtl",
+"officeExit": "res://dialogues/timelines/dialog3D/officeExit.dtl",
+"startDialog": "res://dialogues/timelines/dialog3D/startDialog.dtl"
 }
 layout/style_directory={
 "visual_novel_style": "res://dialogues/styles/visual_novel_style.tres"

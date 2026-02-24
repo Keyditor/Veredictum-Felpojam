@@ -1,0 +1,8 @@
+set {GAME.on_dialog} = true
+set {GAME.on_2d} = true
+join player leftmost
+player: Hoje foi um dia cansativo.
+player: Espero, ao menos, que meu desempenho tenha agradado...
+player: Melhor ir logo dormir, amanhã terei mais a fazer.
+set {GAME.on_dialog} = false
+set {GAME.on_2d} = false
