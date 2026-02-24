@@ -1,5 +1,5 @@
 set {GAME.on_dialog} = true
-join player left
+join player leftmost
 player: Bom... #id:11
 player: como é que eu devo trabalhar agora? #id:12
 player: Ninguém se importou em me ensinar a fazer nada por aqui e olha que é o primeiro dia hein

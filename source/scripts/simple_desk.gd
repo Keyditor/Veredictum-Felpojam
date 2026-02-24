@@ -10,7 +10,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-func use():
-	#print("FUNCIONA")
+func use(_use:bool):
+	if _use:
+		1 == 1 
 	return ["work_table",cena_2d, "cena", Nome]
 	#get_tree().change_scene_to_file("res://scenes/work_table.tscn")

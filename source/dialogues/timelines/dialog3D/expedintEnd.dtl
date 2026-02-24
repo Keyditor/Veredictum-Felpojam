@@ -1,0 +1,8 @@
+set {GAME.on_dialog} = true
+set {GAME.on_2d} = true
+join player leftmost
+player: Bem! são {clockTime} meu expediente acabou.
+player: Acho melhor ir para casa e descansar.
+[signal arg="expedientEnd"]
+set {GAME.on_dialog} = false
+set {GAME.on_2d} = false

@@ -4,6 +4,7 @@ extends CharacterBody3D
 @onready var head = $Head
 @onready var useRange = $Head/Camera3D/RayCast3D
 @onready var actionText = $CanvasLayer/RichTextLabel
+@onready var debug = $CanvasLayer/Debug
 var lastActionText = ""
 
 var overlays := {}  # dicionário para guardar instâncias
@@ -25,10 +26,12 @@ func _ready() -> void:
 	actionText.visible_ratio = 0
 
 func _physics_process(delta: float) -> void:
+	debug.text = Dialogic.VAR.clockTime
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
+	if overlays.has("work_table") and GAME.dayStart == false:
+		Dialogic.start("expedintEnd")
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor() and not GAME.on_2d:
 		velocity.y = JUMP_VELOCITY
@@ -46,7 +49,7 @@ func _physics_process(delta: float) -> void:
 	var target = useRange.get_collider()
 	if target and !GAME.on_2d:
 		if target.has_method("use"):
-			var result = target.use()
+			var result = target.use(false)
 			actionText.text = result[3]
 			lastActionText = actionText.text
 			var i = 0
@@ -69,13 +72,13 @@ func _physics_process(delta: float) -> void:
 			i += 1
 		actionText.text = ""
 	
-	if Input.is_action_just_pressed("action") and not GAME.on_2d:
+	if Input.is_action_just_pressed("action") and not GAME.on_2d: #Tecla de Uso
 		actionText.text = ""
 		if target:
 			print(target.name)
 		if target and target.has_method("use"):
 			print("has use")
-			var resultA = target.use()
+			var resultA = target.use(true)
 			var overlay_id = resultA[0]
 			var cena_2d:PackedScene = resultA[1]
 			var action_type = resultA[2]
@@ -87,6 +90,8 @@ func _physics_process(delta: float) -> void:
 				Dialogic.start("clock3dStart")
 				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 				#open_overlay(overlay_id,cena_2d,action_type)
+			if action_type == "trazicao":
+				pass
 		else: 
 			print("no use")
 			
@@ -137,11 +142,14 @@ func close_overlay(id: String): #Torna a cena 2d invisivel
 	else: print("Sinal nao era cena!")
 
 func _on_dialogic_signal(arg):
-	print("overs : ",str(overlays))
-	close_overlay(arg)
-	print("overs : ",str(overlays))
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	pass
+	if arg == "expedientEnd":
+		close_overlay("work_table")
+	else:
+		print("overs : ",str(overlays))
+		close_overlay(arg)
+		print("overs : ",str(overlays))
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		pass
 
 func _unhandled_input(event):
 	# Verifica se a entrada é um movimento do mouse
