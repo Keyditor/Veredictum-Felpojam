@@ -3,17 +3,33 @@
 [ext_resource type="Script" uid="uid://bqya2r6h8v17o" path="res://scripts/work_table.gd" id="1_n46fc"]
 [ext_resource type="Texture2D" uid="uid://d0btx3x5mla6p" path="res://assets/worktable.png" id="2_t5bnd"]
 [ext_resource type="PackedScene" uid="uid://exkiiwlxhri3" path="res://scenes/objects/conveyor.tscn" id="3_02l05"]
+[ext_resource type="Texture2D" uid="uid://bnaxl4vhyehh1" path="res://assets/Esteira animaçãoo/esteira animação1 - Copia.png" id="3_yc7xh"]
+[ext_resource type="Texture2D" uid="uid://c1i5x7qyaej1b" path="res://assets/Esteira animaçãoo/esteira animação2 - Copia.png" id="4_imci4"]
 [ext_resource type="PackedScene" uid="uid://dymbuj6xarucr" path="res://scenes/objects/stamp.tscn" id="5_w7jxw"]
-[ext_resource type="Texture2D" uid="uid://dcoymbj3xqmu" path="res://assets/folhaespadasaojorgecu.png" id="6_peth1"]
+[ext_resource type="Texture2D" uid="uid://yi1c7irkpgx0" path="res://assets/Esteira animaçãoo/esteira animação3 - Copia.png" id="5_x31l6"]
+[ext_resource type="Texture2D" uid="uid://c5whyik5rytbx" path="res://assets/Esteira animaçãoo/esteira animação4 - Copia.png" id="6_swmut"]
 [ext_resource type="Script" uid="uid://b1l7cf83ax6uy" path="res://scripts/camera.gd" id="7_7p044"]
 [ext_resource type="Script" uid="uid://buomknkwu85ph" path="res://scripts/information_canvas.gd" id="7_t5bnd"]
 
-[sub_resource type="Gradient" id="Gradient_oeah5"]
-offsets = PackedFloat32Array(1)
-colors = PackedColorArray(0.34117684, 0.29784605, 0.26692143, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_t5bnd"]
-gradient = SubResource("Gradient_oeah5")
+[sub_resource type="SpriteFrames" id="SpriteFrames_poale"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_yc7xh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_imci4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_x31l6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_swmut")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
 
 [node name="WorkTable" type="Node2D" unique_id=525587958 groups=["work_table"]]
 texture_filter = 1
@@ -27,6 +43,14 @@ texture = ExtResource("2_t5bnd")
 
 [node name="Conveyors" type="Node2D" parent="Table" unique_id=522650683]
 position = Vector2(185, -154.68236)
+
+[node name="ConveyorAnimation" type="Node2D" parent="Table/Conveyors" unique_id=1556458655]
+position = Vector2(776, 703.6824)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Table/Conveyors/ConveyorAnimation" unique_id=603863657]
+sprite_frames = SubResource("SpriteFrames_poale")
+autoplay = "default"
+frame_progress = 0.3591829
 
 [node name="Conveyor" parent="Table/Conveyors" unique_id=1039227752 instance=ExtResource("3_02l05")]
 position = Vector2(53.000015, 753.68243)
@@ -53,20 +77,9 @@ modulate = Color(1, 0.22745098, 1, 1)
 position = Vector2(1144, 418)
 stamp_mark_kind = 1
 
-[node name="Folhaespadasaojorgecu" type="Sprite2D" parent="." unique_id=459168739]
-position = Vector2(631, 314)
-scale = Vector2(18, 18)
-texture = ExtResource("6_peth1")
-
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1043786255]
 position = Vector2(959, 538)
 script = ExtResource("7_7p044")
-
-[node name="Floor" type="Sprite2D" parent="." unique_id=871016371]
-z_index = -2
-position = Vector2(968, 540)
-scale = Vector2(31.25, 17.875)
-texture = SubResource("GradientTexture2D_t5bnd")
 
 [node name="InformationCanvas" type="CanvasLayer" parent="." unique_id=460395412]
 visible = false
