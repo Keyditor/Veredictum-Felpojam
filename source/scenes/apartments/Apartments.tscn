@@ -53,7 +53,7 @@ mesh = ExtResource("1_rvxjt")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Corridor" unique_id=921638246]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5708733, 8.534916, 16.557373)
-light_color = Color(1, 0.7335, 0.61, 1)
+light_color = Color(0.95350415, 0.97065824, 0.9999997, 1)
 light_size = 1.0
 light_specular = 0.0
 omni_range = 10.653
@@ -62,7 +62,7 @@ omni_shadow_mode = 0
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="Corridor" unique_id=1383896358]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4418964, 8.534916, 16.557373)
-light_color = Color(1, 0.7335, 0.61, 1)
+light_color = Color(0.95350415, 0.97065824, 0.9999997, 1)
 light_size = 1.0
 light_specular = 0.0
 omni_range = 10.653
