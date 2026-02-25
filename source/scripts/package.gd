@@ -3,6 +3,7 @@ extends RigidBody2D
 var is_holding: bool = false
 var is_over_box: bool = false
 var grab_offset := Vector2.ZERO
+var is_open: bool = false
 
 var is_moving: bool = false
 var is_on_conveyor: bool = true
@@ -78,7 +79,7 @@ func _process(_delta: float) -> void:
 	if is_on_conveyor:
 		is_moving = true
 	
-	if object:
+	if object and is_open:
 		if object.is_in_group("objects") and is_over_box and not object.is_holding:
 			mails_within.append(object.mail_info)
 			object.animation_player.play("pop_out")
@@ -87,6 +88,17 @@ func _process(_delta: float) -> void:
 			object.apply_outline()
 		elif object.is_in_group("objects"):
 			object.remove_outline()
+	
+	# Para que a caixa consiga empurrar os itens quando estiver fechada
+	if not is_open:
+		set_collision_mask_value(2, true)
+		if object:
+			object.set_collision_mask_value(1, true)
+	else:
+		set_collision_mask_value(2, false)
+		if object:
+			object.set_collision_mask_value(1, false)
+		
 
 
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
@@ -97,6 +109,14 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 				grab_offset = get_global_mouse_position() - global_position
 				is_moving = false
 				linear_velocity = Vector2.ZERO
+				
+				# Animação de fechar a caixa/pacote
+				if event.double_click:
+					if is_open:
+						animation_player.play("close_package")
+					else:
+						animation_player.play("open_package")
+					is_open = not is_open
 			else:
 				is_holding = false
 
