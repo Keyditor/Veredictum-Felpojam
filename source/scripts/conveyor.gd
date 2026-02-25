@@ -25,7 +25,6 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	# Pacote ser "enviado"
-	print(body)
 	if orientation == Enum.ConveyorOrientation.Asc:
 		body.move_to_position(orientation, speed, asc_marker.global_position)
 	else:

@@ -2,6 +2,7 @@ extends Node2D
 
 var is_holding: bool = false
 var grab_offset := Vector2.ZERO
+var ink_count: int
 
 @export var stamp_mark_kind: Enum.StampMarks
 
@@ -45,29 +46,44 @@ func _on_stamp_head_input_event(viewport: Node, event: InputEvent, shape_idx: in
 				var stamp_mark = stamp_mark_load.instantiate()
 				var object_hited = hited_object
 				set_stamp_mark(stamp_mark, object_hited, global_position, stamp_mark_kind)
+				
+				
+				print(ink_count)
 
 func set_stamp_mark(mark: Node2D, parent_object: Node2D, pos: Vector2, StampMarkKind):
-	if parent_object.is_in_group("objects"):
+	if parent_object.is_in_group("mails") and ink_count > 0:
+		print(parent_object)
 		var mark_local_position = parent_object.to_local(pos)
 		mark.position = mark_local_position
 		parent_object.add_child(mark)
 		
 		# Verificar se o objeto já está carimbado, se sim vai receber o valor no is_stamped como inválido
-		var current_mail_mark = parent_object.mail_info.stamped
+		var current_mail_mark = parent_object.stamped
 		if current_mail_mark == Enum.StampMarks.Neuter:
-			parent_object.mail_info.stamped = StampMarkKind
+			parent_object.stamped = StampMarkKind
 		# Verificar se o objeto já foi carimbado e se sim, o carimbo é igual ao que está sendo feito?
 		elif current_mail_mark == StampMarkKind:
-			parent_object.mail_info.stamped = StampMarkKind
+			parent_object.stamped = StampMarkKind
 		else:
-			parent_object.mail_info.stamped = Enum.StampMarks.Invalid
+			parent_object.stamped = Enum.StampMarks.Invalid
+		
+		# Diminuir a quantidade de tinta no carimbo
+		ink_count -= 1
+	
+	elif parent_object.is_in_group("mails") and ink_count <= 0:
+		# Pequeno diálogo para ajudar o jogador a entender que deve sempre recarregar de tinta
+		Dialogic.start("acabou_tinta")
+
+	elif parent_object.is_in_group("inks"):
+		print("Ink object")
+		if parent_object.ink_type == stamp_mark_kind:
+			ink_count = 3
+			print("Molhou de tinta! Pronto pra ser usado mais 3 vezes")
 
 func _on_stamp_area_body_entered(body: Node2D) -> void:
-	if body.is_in_group("objects"):
-		hited_object = body
+	hited_object = body
 
 
 
 func _on_stamp_area_body_exited(body: Node2D) -> void:
-	if body.is_in_group("objects"):
-		hited_object = Node2D.new()
+	hited_object = Node2D.new()

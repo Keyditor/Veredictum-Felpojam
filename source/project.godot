@@ -30,6 +30,7 @@ directories/dch_directory={
 "player": "res://dialogues/characters/player.dch"
 }
 directories/dtl_directory={
+"acabou_tinta": "res://dialogues/timelines/acabou_tinta.dtl",
 "apartmentsExit": "res://dialogues/timelines/dialog3D/apartmentsExit.dtl",
 "backHome": "res://dialogues/timelines/dialog3D/backHome.dtl",
 "clock3dStart": "res://dialogues/timelines/dialog3D/clock3dStart.dtl",

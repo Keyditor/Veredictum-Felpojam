@@ -143,11 +143,12 @@ _data = {
 self_modulate = Color(1, 1, 1, 0)
 texture_filter = 1
 scale = Vector2(1e-05, 1e-05)
-collision_layer = 2
-collision_mask = 0
+collision_mask = 9
 script = ExtResource("1_116mb")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=771161108]
+z_index = 1
+collision_mask = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=211417130]
 texture = ExtResource("2_uyqbv")
