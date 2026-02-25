@@ -1,8 +1,8 @@
 set {GAME.on_dialog} = true
 set {GAME.on_2d} = true
 join player leftmost
-player: Droga! quase não consegui dormir com tanta ansiedade.
-player: Preciso me apressar e ir logo senão me atrasarei para meu primeiro dia de trabalho.
+player: Minha cabeça... Dormi tão pouco por conta dessa ânsia...
+player: Vou me apressar, não posso me atrasar no primeiro dia!
 set {GAME.on_dialog} = false
 set {GAME.on_2d} = false
 [wait time="1.0"]
