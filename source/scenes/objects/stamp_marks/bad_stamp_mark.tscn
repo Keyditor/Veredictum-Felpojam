@@ -1,8 +1,12 @@
 [gd_scene format=3 uid="uid://cqfvbw4fw0xcv"]
 
-[node name="StampMark" type="Sprite2D" unique_id=132920016]
+[ext_resource type="Texture2D" uid="uid://l162fnofjht7" path="res://assets/work tools/carimbo de tinta.png" id="1_g586l"]
 
-[node name="Polygon2D" type="Polygon2D" parent="." unique_id=226131202]
-position = Vector2(-10, -10)
-color = Color(1, 0, 0.1254902, 1)
-polygon = PackedVector2Array(0, 0, 20, 0, 20, 20, 0, 20)
+[node name="StampMark" type="Sprite2D" unique_id=132920016]
+texture_filter = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1128527699]
+scale = Vector2(6, 6)
+texture = ExtResource("1_g586l")
+region_enabled = true
+region_rect = Rect2(16, 3, 10, 7)

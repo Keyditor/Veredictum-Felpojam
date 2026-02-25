@@ -9,9 +9,10 @@ const StampsMarks = {
 const nights = [
 	{
 		"Mail": [
-			"res://resources/packages/package1.tres",
-			"res://resources/packages/package2.tres",
-			"res://resources/packages/package3.tres"
+			"res://resources/packages/colar_joias.tres",
+			"res://resources/packages/cavalo_madeira.tres",
+			"res://resources/packages/caixa_pregos.tres",
+			"res://resources/packages/formao.tres"
 		]
 	},
 	{

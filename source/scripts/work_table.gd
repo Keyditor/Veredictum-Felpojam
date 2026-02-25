@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var boss: Node2D = $Boss
+@onready var conveyor_desc: Area2D = $Table/Conveyors/Conveyor
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -39,3 +40,5 @@ func on_dialogic_signal(argument: String):
 		play_animation("boss_leave")
 		await animation_player.animation_finished
 		play_animation("camera_down")
+		await animation_player.animation_finished
+		conveyor_desc.start_conveyor = true

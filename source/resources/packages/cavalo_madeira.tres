@@ -2,16 +2,18 @@
 
 [ext_resource type="Script" uid="uid://kejexgcvkqyk" path="res://resources/mail_item.gd" id="1_cin73"]
 [ext_resource type="Texture2D" uid="uid://cm416bs2hqw18" path="res://assets/table 3.png" id="1_lh5fj"]
-[ext_resource type="Texture2D" uid="uid://biymh3oyw5dhp" path="res://icon.svg" id="2_crch7"]
+[ext_resource type="Texture2D" uid="uid://blj72qd1unyah" path="res://assets/sprites mail/cavalo de madeira.png" id="3_gjgmh"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_psfrv"]
-size = Vector2(127, 127)
+[sub_resource type="CircleShape2D" id="CircleShape2D_dpo5u"]
+radius = 80.0
 
 [resource]
 script = ExtResource("1_cin73")
 sender_name = "Bruninho"
 receiver_name = "Antonela"
-texture = ExtResource("2_crch7")
-collider_shape = SubResource("RectangleShape2D_psfrv")
+texture = ExtResource("3_gjgmh")
+collider_position = Vector2(-8, 7)
+collider_shape = SubResource("CircleShape2D_dpo5u")
+scale = Vector2(1, 1)
 info = ExtResource("1_lh5fj")
 metadata/_custom_type_script = "uid://kejexgcvkqyk"

@@ -2,16 +2,19 @@
 
 [ext_resource type="Script" uid="uid://kejexgcvkqyk" path="res://resources/mail_item.gd" id="1_nnk7j"]
 [ext_resource type="Texture2D" uid="uid://qxcu0teixdn1" path="res://assets/paleta dois.png" id="1_vwqbr"]
-[ext_resource type="Texture2D" uid="uid://biymh3oyw5dhp" path="res://icon.svg" id="2_3rxdr"]
+[ext_resource type="Texture2D" uid="uid://bhj0ub33agvnd" path="res://assets/sprites mail/colar de joias.png" id="3_0dixh"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_psfrv"]
-size = Vector2(127, 127)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dpo5u"]
+radius = 44.0
+height = 166.0
 
 [resource]
 script = ExtResource("1_nnk7j")
 sender_name = "Maitê"
 receiver_name = "Remi"
-texture = ExtResource("2_3rxdr")
-collider_shape = SubResource("RectangleShape2D_psfrv")
+texture = ExtResource("3_0dixh")
+collider_shape = SubResource("CapsuleShape2D_dpo5u")
+scale = Vector2(1, 1)
+rotation = 1.5707964
 info = ExtResource("1_vwqbr")
 metadata/_custom_type_script = "uid://kejexgcvkqyk"

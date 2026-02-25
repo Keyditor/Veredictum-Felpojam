@@ -5,6 +5,9 @@ var grab_offset := Vector2.ZERO
 
 @export var stamp_mark_kind: Enum.StampMarks
 
+@onready var good_stamp: Sprite2D = $GoodStamp
+@onready var bad_stamp: Sprite2D = $BadStamp
+
 var stamp_mark_load
 
 var hited_object: Node2D
@@ -12,6 +15,12 @@ var hited_object: Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	stamp_mark_load = load(Data.StampsMarks[stamp_mark_kind])
+	if stamp_mark_kind == Enum.StampMarks.Good:
+		good_stamp.visible = true
+		bad_stamp.visible = false
+	else:
+		bad_stamp.visible = true
+		good_stamp.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

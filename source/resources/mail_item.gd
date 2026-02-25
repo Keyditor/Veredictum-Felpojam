@@ -9,4 +9,7 @@ class_name MailItem
 @export var texture: Texture2D
 @export var collider_position: Vector2
 @export var collider_shape: Shape2D
+@export var skew: float
+@export var scale: Vector2 = Vector2(1, 1)
+@export var rotation: float
 @export var info: Texture2D
