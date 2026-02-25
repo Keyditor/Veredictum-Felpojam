@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bm03yyccayhyj"
-path="res://.godot/imported/Detail_Dulce.png-2b12a44552ed6d45e55fe971a24e8dc6.ctex"
+uid="uid://d0k7t6g3skls"
+path="res://.godot/imported/Vicentes_Letter.png-0c5886235fc4801abdce52030115fd8f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/work tools/Detail_Dulce.png"
-dest_files=["res://.godot/imported/Detail_Dulce.png-2b12a44552ed6d45e55fe971a24e8dc6.ctex"]
+source_file="res://assets/work_tools/Vicentes_Letter.png"
+dest_files=["res://.godot/imported/Vicentes_Letter.png-0c5886235fc4801abdce52030115fd8f.ctex"]
 
 [params]
 

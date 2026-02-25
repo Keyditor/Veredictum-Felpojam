@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0k7t6g3skls"
-path="res://.godot/imported/Vicentes_Letter.png-d86eb98271ecd444232ed5712c25da49.ctex"
+uid="uid://c2ik61r6wk51i"
+path="res://.godot/imported/Detail_Antonio.png-0e61f9f31af9bb51c61d0c4f01d9349b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/work tools/Vicentes_Letter.png"
-dest_files=["res://.godot/imported/Vicentes_Letter.png-d86eb98271ecd444232ed5712c25da49.ctex"]
+source_file="res://assets/work_tools/Detail_Antonio.png"
+dest_files=["res://.godot/imported/Detail_Antonio.png-0e61f9f31af9bb51c61d0c4f01d9349b.ctex"]
 
 [params]
 
