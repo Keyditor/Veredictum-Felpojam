@@ -16,12 +16,13 @@ radius = 19.0
 size = Vector2(59, 12)
 
 [node name="Stamp" type="Node2D" unique_id=1069247919]
-z_index = 2
+z_index = 3
 texture_filter = 1
 script = ExtResource("1_psfrv")
 
 [node name="StampBody" type="Area2D" parent="." unique_id=2034445562]
-z_index = 1
+z_index = 3
+collision_layer = 4
 priority = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StampBody" unique_id=899183415]
@@ -33,8 +34,9 @@ position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_p0y5k")
 
 [node name="StampButton" type="Area2D" parent="." unique_id=1269259949]
-z_index = 1
+z_index = 3
 position = Vector2(0, -14)
+collision_layer = 4
 priority = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StampButton" unique_id=908691338]
@@ -42,8 +44,9 @@ position = Vector2(0, -45)
 shape = SubResource("CircleShape2D_p0y5k")
 
 [node name="StampArea" type="Area2D" parent="." unique_id=1240028794]
-z_index = 1
+z_index = 3
 position = Vector2(0, 20)
+collision_layer = 4
 priority = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StampArea" unique_id=1421569542]

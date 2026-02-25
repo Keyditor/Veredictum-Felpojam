@@ -13,6 +13,7 @@ var initial_pos: Vector2
 var final_pos: Vector2
 
 @export var mails_within: Array = []
+@export var stamped: Enum.MailTypes
 
 var conveyor_orientation: Enum.ConveyorOrientation
 
@@ -84,7 +85,7 @@ func _process(_delta: float) -> void:
 			animation_player.play("put_inside")
 		if object.is_in_group("objects") and is_over_box and object.is_holding:
 			object.apply_outline()
-		else:
+		elif object.is_in_group("objects"):
 			object.remove_outline()
 
 
