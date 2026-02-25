@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://cttsiahivia82"]
 
 [ext_resource type="Script" uid="uid://cnnet88kwqk0e" path="res://scripts/boss.gd" id="1_4yo74"]
-[ext_resource type="Texture2D" uid="uid://dlni1ccrhe2pn" path="res://assets/Chefe sprites/chefe_idle.png" id="1_imw47"]
-[ext_resource type="Texture2D" uid="uid://xa6dtyqxfohm" path="res://assets/Chefe sprites/chefe_evil_open_left_hand.png" id="2_r8uym"]
-[ext_resource type="Texture2D" uid="uid://ctkepy7h038f4" path="res://assets/Chefe sprites/chefe_evil_open_right_hand.png" id="3_p2gyk"]
-[ext_resource type="Texture2D" uid="uid://c1p32wnes8g6v" path="res://assets/Chefe sprites/chefe_index_finger.png" id="4_p2gyk"]
-[ext_resource type="Texture2D" uid="uid://cnl2pa18xmvvt" path="res://assets/Chefe sprites/chefe_arms_crossed.png" id="5_hxcvo"]
-[ext_resource type="Texture2D" uid="uid://cbj6cofmptoem" path="res://assets/Chefe sprites/chefe_finger_tenting.png" id="6_j30ar"]
-[ext_resource type="Texture2D" uid="uid://djhu2r6xm8kvt" path="res://assets/Chefe sprites/chefe_forward_palms.png" id="7_qryem"]
-[ext_resource type="Texture2D" uid="uid://bote3j4mgtf46" path="res://assets/Chefe sprites/chefe_pocket_watch.png" id="8_3dof1"]
+[ext_resource type="Texture2D" uid="uid://dlni1ccrhe2pn" path="res://assets/chefe/chefe_idle.png" id="1_imw47"]
+[ext_resource type="Texture2D" uid="uid://xa6dtyqxfohm" path="res://assets/chefe/chefe_evil_open_left_hand.png" id="2_r8uym"]
+[ext_resource type="Texture2D" uid="uid://ctkepy7h038f4" path="res://assets/chefe/chefe_evil_open_right_hand.png" id="3_p2gyk"]
+[ext_resource type="Texture2D" uid="uid://c1p32wnes8g6v" path="res://assets/chefe/chefe_index_finger.png" id="4_p2gyk"]
+[ext_resource type="Texture2D" uid="uid://cnl2pa18xmvvt" path="res://assets/chefe/chefe_arms_crossed.png" id="5_hxcvo"]
+[ext_resource type="Texture2D" uid="uid://cbj6cofmptoem" path="res://assets/chefe/chefe_finger_tenting.png" id="6_j30ar"]
+[ext_resource type="Texture2D" uid="uid://djhu2r6xm8kvt" path="res://assets/chefe/chefe_forward_palms.png" id="7_qryem"]
+[ext_resource type="Texture2D" uid="uid://bote3j4mgtf46" path="res://assets/chefe/chefe_pocket_watch.png" id="8_3dof1"]
 
 [sub_resource type="Animation" id="Animation_r8uym"]
 length = 0.001

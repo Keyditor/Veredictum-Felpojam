@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dymbuj6xarucr"]
 
 [ext_resource type="Script" uid="uid://ccr45op5ovxqi" path="res://scripts/stamp.gd" id="1_psfrv"]
-[ext_resource type="Texture2D" uid="uid://bfjj0sbjei4o3" path="res://assets/work tools/carimbos.png" id="2_p0y5k"]
+[ext_resource type="Texture2D" uid="uid://bfjj0sbjei4o3" path="res://assets/work_tools/carimbos.png" id="2_p0y5k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_psfrv"]
 size = Vector2(36, 54)

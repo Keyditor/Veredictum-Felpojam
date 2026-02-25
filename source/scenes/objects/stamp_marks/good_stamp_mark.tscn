@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cpy03mffo7ckq"]
 
-[ext_resource type="Texture2D" uid="uid://l162fnofjht7" path="res://assets/work tools/carimbo de tinta.png" id="1_wxcde"]
+[ext_resource type="Texture2D" uid="uid://l162fnofjht7" path="res://assets/work_tools/carimbo_de_tinta.png" id="1_wxcde"]
 
 [node name="StampMark" type="Sprite2D" unique_id=132920016]
 texture_filter = 1

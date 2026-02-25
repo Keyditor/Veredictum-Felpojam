@@ -1,6 +1,7 @@
 extends RigidBody2D
 
 var is_holding: bool = false
+var is_over_box: bool = false
 var grab_offset := Vector2.ZERO
 
 var is_moving: bool = false
@@ -11,7 +12,7 @@ var max_speed = 2000
 var initial_pos: Vector2
 var final_pos: Vector2
 
-@export var mail_info: MailItem
+@export var mails_within: Array = []
 
 var conveyor_orientation: Enum.ConveyorOrientation
 
@@ -20,14 +21,8 @@ var conveyor_orientation: Enum.ConveyorOrientation
 @onready var collision_shape_2d_mouse: CollisionShape2D = $Area2D/CollisionShape2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-const shader = preload("res://scenes/shaders/mail_object.gdshader") 
-var new_material
 
-var information_canvas
-
-var clicked_stamp: bool = false
-
-var caixa_index: int = 0
+var object
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -36,12 +31,7 @@ func _ready() -> void:
 	linear_damp = 6
 	gravity_scale = 0
 	
-	information_canvas = get_tree().get_nodes_in_group("work_table")[0].get_node("InformationCanvas")
 	animation_player.play("pop_up")
-	
-	# Criação do material que contém a outline
-	new_material = ShaderMaterial.new()
-	new_material.shader = shader
 
 
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
@@ -60,7 +50,7 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 			state.linear_velocity = state.linear_velocity.normalized() * max_speed
 			
 		if global_position == final_pos and conveyor_orientation == Enum.ConveyorOrientation.Desc:
-				state.linear_velocity = Vector2.RIGHT * 4000
+				state.linear_velocity = Vector2.RIGHT * 3000
 
 func _physics_process(delta: float) -> void:
 	if is_moving:
@@ -78,59 +68,44 @@ func stop_moving():
 	is_moving = false
 	is_on_conveyor = false
 
-
-func show_information():
-	information_canvas.get_node("Panel/TextureRect").texture = mail_info.info
-	information_canvas.visible = true
-
-func hide_information():
-	information_canvas.visible = false
-
-func apply_outline():
-	sprite_2d.material = new_material
-
-func remove_outline():
-	sprite_2d.material = null
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:	
-	# Declarar variáveis do Resource
-	sprite_2d.texture = mail_info.texture
-	collision_shape_2d.shape = mail_info.collider_shape
-	collision_shape_2d.position = mail_info.collider_position
-	collision_shape_2d.scale = mail_info.scale
-	collision_shape_2d.rotation = mail_info.rotation
-	collision_shape_2d.skew = mail_info.skew
-	
-	# Colisor do Click do Mouse
-	collision_shape_2d_mouse.shape = mail_info.collider_shape
-	collision_shape_2d_mouse.position = mail_info.collider_position
-	collision_shape_2d_mouse.scale = mail_info.scale
-	collision_shape_2d_mouse.rotation = mail_info.rotation
-	collision_shape_2d_mouse.skew = mail_info.skew
-	
 	if global_position == final_pos and not is_holding:
 		if conveyor_orientation == Enum.ConveyorOrientation.Asc:
-			Data.add_to_in_scene_mail(self.mail_info)
+			Data.add_to_in_scene_mail(mails_within)
 			animation_player.play("pop_out")
 	if is_on_conveyor:
 		is_moving = true
+	
+	if object:
+		if object.is_in_group("objects") and is_over_box and not object.is_holding:
+			mails_within.append(object.mail_info)
+			object.animation_player.play("pop_out")
+			animation_player.play("put_inside")
+		if object.is_in_group("objects") and is_over_box and object.is_holding:
+			object.apply_outline()
+		else:
+			object.remove_outline()
 
 
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
-			if event.pressed and not clicked_stamp: # Impede que a encomenda seja puxada junto com o carimbo
+			if event.pressed: # Impede que a encomenda seja puxada junto com o carimbo
 				is_holding = true
 				grab_offset = get_global_mouse_position() - global_position
 				is_moving = false
 				linear_velocity = Vector2.ZERO
 			else:
 				is_holding = false
-		if event.button_index == MOUSE_BUTTON_RIGHT:
-			show_information()
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.is_in_group("mails"):
-		collision_shape_2d.disabled = true
+	is_over_box = true
+	object = body
+
+
+
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	is_over_box = false

@@ -4,14 +4,14 @@
 [ext_resource type="PackedScene" uid="uid://cttsiahivia82" path="res://scenes/characters/boss.tscn" id="2_imci4"]
 [ext_resource type="Texture2D" uid="uid://d0btx3x5mla6p" path="res://assets/worktable.png" id="2_t5bnd"]
 [ext_resource type="PackedScene" uid="uid://exkiiwlxhri3" path="res://scenes/objects/conveyor.tscn" id="3_02l05"]
-[ext_resource type="Texture2D" uid="uid://bnaxl4vhyehh1" path="res://assets/Esteira animaçãoo/esteira animação1 - Copia.png" id="3_yc7xh"]
-[ext_resource type="Texture2D" uid="uid://c1i5x7qyaej1b" path="res://assets/Esteira animaçãoo/esteira animação2 - Copia.png" id="4_imci4"]
+[ext_resource type="Texture2D" uid="uid://bnaxl4vhyehh1" path="res://assets/esteira_animation/esteira animação1 - Copia.png" id="3_yc7xh"]
+[ext_resource type="Texture2D" uid="uid://c1i5x7qyaej1b" path="res://assets/esteira_animation/esteira animação2 - Copia.png" id="4_imci4"]
 [ext_resource type="PackedScene" uid="uid://dymbuj6xarucr" path="res://scenes/objects/stamp.tscn" id="5_w7jxw"]
-[ext_resource type="Texture2D" uid="uid://yi1c7irkpgx0" path="res://assets/Esteira animaçãoo/esteira animação3 - Copia.png" id="5_x31l6"]
-[ext_resource type="Texture2D" uid="uid://c5whyik5rytbx" path="res://assets/Esteira animaçãoo/esteira animação4 - Copia.png" id="6_swmut"]
+[ext_resource type="Texture2D" uid="uid://yi1c7irkpgx0" path="res://assets/esteira_animation/esteira animação3 - Copia.png" id="5_x31l6"]
+[ext_resource type="Texture2D" uid="uid://c5whyik5rytbx" path="res://assets/esteira_animation/esteira animação4 - Copia.png" id="6_swmut"]
 [ext_resource type="Script" uid="uid://b1l7cf83ax6uy" path="res://scripts/camera.gd" id="7_7p044"]
 [ext_resource type="Script" uid="uid://buomknkwu85ph" path="res://scripts/information_canvas.gd" id="7_t5bnd"]
-[ext_resource type="Texture2D" uid="uid://cihctlmt35u3p" path="res://assets/work tools/leitura de carta .png" id="12_x31l6"]
+[ext_resource type="Texture2D" uid="uid://cihctlmt35u3p" path="res://assets/work_tools/leitura_de_carta.png" id="12_x31l6"]
 
 [sub_resource type="Gradient" id="Gradient_imci4"]
 offsets = PackedFloat32Array(1)
@@ -356,10 +356,11 @@ rotation = -0.31415927
 priority = -1
 
 [node name="Walls" type="StaticBody2D" parent="Table" unique_id=2042575324]
+collision_mask = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Table/Walls" unique_id=444381601]
 build_mode = 1
-polygon = PackedVector2Array(264, 93, -1, 898, 254, 975, 256, 1022, 1649, 1022, 1689, 978, 1903, 902, 1641, 96, 1403, 161, 1409, 321, 505, 321, 507, 163)
+polygon = PackedVector2Array(236, 79, -48, 919, 239, 1006, 262, 1025, 1649, 1022, 1670, 1002, 1947, 919, 1683, 77, 1412, 80, 1409, 321, 505, 321, 498, 77)
 
 [node name="GoodStamp" parent="." unique_id=1567015258 instance=ExtResource("5_w7jxw")]
 position = Vector2(1307, 439)
