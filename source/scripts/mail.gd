@@ -20,9 +20,14 @@ var conveyor_orientation: Enum.ConveyorOrientation
 @onready var collision_shape_2d_mouse: CollisionShape2D = $Area2D/CollisionShape2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
+const shader = preload("res://scenes/shaders/mail_object.gdshader") 
+var new_material
+
 var information_canvas
 
 var clicked_stamp: bool = false
+
+var caixa_index: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -33,6 +38,10 @@ func _ready() -> void:
 	
 	information_canvas = get_tree().get_nodes_in_group("work_table")[0].get_node("InformationCanvas")
 	animation_player.play("pop_up")
+	
+	# Criação do material que contém a outline
+	new_material = ShaderMaterial.new()
+	new_material.shader = shader
 
 
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
@@ -51,7 +60,7 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 			state.linear_velocity = state.linear_velocity.normalized() * max_speed
 			
 		if global_position == final_pos and conveyor_orientation == Enum.ConveyorOrientation.Desc:
-				state.linear_velocity = Vector2.RIGHT * 3000
+				state.linear_velocity = Vector2.RIGHT * 4000
 
 func _physics_process(delta: float) -> void:
 	if is_moving:
@@ -77,6 +86,11 @@ func show_information():
 func hide_information():
 	information_canvas.visible = false
 
+func apply_outline():
+	sprite_2d.material = new_material
+
+func remove_outline():
+	sprite_2d.material = null
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:	
@@ -84,8 +98,16 @@ func _process(_delta: float) -> void:
 	sprite_2d.texture = mail_info.texture
 	collision_shape_2d.shape = mail_info.collider_shape
 	collision_shape_2d.position = mail_info.collider_position
+	collision_shape_2d.scale = mail_info.scale
+	collision_shape_2d.rotation = mail_info.rotation
+	collision_shape_2d.skew = mail_info.skew
+	
+	# Colisor do Click do Mouse
 	collision_shape_2d_mouse.shape = mail_info.collider_shape
 	collision_shape_2d_mouse.position = mail_info.collider_position
+	collision_shape_2d_mouse.scale = mail_info.scale
+	collision_shape_2d_mouse.rotation = mail_info.rotation
+	collision_shape_2d_mouse.skew = mail_info.skew
 	
 	if global_position == final_pos and not is_holding:
 		if conveyor_orientation == Enum.ConveyorOrientation.Asc:
@@ -107,3 +129,8 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 				is_holding = false
 		if event.button_index == MOUSE_BUTTON_RIGHT:
 			show_information()
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("mails"):
+		collision_shape_2d.disabled = true

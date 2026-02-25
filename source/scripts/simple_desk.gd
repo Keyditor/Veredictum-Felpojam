@@ -12,6 +12,7 @@ func _process(delta: float) -> void:
 	pass
 func use(_use:bool):
 	if _use:
-		1 == 1 
+		if GAME.dayStart == false:
+			Dialogic.start("expedintEnd")
 	return ["work_table",cena_2d, "cena", Nome]
 	#get_tree().change_scene_to_file("res://scenes/work_table.tscn")

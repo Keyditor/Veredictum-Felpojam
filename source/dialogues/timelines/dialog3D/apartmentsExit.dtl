@@ -3,9 +3,12 @@ set {GAME.on_2d} = true
 join player leftmost
 if {GAME.dayTimeTick} != {GAME.dayTimeStart}:
 	player: Não posso sair agora, está tarde.
-	Preciso dormir, estou exausto.
+	player: Preciso dormir, estou exausto.
 else:
 	player: Certo, vamos lá.
+	[signal arg="fadeIN"]
+	[wait time="1.0"]
 	[signal arg="goWork"]
+	[signal arg="fadeOUT"]
 set {GAME.on_dialog} = false
 set {GAME.on_2d} = false

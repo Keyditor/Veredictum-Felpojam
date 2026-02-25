@@ -1,51 +1,68 @@
 [gd_scene format=3 uid="uid://dymbuj6xarucr"]
 
 [ext_resource type="Script" uid="uid://ccr45op5ovxqi" path="res://scripts/stamp.gd" id="1_psfrv"]
+[ext_resource type="Texture2D" uid="uid://bfjj0sbjei4o3" path="res://assets/work_tools/carimbos.png" id="2_p0y5k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_psfrv"]
-size = Vector2(20, 40)
+size = Vector2(36, 54)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p0y5k"]
-size = Vector2(20, 10)
+size = Vector2(72, 30)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p0y5k"]
+radius = 19.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mckan"]
-size = Vector2(20, 12)
+size = Vector2(59, 12)
 
 [node name="Stamp" type="Node2D" unique_id=1069247919]
 z_index = 2
+texture_filter = 1
 script = ExtResource("1_psfrv")
 
 [node name="StampBody" type="Area2D" parent="." unique_id=2034445562]
 z_index = 1
 priority = 2
 
-[node name="StampImage" type="Polygon2D" parent="StampBody" unique_id=323506222]
-position = Vector2(-10, -40)
-polygon = PackedVector2Array(0, 0, 20, 0, 20, 40, 0, 40)
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StampBody" unique_id=899183415]
-position = Vector2(0, -20)
+position = Vector2(0, -13)
 shape = SubResource("RectangleShape2D_psfrv")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StampBody" unique_id=977500592]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_p0y5k")
 
 [node name="StampButton" type="Area2D" parent="." unique_id=1269259949]
 z_index = 1
+position = Vector2(0, -14)
 priority = 2
-
-[node name="Polygon2D" type="Polygon2D" parent="StampButton" unique_id=855665836]
-position = Vector2(-10, -40)
-color = Color(0.9076337, 0.41880777, 5.198121e-06, 1)
-polygon = PackedVector2Array(0, 0, 20, 0, 10, -10)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StampButton" unique_id=908691338]
 position = Vector2(0, -45)
-shape = SubResource("RectangleShape2D_p0y5k")
+shape = SubResource("CircleShape2D_p0y5k")
 
 [node name="StampArea" type="Area2D" parent="." unique_id=1240028794]
 z_index = 1
+position = Vector2(0, 20)
 priority = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StampArea" unique_id=1421569542]
+position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_mckan")
+
+[node name="GoodStamp" type="Sprite2D" parent="." unique_id=127898684]
+position = Vector2(0, -25.000002)
+scale = Vector2(6, 6)
+texture = ExtResource("2_p0y5k")
+region_enabled = true
+region_rect = Rect2(20, 3, 14, 17)
+
+[node name="BadStamp" type="Sprite2D" parent="." unique_id=1261486005]
+position = Vector2(0, -25.000002)
+scale = Vector2(6, 6)
+texture = ExtResource("2_p0y5k")
+region_enabled = true
+region_rect = Rect2(37, 3, 14, 17)
 
 [connection signal="input_event" from="StampBody" to="." method="_on_stamp_body_input_event"]
 [connection signal="input_event" from="StampButton" to="." method="_on_stamp_head_input_event"]

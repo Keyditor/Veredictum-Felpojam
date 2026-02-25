@@ -1,10 +1,12 @@
 set {GAME.on_dialog} = true
 join player leftmost
 player: Bom... #id:11
-player: como é que eu devo trabalhar agora? #id:12
+player: Como é que eu devo trabalhar agora? #id:12
 player: Ninguém se importou em me ensinar a fazer nada por aqui e olha que é o primeiro dia hein
+leave player
 boss: Olá, vejo que já encontrou sua mesa de trabalho!
 [signal arg="boss_arrive"]
+join player leftmost
 player: Chefe?!?!?!
 player: O senhor por aqui?
 player: Eu já ia procurar alguém pra me ajudar a entender minha função exatamente, porque na entrevista...
@@ -22,8 +24,9 @@ boss: E um carimbo de [color=red][b]Reprovado[/b][/color], com que você decidir
 boss: Após ter feito sua escolha, carimbe a correspondência de acordo com ela!
 [signal arg="boss_arms_crossed"]
 boss: É isso. Apenas isso
-join player left [animation="Slide From Left"]
+join player leftmost [animation="Slide From Left"]
 player: Pera.. Eu não deveria... Assim... Ter algum método mais objetivo pra decidir o que deve ser aprovado, além da minha opinião?
+leave player
 boss: Temo que isso não será necessário! Eu [b]confio[/b] na sua escolha.
 player: Ok...
 [signal arg="boss_pocket_watch"]

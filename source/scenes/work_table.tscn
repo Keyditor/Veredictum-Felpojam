@@ -4,13 +4,21 @@
 [ext_resource type="PackedScene" uid="uid://cttsiahivia82" path="res://scenes/characters/boss.tscn" id="2_imci4"]
 [ext_resource type="Texture2D" uid="uid://d0btx3x5mla6p" path="res://assets/worktable.png" id="2_t5bnd"]
 [ext_resource type="PackedScene" uid="uid://exkiiwlxhri3" path="res://scenes/objects/conveyor.tscn" id="3_02l05"]
-[ext_resource type="Texture2D" uid="uid://bnaxl4vhyehh1" path="res://assets/Esteira animaçãoo/esteira animação1 - Copia.png" id="3_yc7xh"]
-[ext_resource type="Texture2D" uid="uid://c1i5x7qyaej1b" path="res://assets/Esteira animaçãoo/esteira animação2 - Copia.png" id="4_imci4"]
+[ext_resource type="Texture2D" uid="uid://bnaxl4vhyehh1" path="res://assets/esteira_animation/esteira animação1 - Copia.png" id="3_yc7xh"]
+[ext_resource type="Texture2D" uid="uid://c1i5x7qyaej1b" path="res://assets/esteira_animation/esteira animação2 - Copia.png" id="4_imci4"]
 [ext_resource type="PackedScene" uid="uid://dymbuj6xarucr" path="res://scenes/objects/stamp.tscn" id="5_w7jxw"]
-[ext_resource type="Texture2D" uid="uid://yi1c7irkpgx0" path="res://assets/Esteira animaçãoo/esteira animação3 - Copia.png" id="5_x31l6"]
-[ext_resource type="Texture2D" uid="uid://c5whyik5rytbx" path="res://assets/Esteira animaçãoo/esteira animação4 - Copia.png" id="6_swmut"]
+[ext_resource type="Texture2D" uid="uid://yi1c7irkpgx0" path="res://assets/esteira_animation/esteira animação3 - Copia.png" id="5_x31l6"]
+[ext_resource type="Texture2D" uid="uid://c5whyik5rytbx" path="res://assets/esteira_animation/esteira animação4 - Copia.png" id="6_swmut"]
 [ext_resource type="Script" uid="uid://b1l7cf83ax6uy" path="res://scripts/camera.gd" id="7_7p044"]
 [ext_resource type="Script" uid="uid://buomknkwu85ph" path="res://scripts/information_canvas.gd" id="7_t5bnd"]
+[ext_resource type="Texture2D" uid="uid://cihctlmt35u3p" path="res://assets/work_tools/leitura_de_carta.png" id="12_x31l6"]
+
+[sub_resource type="Gradient" id="Gradient_imci4"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_x31l6"]
+gradient = SubResource("Gradient_imci4")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_poale"]
 animations = [{
@@ -31,6 +39,69 @@ animations = [{
 "name": &"default",
 "speed": 4.0
 }]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_imci4"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x31l6"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_swmut"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="Animation" id="Animation_56gch"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel/TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1007, 1375)]
+}
+
+[sub_resource type="Animation" id="Animation_gstpo"]
+resource_name = "hide_information"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel/TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1007, 646), Vector2(1007, 1375)]
+}
+
+[sub_resource type="Animation" id="Animation_hg65r"]
+resource_name = "show_information"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel/TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1007, 1375), Vector2(1007, 646)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gstpo"]
+_data = {
+&"RESET": SubResource("Animation_56gch"),
+&"hide_information": SubResource("Animation_gstpo"),
+&"show_information": SubResource("Animation_hg65r")
+}
 
 [sub_resource type="Animation" id="Animation_imci4"]
 length = 0.001
@@ -247,6 +318,11 @@ _data = {
 texture_filter = 1
 script = ExtResource("1_n46fc")
 
+[node name="BackGroundColor" type="Sprite2D" parent="." unique_id=917388386]
+position = Vector2(918.99994, 0)
+scale = Vector2(50, 50)
+texture = SubResource("GradientTexture2D_x31l6")
+
 [node name="Boss" parent="." unique_id=1027935484 instance=ExtResource("2_imci4")]
 position = Vector2(2545, -512)
 
@@ -280,16 +356,16 @@ rotation = -0.31415927
 priority = -1
 
 [node name="Walls" type="StaticBody2D" parent="Table" unique_id=2042575324]
+collision_mask = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Table/Walls" unique_id=444381601]
 build_mode = 1
-polygon = PackedVector2Array(264, 93, -1, 898, 254, 975, 256, 1022, 1649, 1022, 1689, 978, 1903, 902, 1641, 96, 1403, 161, 1409, 321, 505, 321, 507, 163)
+polygon = PackedVector2Array(236, 79, -48, 919, 239, 1006, 262, 1025, 1649, 1022, 1670, 1002, 1947, 919, 1683, 77, 1412, 80, 1409, 321, 505, 321, 498, 77)
 
 [node name="GoodStamp" parent="." unique_id=1567015258 instance=ExtResource("5_w7jxw")]
 position = Vector2(1307, 439)
 
 [node name="BadStamp2" parent="." unique_id=1069247919 instance=ExtResource("5_w7jxw")]
-modulate = Color(1, 0.22745098, 1, 1)
 position = Vector2(1144, 435)
 stamp_mark_kind = 1
 
@@ -302,6 +378,7 @@ visible = false
 script = ExtResource("7_t5bnd")
 
 [node name="Panel" type="Panel" parent="InformationCanvas" unique_id=1818904398]
+self_modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -310,31 +387,44 @@ grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="InformationCanvas/Panel" unique_id=1488967320]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -32.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 32.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -913.0
+offset_top = 295.0
+offset_right = -849.0
+offset_bottom = 359.0
+grow_horizontal = 0
+grow_vertical = 0
 mouse_filter = 0
+
+[node name="LeituraDeCarta" type="Sprite2D" parent="InformationCanvas/Panel/TextureRect" unique_id=1389204170]
+texture_filter = 1
+scale = Vector2(6, 6)
+texture = ExtResource("12_x31l6")
 
 [node name="Button" type="Button" parent="InformationCanvas/Panel" unique_id=53904760]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -300.0
+offset_left = -352.0
 offset_top = 140.0
-offset_right = -236.0
+offset_right = -222.0
 offset_bottom = 272.0
 grow_horizontal = 0
+theme_override_colors/font_pressed_color = Color(0.33288068, 0.3328807, 0.33288056, 1)
+theme_override_colors/font_hover_color = Color(0.6789436, 0.6789436, 0.6789446, 1)
 theme_override_font_sizes/font_size = 90
+theme_override_styles/normal = SubResource("StyleBoxFlat_imci4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_x31l6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_swmut")
 text = "X"
+
+[node name="CanvasAnimationPlayer" type="AnimationPlayer" parent="InformationCanvas" unique_id=51786716]
+libraries/ = SubResource("AnimationLibrary_gstpo")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1385179545]
 libraries/ = SubResource("AnimationLibrary_swmut")

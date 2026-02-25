@@ -2,6 +2,7 @@ extends Node3D
 @onready var Player = $Player
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	GAME.gameStart = true
 	if GAME.lastScene == "res://scenes/office/Office.tscn":
 		Player.global_position = Vector3(-11.7, 0, 1.893)
 		Player.global_rotation_degrees = Vector3(0, -90, 0)

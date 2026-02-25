@@ -1,0 +1,166 @@
+[gd_scene format=3 uid="uid://03hkwn8jckqo"]
+
+[ext_resource type="Script" uid="uid://bcku3fy8y6eoy" path="res://scripts/package.gd" id="1_116mb"]
+[ext_resource type="Texture2D" uid="uid://c455ue0qq7bg7" path="res://assets/mail/Caixas_separadas/caixa0.png" id="2_uyqbv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uyqbv"]
+size = Vector2(222, 156)
+
+[sub_resource type="Animation" id="Animation_uyqbv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area2D/Sprite2D:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Area2D/Sprite2D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_wwprd"]
+resource_name = "pop_out"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1e-05, 1e-05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area2D/Sprite2D:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_imqj4"]
+resource_name = "pop_up"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area2D/Sprite2D:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_s3y8c"]
+resource_name = "put_inside"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area2D/Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wwprd"]
+_data = {
+&"RESET": SubResource("Animation_uyqbv"),
+&"pop_out": SubResource("Animation_wwprd"),
+&"pop_up": SubResource("Animation_imqj4"),
+&"put_inside": SubResource("Animation_s3y8c")
+}
+
+[node name="RigidBody2D" type="RigidBody2D" unique_id=230980648 groups=["mails"]]
+self_modulate = Color(1, 1, 1, 0)
+texture_filter = 1
+scale = Vector2(1e-05, 1e-05)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_116mb")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=771161108]
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=211417130]
+texture = ExtResource("2_uyqbv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1955260744]
+shape = SubResource("RectangleShape2D_uyqbv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=875741756]
+shape = SubResource("RectangleShape2D_uyqbv")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=67150515]
+libraries/ = SubResource("AnimationLibrary_wwprd")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

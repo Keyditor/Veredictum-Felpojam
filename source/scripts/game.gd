@@ -1,6 +1,6 @@
 extends Node
-var on_2d = false
-var on_dialog = false
+var on_2d = true
+var on_dialog = true
 var on_2d_last = false
 var on_dialog_last = false
 var dayStart = false
@@ -9,11 +9,13 @@ var dayTimeStart = 480 # Tempo de inicio do dia ( 480 = 08:00 )
 var dayTimeSpeed = 12 # Velocidade de incremento do tempo ( 12 minutos no jogo passão em 1 segundo)
 var dayTimeTick = dayTimeStart
 var lastScene = "Start" 
+var gameStart = false
 
 func change_scene(path:String):
 	get_tree().change_scene_to_file(path)
 	
 func _process(delta: float) -> void:
+	#print("game2d:",on_2d)
 	if on_2d != on_2d_last:
 		on_2d_last = on_2d
 		print("Mudou on_2d = ",on_2d)
