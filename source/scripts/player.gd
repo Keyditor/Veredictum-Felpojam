@@ -3,11 +3,13 @@ extends CharacterBody3D
 @onready var render2d = $CanvasLayer/CanvasLayer
 @onready var head = $Head
 @onready var useRange = $Head/Camera3D/RayCast3D
-@onready var actionText = $CanvasLayer/RichTextLabel
-@onready var debug = $CanvasLayer/Debug
-@onready var fade_anim = $CanvasLayer/AnimationPlayer
-@onready var fade_rect = $CanvasLayer/ColorRect
+@onready var actionText = $CanvasLayer/HUD/RichTextLabel
+@onready var debug = $CanvasLayer/HUD/Debug
+@onready var fade_anim = $CanvasLayer/HUD/AnimationPlayer
+@onready var fade_rect = $CanvasLayer/HUD/ColorRect
+@onready var hud = $CanvasLayer/HUD
 var lastActionText = ""
+var timesUP = false
 
 var overlays := {}  # dicionário para guardar instâncias
 
@@ -38,23 +40,31 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-	if overlays.has("work_table") and GAME.dayStart == false:
-		Dialogic.start("expedintEnd")
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor() and not GAME.on_2d:
 		velocity.y = JUMP_VELOCITY
 	if Input.is_action_just_pressed("pause") and not GAME.on_2d:
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	if Input.is_action_just_pressed("pause") and not GAME.on_2d:
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		GAME.dayTimeTick = GAME.dayTimeLimit - 24
+	#if Input.is_action_just_pressed("pause") and not GAME.on_2d:
+		#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	if Input.is_action_just_pressed("down") and GAME.on_2d and not GAME.on_dialog:
 		for i in overlays:
 			print(i)
 			close_overlay(i)
+			render2d.visible = false
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		GAME.on_2d = false
 	
 	var target = useRange.get_collider()
+	
+	if overlays.has("work_table") and GAME.dayStart == false and timesUP:
+		if target.hahs("use"):
+			var resu = target.use(false)
+			if resu[0] == "work_table":
+				Dialogic.start("expedintEnd")
+		timesUP = true
+		close_overlay("work_table")
 	if target and !GAME.on_2d:
 		if target.has_method("use"):
 			var result = target.use(false)
@@ -92,6 +102,9 @@ func _physics_process(delta: float) -> void:
 			var action_type = resultA[2]
 			print("Action: ",action_type)
 			if action_type == "cena":
+				if overlay_id == "work_table" and !GAME.dayStart:
+					Dialogic.start("expedintEnd")
+					pass
 				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 				open_overlay(overlay_id,cena_2d)
 			if action_type == "dialogo":
@@ -133,8 +146,9 @@ func _physics_process(delta: float) -> void:
 
 func open_overlay(id:String,packed_scene: PackedScene,action_type = "cena"): #Instancia e torna a cena 2d visível
 	if not overlays.has(id):
-		#if id == "work_table":
-			
+		if id == "work_table":
+			hud.visible = false
+			render2d.visible = true
 		var instancia = packed_scene.instantiate()
 		overlays[id] = instancia
 		render2d.add_child(overlays[id])
@@ -144,6 +158,8 @@ func open_overlay(id:String,packed_scene: PackedScene,action_type = "cena"): #In
 
 func close_overlay(id: String): #Torna a cena 2d invisivel
 	print("entrou fechar cena")
+	if id == "work_table":
+			hud.visible = true
 	if overlays.has(id):
 		print("encontrou cena")
 		overlays[id].hide()
@@ -171,6 +187,7 @@ func _on_dialogic_signal(arg):
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		#fade_rect.visible = false
 	if arg == "expedientEnd":
+		print("Dia acabou")
 		close_overlay("work_table")
 	else:
 		print("overs : ",str(overlays))

@@ -13,7 +13,7 @@ length = 0.001
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color:r")
+tracks/0/path = NodePath("HUD/ColorRect:color:r")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -24,7 +24,7 @@ tracks/0/keys = {
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("ColorRect:color:g")
+tracks/1/path = NodePath("HUD/ColorRect:color:g")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -35,7 +35,7 @@ tracks/1/keys = {
 tracks/2/type = "bezier"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("ColorRect:color:b")
+tracks/2/path = NodePath("HUD/ColorRect:color:b")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -46,7 +46,7 @@ tracks/2/keys = {
 tracks/3/type = "bezier"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("ColorRect:color:a")
+tracks/3/path = NodePath("HUD/ColorRect:color:a")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -60,7 +60,7 @@ resource_name = "fade_in"
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color:r")
+tracks/0/path = NodePath("HUD/ColorRect:color:r")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -71,7 +71,7 @@ tracks/0/keys = {
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("ColorRect:color:g")
+tracks/1/path = NodePath("HUD/ColorRect:color:g")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -82,7 +82,7 @@ tracks/1/keys = {
 tracks/2/type = "bezier"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("ColorRect:color:b")
+tracks/2/path = NodePath("HUD/ColorRect:color:b")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -93,7 +93,7 @@ tracks/2/keys = {
 tracks/3/type = "bezier"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("ColorRect:color:a")
+tracks/3/path = NodePath("HUD/ColorRect:color:a")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -107,7 +107,7 @@ resource_name = "fade_out"
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color:r")
+tracks/0/path = NodePath("HUD/ColorRect:color:r")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -118,7 +118,7 @@ tracks/0/keys = {
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("ColorRect:color:g")
+tracks/1/path = NodePath("HUD/ColorRect:color:g")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -129,7 +129,7 @@ tracks/1/keys = {
 tracks/2/type = "bezier"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("ColorRect:color:b")
+tracks/2/path = NodePath("HUD/ColorRect:color:b")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -140,7 +140,7 @@ tracks/2/keys = {
 tracks/3/type = "bezier"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("ColorRect:color:a")
+tracks/3/path = NodePath("HUD/ColorRect:color:a")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -177,7 +177,9 @@ mesh = SubResource("CapsuleMesh_d5yd0")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1520136409]
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer" unique_id=1914220526]
+[node name="HUD" type="CanvasLayer" parent="CanvasLayer" unique_id=206230272]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/HUD" unique_id=1914220526]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -190,7 +192,7 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="CanvasLayer" unique_id=1581416827]
+[node name="Label" type="Label" parent="CanvasLayer/HUD" unique_id=1581416827]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -205,7 +207,7 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 26
 text = "*"
 
-[node name="Debug" type="RichTextLabel" parent="CanvasLayer" unique_id=1729673347]
+[node name="Debug" type="RichTextLabel" parent="CanvasLayer/HUD" unique_id=1729673347]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -218,13 +220,14 @@ offset_bottom = -50.62982
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1871919590]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/HUD" unique_id=1871919590]
 offset_right = 1920.0
 offset_bottom = 1080.0
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer" unique_id=898593301]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/HUD" unique_id=898593301]
+root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_rajaw")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="CanvasLayer" unique_id=1974544410]

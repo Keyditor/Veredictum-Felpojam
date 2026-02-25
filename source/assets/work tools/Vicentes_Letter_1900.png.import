@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cihctlmt35u3p"
-path="res://.godot/imported/leitura de carta .png-559d6c657c06320e41fbd400d7d19cbc.ctex"
+uid="uid://cnxkgmtwhuhf4"
+path="res://.godot/imported/Vicentes_Letter_1900.png-351e30953f07b388af01deffc52795d4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/leitura de carta .png"
-dest_files=["res://.godot/imported/leitura de carta .png-559d6c657c06320e41fbd400d7d19cbc.ctex"]
+source_file="res://assets/work tools/Vicentes_Letter_1900.png"
+dest_files=["res://.godot/imported/Vicentes_Letter_1900.png-351e30953f07b388af01deffc52795d4.ctex"]
 
 [params]
 

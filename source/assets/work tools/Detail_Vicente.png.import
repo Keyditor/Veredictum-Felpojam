@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://br6nwea2b45sh"
-path="res://.godot/imported/muda de roupa.png-07c6871ce43c732a3f9f0509e9782cdc.ctex"
+uid="uid://cbeu1ounuaecm"
+path="res://.godot/imported/Detail_Vicente.png-c9fd02fb90fba1f808cf6e02c7244842.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/muda de roupa.png"
-dest_files=["res://.godot/imported/muda de roupa.png-07c6871ce43c732a3f9f0509e9782cdc.ctex"]
+source_file="res://assets/work tools/Detail_Vicente.png"
+dest_files=["res://.godot/imported/Detail_Vicente.png-c9fd02fb90fba1f808cf6e02c7244842.ctex"]
 
 [params]
 

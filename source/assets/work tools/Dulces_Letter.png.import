@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qm3yt3h1qfj4"
-path="res://.godot/imported/par de gazuas.png-17908b5eab5a98e1ac91069d1e324bd1.ctex"
+uid="uid://cbbr41j15a63"
+path="res://.godot/imported/Dulces_Letter.png-5201b654a04aaa364682cf7c5b61b82f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/par de gazuas.png"
-dest_files=["res://.godot/imported/par de gazuas.png-17908b5eab5a98e1ac91069d1e324bd1.ctex"]
+source_file="res://assets/work tools/Dulces_Letter.png"
+dest_files=["res://.godot/imported/Dulces_Letter.png-5201b654a04aaa364682cf7c5b61b82f.ctex"]
 
 [params]
 

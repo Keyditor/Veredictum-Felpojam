@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://duwjcrruavsdn"
-path="res://.godot/imported/caixas.png-424998ae49e640f21249a6af9fb92bf9.ctex"
+uid="uid://bm03yyccayhyj"
+path="res://.godot/imported/Detail_Dulce.png-2b12a44552ed6d45e55fe971a24e8dc6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/caixas.png"
-dest_files=["res://.godot/imported/caixas.png-424998ae49e640f21249a6af9fb92bf9.ctex"]
+source_file="res://assets/work tools/Detail_Dulce.png"
+dest_files=["res://.godot/imported/Detail_Dulce.png-2b12a44552ed6d45e55fe971a24e8dc6.ctex"]
 
 [params]
 

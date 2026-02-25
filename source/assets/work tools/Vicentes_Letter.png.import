@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfjj0sbjei4o3"
-path="res://.godot/imported/carimbos.png-b7e4fac573f824f9c21e49fa8847a1e1.ctex"
+uid="uid://d0k7t6g3skls"
+path="res://.godot/imported/Vicentes_Letter.png-d86eb98271ecd444232ed5712c25da49.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/carimbos.png"
-dest_files=["res://.godot/imported/carimbos.png-b7e4fac573f824f9c21e49fa8847a1e1.ctex"]
+source_file="res://assets/work tools/Vicentes_Letter.png"
+dest_files=["res://.godot/imported/Vicentes_Letter.png-d86eb98271ecd444232ed5712c25da49.ctex"]
 
 [params]
 
