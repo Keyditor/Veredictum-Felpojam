@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbeu1ounuaecm"
-path="res://.godot/imported/Detail_Vicente.png-c9fd02fb90fba1f808cf6e02c7244842.ctex"
+uid="uid://biaci8iaffqn0"
+path="res://.godot/imported/Detail_Benedito.png-ce3c351d907c57c92aa098944d5ac4f5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/work tools/Detail_Vicente.png"
-dest_files=["res://.godot/imported/Detail_Vicente.png-c9fd02fb90fba1f808cf6e02c7244842.ctex"]
+source_file="res://assets/work_tools/Detail_Benedito.png"
+dest_files=["res://.godot/imported/Detail_Benedito.png-ce3c351d907c57c92aa098944d5ac4f5.ctex"]
 
 [params]
 

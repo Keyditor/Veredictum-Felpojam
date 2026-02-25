@@ -2,10 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://l162fnofjht7" path="res://assets/work_tools/carimbo_de_tinta.png" id="1_g586l"]
 
-[node name="StampMark" type="Sprite2D" unique_id=132920016]
+[node name="BadStampMark" type="Sprite2D" unique_id=132920016]
+z_index = 2
 texture_filter = 1
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1128527699]
 scale = Vector2(6, 6)
 texture = ExtResource("1_g586l")
 region_enabled = true

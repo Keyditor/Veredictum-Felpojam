@@ -129,8 +129,3 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 				is_holding = false
 		if event.button_index == MOUSE_BUTTON_RIGHT:
 			show_information()
-
-
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.is_in_group("mails"):
-		collision_shape_2d.disabled = true

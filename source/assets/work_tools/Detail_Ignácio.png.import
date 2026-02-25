@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbbr41j15a63"
-path="res://.godot/imported/Dulces_Letter.png-5201b654a04aaa364682cf7c5b61b82f.ctex"
+uid="uid://bhsywgo8pok6y"
+path="res://.godot/imported/Detail_Ignácio.png-6afd99ad2f66cf1484aede4caeadaf64.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/work tools/Dulces_Letter.png"
-dest_files=["res://.godot/imported/Dulces_Letter.png-5201b654a04aaa364682cf7c5b61b82f.ctex"]
+source_file="res://assets/work_tools/Detail_Ignácio.png"
+dest_files=["res://.godot/imported/Detail_Ignácio.png-6afd99ad2f66cf1484aede4caeadaf64.ctex"]
 
 [params]
 
