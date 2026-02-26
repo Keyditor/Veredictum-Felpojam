@@ -451,7 +451,6 @@ libraries/ = SubResource("AnimationLibrary_gstpo")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1385179545]
 libraries/ = SubResource("AnimationLibrary_swmut")
-autoplay = &"intro_cutscene"
 
 [connection signal="gui_input" from="InformationCanvas/Panel" to="InformationCanvas" method="_on_panel_gui_input"]
 [connection signal="gui_input" from="InformationCanvas/Panel/TextureRect" to="InformationCanvas" method="_on_texture_rect_gui_input"]

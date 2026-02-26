@@ -110,10 +110,7 @@ func _process(_delta: float) -> void:
 	collision_shape_2d_mouse.scale = mail_info.scale
 	collision_shape_2d_mouse.rotation = mail_info.rotation
 	collision_shape_2d_mouse.skew = mail_info.skew
-	
-	if global_position == final_pos and not is_holding:
-		if conveyor_orientation == Enum.ConveyorOrientation.Asc:
-			animation_player.play("pop_out")
+
 	if is_on_conveyor:
 		is_moving = true
 

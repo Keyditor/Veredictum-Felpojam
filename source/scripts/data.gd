@@ -16,10 +16,11 @@ const nights = [
 	},
 	{
 		"Mail": [
-			"res://resources/packages/package1.tres",
-			"res://resources/packages/package2.tres",
-			"res://resources/packages/package3.tres"
-		]
+			"res://resources/packages/caixa_pregos.tres",
+			"res://resources/packages/cavalo_madeira.tres",
+			"res://scenes/objects/package.tscn"
+		],
+		"person_detail": "res://assets/work_tools/Detail_Dulce.png"
 	}
 ]
 

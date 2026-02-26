@@ -89,7 +89,6 @@ func hide_information():
 func _process(_delta: float) -> void:	
 	if global_position == final_pos and not is_holding:
 		if conveyor_orientation == Enum.ConveyorOrientation.Asc:
-			Data.add_to_in_scene_mail(mails_within[0].sender_name, stamped)
 			animation_player.play("pop_out")
 	if is_on_conveyor:
 		is_moving = true
