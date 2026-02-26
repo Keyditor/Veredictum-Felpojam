@@ -36,6 +36,7 @@ func _process(delta: float) -> void:
 	
 
 func clockFormat(timeInSeconds: int): #Formata o tempo paara exibir no dialogo do relógio
+	@warning_ignore("integer_division")
 	var minutes = timeInSeconds / 60
 	var seconds = timeInSeconds % 60
 	return "%02d:%02d" % [minutes, seconds]

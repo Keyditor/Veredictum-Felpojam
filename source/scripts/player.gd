@@ -144,7 +144,7 @@ func _physics_process(delta: float) -> void:
 		t_bob = 0.0 
 	cam.transform.origin = cam.transform.origin.lerp(target_cam_pos, delta * 10.0)
 
-func open_overlay(id:String,packed_scene: PackedScene,action_type = "cena"): #Instancia e torna a cena 2d visível
+func open_overlay(id:String,packed_scene: PackedScene,_action_type = "cena"): #Instancia e torna a cena 2d visível
 	if not overlays.has(id):
 		if id == "work_table":
 			hud.visible = false
