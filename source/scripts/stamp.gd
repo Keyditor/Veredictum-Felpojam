@@ -80,6 +80,8 @@ func set_stamp_mark(mark: Node2D, parent_object: Node2D, pos: Vector2, StampMark
 		if parent_object.ink_type == stamp_mark_kind:
 			ink_count = 3
 			print("Molhou de tinta! Pronto pra ser usado mais 3 vezes")
+		else:
+			Dialogic.start("molhar_com_cor_diferente")
 
 func _on_stamp_area_body_entered(body: Node2D) -> void:
 	hited_object = body

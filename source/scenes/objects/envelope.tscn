@@ -1,0 +1,207 @@
+[gd_scene format=3 uid="uid://bre0q45kg4ib2"]
+
+[ext_resource type="Script" uid="uid://wgy72jyy0rwq" path="res://scripts/envelope.gd" id="1_66wji"]
+[ext_resource type="Texture2D" uid="uid://bkuebj1xxeglx" path="res://assets/mail/envelope_separado/envelope0.png" id="2_v4m3y"]
+[ext_resource type="Texture2D" uid="uid://cwybxylms64o7" path="res://assets/mail/envelope_separado/envelope1.png" id="3_dww81"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dww81"]
+size = Vector2(167, 109)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_66wji"]
+size = Vector2(154, 99)
+
+[sub_resource type="Animation" id="Animation_dww81"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Area2D/Sprite2D:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_v4m3y")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Area2D/Sprite2D:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_7kh6j"]
+resource_name = "close_envelope"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area2D/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("3_dww81"), ExtResource("2_v4m3y")]
+}
+
+[sub_resource type="Animation" id="Animation_v4m3y"]
+resource_name = "open_envelope"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area2D/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("2_v4m3y"), ExtResource("3_dww81")]
+}
+
+[sub_resource type="Animation" id="Animation_5rtqw"]
+resource_name = "pop_out"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1e-05, 1e-05)]
+}
+
+[sub_resource type="Animation" id="Animation_66wji"]
+resource_name = "pop_up"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_1yamn"]
+resource_name = "put_inside"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area2D/Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5rtqw"]
+_data = {
+&"RESET": SubResource("Animation_dww81"),
+&"close_envelope": SubResource("Animation_7kh6j"),
+&"open_envelope": SubResource("Animation_v4m3y"),
+&"pop_out": SubResource("Animation_5rtqw"),
+&"pop_up": SubResource("Animation_66wji"),
+&"put_inside": SubResource("Animation_1yamn")
+}
+
+[node name="RigidBody2D" type="RigidBody2D" unique_id=230980648 groups=["mails"]]
+self_modulate = Color(1, 1, 1, 0)
+texture_filter = 1
+scale = Vector2(1e-05, 1e-05)
+collision_layer = 17
+collision_mask = 9
+script = ExtResource("1_66wji")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=771161108]
+z_index = 1
+collision_layer = 16
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=211417130]
+texture = ExtResource("2_v4m3y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1955260744]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_dww81")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=875741756]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_66wji")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1171648769]
+libraries/ = SubResource("AnimationLibrary_5rtqw")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
