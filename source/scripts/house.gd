@@ -16,11 +16,9 @@ func _process(delta: float) -> void:
 func use(_use:bool = false):
 	if _use:
 		Dialogic.start("daySkip")
-		if GAME.dayPass:
-			GAME.dayPass = false
 	return ["work_table",cena_2d, "trazicao", Nome]
 	
 func _on_dialogic_signal(arg):
-	if arg == "exitOffice":
-		GAME.lastScene = "res://scenes/office/Office.tscn"
+	if arg == "daySkipSignal":
+		GAME.lastScene = "res://scenes/apartments/Apartments.tscn"
 		GAME.change_scene("res://scenes/apartments/Apartments.tscn")

@@ -1,9 +1,15 @@
 set {GAME.on_dialog} = true
 set {GAME.on_2d} = true
 join player leftmost
-if {GAME.dayStart} == false:
+if {GAME.dayPass} == false:
 	player: Não posso ficar em casa. Preciso do dinheiro desse emprego.
 else:
+	set {GAME.dayPass} = false
+	[signal arg="dayCountIncrease"]
 	player: Finalmente em casa...
+	leave player
+	[signal arg="dayPassSignal"]
+	[wait time="1.0"]
+	[signal arg="newDay"]
 set {GAME.on_dialog} = false
 set {GAME.on_2d} = false

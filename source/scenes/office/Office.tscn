@@ -117,3 +117,5 @@ shape = SubResource("ConcavePolygonShape3D_73nwr")
 
 [node name="Player2" parent="." unique_id=879881357 instance=ExtResource("10_y0aq1")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -8.825863, 0.20000267, -5.0552464)
+
+[node name="Timer" type="Timer" parent="." unique_id=72996163]

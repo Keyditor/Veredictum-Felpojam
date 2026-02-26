@@ -16,6 +16,9 @@ var dayPass = false
 func change_scene(path:String):
 	get_tree().change_scene_to_file(path)
 	
+func _ready() -> void:
+	Dialogic.signal_event.connect(_on_dialogic_signal)
+
 func _process(delta: float) -> void:
 	#print("game2d:",on_2d)
 	if on_2d != on_2d_last:
@@ -36,7 +39,11 @@ func _process(delta: float) -> void:
 	
 
 func clockFormat(timeInSeconds: int): #Formata o tempo paara exibir no dialogo do relógio
+	#@warning_ignore("integer_division")
 	var minutes = timeInSeconds / 60
 	var seconds = timeInSeconds % 60
 	return "%02d:%02d" % [minutes, seconds]
-	
+
+func _on_dialogic_signal(arg):
+	if arg == "dayCountIncrease":
+		dayCount += 1

@@ -108,6 +108,7 @@ mesh = ExtResource("5_lmsxe")
 
 [node name="House" type="StaticBody3D" parent="CorridorD4" unique_id=1651677807]
 script = ExtResource("7_uk0yu")
+Nome = "Entrar em casa?"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CorridorD4/House" unique_id=806357059]
 shape = SubResource("ConvexPolygonShape3D_lmsxe")
@@ -161,3 +162,5 @@ shape = SubResource("ConvexPolygonShape3D_6wqgl")
 
 [node name="Player" parent="." unique_id=879881357 instance=ExtResource("11_ib0fr")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 7.509075, 0, -1.370445)
+
+[node name="Timer" type="Timer" parent="." unique_id=236625896]

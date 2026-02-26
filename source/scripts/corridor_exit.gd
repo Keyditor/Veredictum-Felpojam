@@ -2,9 +2,11 @@ extends StaticBody3D
 
 @export var cena_2d: PackedScene
 @export var Nome : String
+@onready var dTimer = $"../../Timer"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	dTimer.timeout.connect(_on_dTimer)
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	pass # Replace with function body.
 
@@ -20,6 +22,9 @@ func use(_use:bool = false):
 
 func _on_dialogic_signal(arg):
 	if arg == "goWork":
-		GAME.lastScene = "res://scenes/apartments/Apartments.tscn"
-		GAME.change_scene("res://scenes/office/Office.tscn")
+		dTimer.start()
 	pass
+	
+func _on_dTimer():
+	GAME.lastScene = "res://scenes/apartments/Apartments.tscn"
+	GAME.change_scene("res://scenes/office/Office.tscn")
