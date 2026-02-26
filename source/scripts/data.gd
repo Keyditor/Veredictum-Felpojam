@@ -28,7 +28,24 @@ const nights = [
 	}
 ]
 
-var in_scene_mail = []
+var sent_mail = [
+	{
+		"name": "Dulce Martins",
+		"state": Enum.StampMarks.Good
+	},
+	{
+		"name": "Vicente Fonseca",
+		"state": Enum.StampMarks.Bad
+	},
+	{
+		"name": "Odete Oliveira",
+		"state": Enum.StampMarks.Neuter
+	},
+	{
+		"name": "João Brasil",
+		"state": Enum.StampMarks.Invalid
+	}
+]
 
 # Função que spawna as correspondências na esteira
 func spawn_mail(night_index: int, spawn_point: Vector2, spawn_gap_time: float):
@@ -70,6 +87,6 @@ func create_package(package: String, spawn_point: Vector2):
 	get_tree().get_first_node_in_group("work_table").add_child(new_package)
 
 func add_to_in_scene_mail(mail_item):
-	in_scene_mail.append(mail_item)
+	sent_mail.append(mail_item)
 func remove_from_in_scene_mail(mail_item):
-	in_scene_mail.erase(mail_item)
+	sent_mail.erase(mail_item)

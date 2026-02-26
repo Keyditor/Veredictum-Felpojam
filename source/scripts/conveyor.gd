@@ -19,7 +19,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if orientation == Enum.ConveyorOrientation.Desc and start_conveyor and first:
-		Data.spawn_mail(0, spawn_point, 5)
+		Data.spawn_mail(0, spawn_point, time_gap)
 		first = false
 
 

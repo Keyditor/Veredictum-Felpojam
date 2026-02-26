@@ -52,7 +52,7 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 			state.linear_velocity = state.linear_velocity.normalized() * max_speed
 			
 		if global_position == final_pos and conveyor_orientation == Enum.ConveyorOrientation.Desc:
-				state.linear_velocity = Vector2.RIGHT * 3000
+				state.linear_velocity = Vector2.RIGHT * 5000
 
 func _physics_process(delta: float) -> void:
 	if is_moving:
@@ -90,14 +90,18 @@ func _process(_delta: float) -> void:
 			object.remove_outline()
 	
 	# Para que a caixa consiga empurrar os itens quando estiver fechada
-	if not is_open:
-		set_collision_mask_value(2, true)
-		if object:
-			object.set_collision_mask_value(1, true)
-	elif object.mail_info.mail_type ==  Enum.MailTypes.Letter:
-		set_collision_mask_value(2, false)
-		if object:
-			object.set_collision_mask_value(1, false)
+	if object:
+		if object.is_in_group("objects"):
+			if object.mail_info:
+				if object.mail_info.mail_type == Enum.MailTypes.Item:
+					if not is_open:
+						set_collision_mask_value(2, true)
+						if object:
+							object.set_collision_mask_value(1, true)
+					else:
+						set_collision_mask_value(2, false)
+						if object:
+							object.set_collision_mask_value(1, false)
 		
 
 
