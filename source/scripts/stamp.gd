@@ -38,6 +38,7 @@ func _on_stamp_body_input_event(viewport: Node, event: InputEvent, shape_idx: in
 				grab_offset = get_global_mouse_position() - global_position
 			else:
 				is_holding = false
+			get_viewport().set_input_as_handled() # Impede que o sinal do click passe para outros elementos
 
 func _on_stamp_head_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton:

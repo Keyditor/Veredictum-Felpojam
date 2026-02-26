@@ -8,7 +8,6 @@ var is_on_conveyor: bool = true
 var conveyor_speed: float
 var max_speed = 2000
 
-var initial_pos: Vector2
 var final_pos: Vector2
 
 @export var mail_info: MailItem
@@ -24,10 +23,6 @@ const shader = preload("res://scenes/shaders/mail_object.gdshader")
 var new_material
 
 var information_canvas
-
-var clicked_stamp: bool = false
-
-var caixa_index: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -120,7 +115,7 @@ func _process(_delta: float) -> void:
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
-			if event.pressed and not clicked_stamp: # Impede que a encomenda seja puxada junto com o carimbo
+			if event.pressed:
 				is_holding = true
 				grab_offset = get_global_mouse_position() - global_position
 				is_moving = false
