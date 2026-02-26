@@ -144,6 +144,20 @@ tracks/3/keys = {
 "update": 1,
 "values": [ExtResource("4_s3y8c")]
 }
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"send_mail"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_imqj4"]
 resource_name = "pop_up"
@@ -217,6 +231,7 @@ texture_filter = 1
 scale = Vector2(1e-05, 1e-05)
 collision_mask = 25
 script = ExtResource("1_116mb")
+stamped = 2
 
 [node name="Area2D" type="Area2D" parent="." unique_id=771161108]
 z_index = 1

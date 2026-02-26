@@ -9,15 +9,10 @@ const StampsMarks = {
 const nights = [
 	{
 		"Mail": [
-			"res://resources/packages/colar_joias.tres",
-			"res://resources/packages/cavalo_madeira.tres",
-			"res://resources/packages/caixa_pregos.tres",
-			"res://resources/packages/formao.tres",
 			"res://resources/Letters/letter_dulce.tres",
-			"res://scenes/objects/envelope.tscn",
-			"res://scenes/objects/package.tscn"
+			"res://scenes/objects/envelope.tscn"
 		],
-		"person_info": ""
+		"person_detail": "res://assets/work_tools/Detail_Dulce.png"
 	},
 	{
 		"Mail": [
@@ -28,24 +23,7 @@ const nights = [
 	}
 ]
 
-var sent_mail = [
-	{
-		"name": "Dulce Martins",
-		"state": Enum.StampMarks.Good
-	},
-	{
-		"name": "Vicente Fonseca",
-		"state": Enum.StampMarks.Bad
-	},
-	{
-		"name": "Odete Oliveira",
-		"state": Enum.StampMarks.Neuter
-	},
-	{
-		"name": "João Brasil",
-		"state": Enum.StampMarks.Invalid
-	}
-]
+var sent_mail = []
 
 # Função que spawna as correspondências na esteira
 func spawn_mail(night_index: int, spawn_point: Vector2, spawn_gap_time: float):
@@ -63,7 +41,7 @@ func spawn_mail(night_index: int, spawn_point: Vector2, spawn_gap_time: float):
 			# Criação da caixa e envelope
 			var verify_mail = load(mail)
 			if verify_mail is not MailItem:
-				create_package(mail, spawn_point)
+				create_package(mail, spawn_point, nights[night_index]["person_detail"])
 			else:
 				print(mail)
 				# criação em si da correspondência
@@ -80,13 +58,19 @@ func create_mail_object(resource: String, spawn_point: Vector2, spawn_gap_time: 
 	new_mail.global_position = spawn_point
 	get_tree().get_first_node_in_group("work_table").add_child(new_mail)
 
-func create_package(package: String, spawn_point: Vector2):
+func create_package(package: String, spawn_point: Vector2, person_detail):
+	var person_detail_loaded = load(person_detail)
 	var package_scene = load(package)
 	var new_package = package_scene.instantiate()
 	new_package.global_position = spawn_point
+	new_package.person_detail = person_detail_loaded
 	get_tree().get_first_node_in_group("work_table").add_child(new_package)
 
-func add_to_in_scene_mail(mail_item):
-	sent_mail.append(mail_item)
+func add_to_in_scene_mail(person_name, stamp_mark):
+	sent_mail.append({
+		"name": person_name,
+		"state": stamp_mark
+	})
+	print(sent_mail)
 func remove_from_in_scene_mail(mail_item):
 	sent_mail.erase(mail_item)

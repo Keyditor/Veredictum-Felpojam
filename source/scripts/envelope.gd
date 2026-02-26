@@ -14,7 +14,8 @@ var initial_pos: Vector2
 var final_pos: Vector2
 
 @export var mails_within: Array = []
-@export var stamped: Enum.MailTypes
+@export var stamped: Enum.StampMarks
+@export var person_detail: Texture
 
 var conveyor_orientation: Enum.ConveyorOrientation
 
@@ -25,6 +26,7 @@ var conveyor_orientation: Enum.ConveyorOrientation
 
 
 var object
+var information_canvas
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -33,6 +35,7 @@ func _ready() -> void:
 	linear_damp = 6
 	gravity_scale = 0
 	
+	information_canvas = get_tree().get_nodes_in_group("work_table")[0].get_node("InformationCanvas")
 	animation_player.play("pop_up")
 
 
@@ -69,12 +72,19 @@ func move_to_position(orientation: Enum.ConveyorOrientation, speed, final: Vecto
 func stop_moving():
 	is_moving = false
 	is_on_conveyor = false
+	
+# Mostrar detalhes com cartas
+func show_information():
+	information_canvas.get_node("Panel/TextureRect").texture = person_detail
+	information_canvas.visible = true
+
+func send_mail():
+	Data.add_to_in_scene_mail(mails_within[0].sender_name, stamped)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:	
 	if global_position == final_pos and not is_holding:
 		if conveyor_orientation == Enum.ConveyorOrientation.Asc:
-			Data.add_to_in_scene_mail(mails_within)
 			animation_player.play("pop_out")
 	if is_on_conveyor:
 		is_moving = true
@@ -128,6 +138,8 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 					is_open = not is_open
 			else:
 				is_holding = false
+		if event.button_index == MOUSE_BUTTON_RIGHT:
+			show_information()
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
