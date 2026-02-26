@@ -13,8 +13,15 @@ func _ready() -> void:
 		Player.global_position = Vector3(7.509, 0, -1.37)
 		Player.global_rotation_degrees = Vector3(0, 180, 0)
 		Dialogic.start("startDialog")
-	pass # Replace with function body.
-
+	elif GAME.dayCount == 2:
+		Player.global_position = Vector3(7.509, 0, -1.37)
+		Player.global_rotation_degrees = Vector3(0, 180, 0)
+		Dialogic.start("dayTwo")
+	elif GAME.dayCount == 3:
+		Player.global_position = Vector3(7.509, 0, -1.37)
+		Player.global_rotation_degrees = Vector3(0, 180, 0)
+		Dialogic.start("dayThree")
+		pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

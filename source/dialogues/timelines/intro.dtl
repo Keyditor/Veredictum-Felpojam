@@ -2,7 +2,7 @@ set {GAME.on_dialog} = true
 join player leftmost
 player: Bom... #id:11
 player: Não me explicaram exatamente o que eu preciso fazer, apenas que envolvia empacotar. #id:12
-player: Não vejo ninguém por perto, vou procurar alguém para me ajudar.
+player: Não vejo ninguém por perto, acho vou procurar alguém para me ajudar.
 leave player
 boss: Bom dia, estou vendo que já encontrou sua sala!
 [signal arg="boss_arrive"]
@@ -16,24 +16,24 @@ boss: Ah meu caro, não se preocupe.
 [signal arg="boss_index_finger"]
 boss: Vim aqui pessoalmente para lhe ajudar com isso!
 boss: Permita-me explicar qual o seu dever na nossa empresa.
-boss: Você está responsável por validar as encomendas que irão chegar pela esteira a sua esquerda. Por ela, ira chegar uma variedade de itens! A sua função é determinar, quaisquer sejam os seus meios de dedução, o que deve ser entregue ou não.
+boss: Você está responsável por validar as encomendas que chegarão pela esteira a sua esquerda. Você rececberá uma variedade de itens e os colocará em um pacote. A sua função é determinar, quaisquer sejam os seus meios de dedução, o que deve ser entregue ou não.
 [signal arg="boss_finger_tenting"]
-boss: Na sua mesa você tem dois carimbos!
-boss: Um carimbo para [color=green][b]Aprovar[/b][/color], com ele você irá marcar o item como aprovado para ser entregue.
-boss: E um carimbo de [color=red][b]Reprovar[/b][/color], que irá negar a passagem do item para entrega.
-boss: Após ter decidido qual carimbo usar, carimbe a correspondência de acordo!
+boss: Na sua mesa tens dois carimbos!
+boss: Um carimbo para [color=green][wave amp=90]Aprovar[/wave][/color], com ele você macará o pacote como aprovado para ser despachado.
+boss: E um carimbo de [color=red][wave amp=90]Reprovar[/wave][/color], que negará o despacho do pacote.
+boss: Após ter decidido qual carimbo usar, carimbe o pacote, colocando o carimbo em cima do mesmo e clicando e despache-o pela esteira a direita.
 [signal arg="boss_arms_crossed"]
-boss: Seu trabalho é isso, acredito que irá se sair bem!
+boss: Simples não? acredito que se sairá bem!
 join player leftmost [animation="Slide From Left"]
 player: Hmm... Eu não deveria ter algum método mais objetivo para decidir o que deve ser aprovado, além da minha dedução?
 leave player
-boss: Acredito que não será necessário! Eu [b]confio[/b] na sua escolha.
+boss: Acredito que não será necessário! Eu [wave amp=2 freq=2]confio[/wave] na sua escolha.
 player: Certo...
 [signal arg="boss_pocket_watch"]
 boss: Bom, se você não possui mais dúvidas, retirar-me-ei! O tempo voa, não é mesmo?
 boss: Lembre-se de que tempo é dinheiro.
 [signal arg="boss_leave"]
 [wait time="1.0"]
-player: Peculiar. Não irei questionar...
+player: Peculiar, mas não questionarei...
 player: Estou precisando muito desse emprego, vamos trabalhar.
 set {GAME.on_dialog} = false

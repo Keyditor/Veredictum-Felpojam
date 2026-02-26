@@ -16,8 +16,6 @@ func _process(delta: float) -> void:
 func use(_use:bool = false):
 	if _use:
 		Dialogic.start("daySkip")
-		if GAME.dayPass:
-			GAME.dayPass = false
 	return ["work_table",cena_2d, "trazicao", Nome]
 	
 func _on_dialogic_signal(arg):
