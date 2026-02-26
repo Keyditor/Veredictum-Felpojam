@@ -1,5 +1,6 @@
 extends Node3D
 @onready var Player = $Player
+var PLACEHOLDER = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Dialogic.signal_event.connect(_on_dialogic_signal)
@@ -26,6 +27,23 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if PLACEHOLDER:
+		$CorridorD1/Sign.visible = true
+	if PLACEHOLDER:
+		$CorridorD2/Sign.visible = true
+	if PLACEHOLDER:
+		$CorridorD3/Sign.visible = true
+	if PLACEHOLDER:
+		$CorridorD5/Sign.visible = true
+	if PLACEHOLDER:
+		$CorridorD6/Sign.visible = true
+	if PLACEHOLDER:
+		$CorridorD7/Sign.visible = true
+	if PLACEHOLDER:
+		$CorridorD8/Sign.visible = true
+	if PLACEHOLDER:
+		$CorridorD4/Sign.visible = true
+	
 	pass
 
 func _on_dialogic_signal(arg):

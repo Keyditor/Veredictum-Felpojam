@@ -1,0 +1,9 @@
+set {GAME.on_dialog} = true
+set {GAME.on_2d} = true
+join player leftmost [animation="Fade In Up" wait="true"]
+player: Na placa diz...
+player: Ordem de despejo a pertences de [wave]{ownerSign}[/wave] em notório óbito.
+player: Dulce Martins...
+player: Esse nome me parece familiar...
+set {GAME.on_dialog} = false
+set {GAME.on_2d} = false

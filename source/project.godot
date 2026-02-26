@@ -40,6 +40,7 @@ directories/dtl_directory={
 "expedintEnd": "res://dialogues/timelines/dialog3D/expedintEnd.dtl",
 "intro": "res://dialogues/timelines/intro.dtl",
 "officeExit": "res://dialogues/timelines/dialog3D/officeExit.dtl",
+"signDialog": "res://dialogues/timelines/dialog3D/signDialog.dtl",
 "startDialog": "res://dialogues/timelines/dialog3D/startDialog.dtl"
 }
 layout/style_directory={
@@ -50,7 +51,8 @@ layout/default_style=""
 variables={
 "NewVar": "",
 "clockState": "early",
-"clockTime": "08:00"
+"clockTime": "08:00",
+"ownerSign": "none"
 }
 glossary/default_case_sensitive=true
 text/letter_speed=0.05
