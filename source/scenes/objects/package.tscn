@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://bpq32qv1fpw54" path="res://assets/mail/Caixas_separadas/caixa1.png" id="3_wwprd"]
 [ext_resource type="Texture2D" uid="uid://cymn20u3eterx" path="res://assets/mail/Caixas_separadas/caixa2.png" id="4_s3y8c"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uyqbv"]
-size = Vector2(222, 156)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wwprd"]
+size = Vector2(232, 166)
 
 [sub_resource type="Animation" id="Animation_uyqbv"]
 length = 0.001
@@ -215,7 +215,7 @@ _data = {
 self_modulate = Color(1, 1, 1, 0)
 texture_filter = 1
 scale = Vector2(1e-05, 1e-05)
-collision_mask = 9
+collision_mask = 25
 script = ExtResource("1_116mb")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=771161108]
@@ -226,10 +226,11 @@ collision_mask = 3
 texture = ExtResource("2_uyqbv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1955260744]
-shape = SubResource("RectangleShape2D_uyqbv")
+shape = SubResource("RectangleShape2D_wwprd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=875741756]
-shape = SubResource("RectangleShape2D_uyqbv")
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_wwprd")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=67150515]
 libraries/ = SubResource("AnimationLibrary_wwprd")

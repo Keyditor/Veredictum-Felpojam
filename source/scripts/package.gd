@@ -94,7 +94,7 @@ func _process(_delta: float) -> void:
 		set_collision_mask_value(2, true)
 		if object:
 			object.set_collision_mask_value(1, true)
-	else:
+	elif object.mail_info.mail_type ==  Enum.MailTypes.Letter:
 		set_collision_mask_value(2, false)
 		if object:
 			object.set_collision_mask_value(1, false)
