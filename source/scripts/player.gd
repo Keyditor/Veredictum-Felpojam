@@ -36,7 +36,7 @@ func _ready() -> void:
 	actionText.visible_ratio = 0
 
 func _physics_process(delta: float) -> void:
-	debug.text = Dialogic.VAR.clockTime
+	debug.text = str(Dialogic.VAR.clockTime," ",GAME.dayCount)
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta

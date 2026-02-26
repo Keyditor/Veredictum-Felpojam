@@ -6,5 +6,6 @@ if {GAME.dayStart} == true:
 else:
 	player: Certo, hora de ir pra casa.
 	[signal arg="exitOffice"]
+set {GAME.dayPass} = true
 set {GAME.on_dialog} = false
 set {GAME.on_2d} = false

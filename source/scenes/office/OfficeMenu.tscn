@@ -51,15 +51,12 @@ mesh = ExtResource("1_8ee8a")
 visible = false
 shape = SubResource("ConcavePolygonShape3D_4aho4")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="Office" unique_id=1128236442]
-transform = Transform3D(-4.371139e-08, -1, -4.371138e-08, 0, -4.371138e-08, 1, -1, 4.371139e-08, 1.9106853e-15, 0.014804055, 11.689413, -1.5982239)
+[node name="SpotLight3D" type="OmniLight3D" parent="Office" unique_id=859539033]
+transform = Transform3D(-4.371139e-08, -1, -4.371138e-08, 0, -4.371138e-08, 1, -1, 4.371139e-08, 1.9106853e-15, 0.014804055, 10.576471, -1.5982239)
 light_color = Color(0.98039216, 0.99607843, 1, 1)
 light_energy = 3.217
 light_specular = 0.183
-spot_range = 18.673
-spot_attenuation = -0.19
-spot_angle = 88.03
-spot_angle_attenuation = 2.9281712
+omni_range = 18.673
 
 [node name="Chair" type="MeshInstance3D" parent="." unique_id=485919596]
 transform = Transform3D(0.5673155, 0, -0.41006476, 0, 0.7, 0, 0.41006476, 0, 0.5673155, 0.8602419, 0.20000243, 2.6347873)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ca8m3uh67kie7"
-path="res://.godot/imported/K.png-5d0506ebeb2da2712db2c914887ed853.ctex"
+uid="uid://vduks3f2aeo7"
+path="res://.godot/imported/Cat.png-956480bcd1676a3990e82aa224224448.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Letras da Logo/K.png"
-dest_files=["res://.godot/imported/K.png-5d0506ebeb2da2712db2c914887ed853.ctex"]
+source_file="res://assets/Letras_da_Logo/Cat.png"
+dest_files=["res://.godot/imported/Cat.png-956480bcd1676a3990e82aa224224448.ctex"]
 
 [params]
 

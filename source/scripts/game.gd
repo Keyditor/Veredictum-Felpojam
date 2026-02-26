@@ -10,6 +10,8 @@ var dayTimeSpeed = 12 # Velocidade de incremento do tempo ( 12 minutos no jogo p
 var dayTimeTick = dayTimeStart
 var lastScene = "Start" 
 var gameStart = false
+var dayCount = 1
+var dayPass = false
 
 func change_scene(path:String):
 	get_tree().change_scene_to_file(path)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dd7iqpynf5u1k"
-path="res://.godot/imported/c A t.png-b20272746e4a6aac31d9c8359ce5ee3d.ctex"
+uid="uid://bwk314kryuroa"
+path="res://.godot/imported/C.png-3c8ad13e66980812eb97b22522094b79.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Letras da Logo/c A t.png"
-dest_files=["res://.godot/imported/c A t.png-b20272746e4a6aac31d9c8359ce5ee3d.ctex"]
+source_file="res://assets/Letras_da_Logo/C.png"
+dest_files=["res://.godot/imported/C.png-3c8ad13e66980812eb97b22522094b79.ctex"]
 
 [params]
 
