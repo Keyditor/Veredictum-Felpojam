@@ -79,22 +79,80 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9326916, 0, -14.752758)
 mesh = ExtResource("1_rvxjt")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Corridor" unique_id=921638246]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5708733, 8.534916, 16.557373)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5805454, 8.534916, 16.557373)
 light_color = Color(0.95350415, 0.97065824, 0.9999997, 1)
 light_size = 1.0
 light_specular = 0.0
+shadow_enabled = true
 omni_range = 10.653
 omni_attenuation = 0.0
 omni_shadow_mode = 0
+
+[node name="SpotLight3D2" type="OmniLight3D" parent="Corridor/OmniLight3D" unique_id=1179061137]
+transform = Transform3D(1, 0, 0, 0, -1, -8.742276e-08, 0, 8.742276e-08, -1, 0.76447535, -0.3236065, 0.44823408)
+light_color = Color(0.98039216, 0.99607843, 1, 1)
+light_specular = 0.183
+omni_range = 1.929
+omni_attenuation = 10.0
+
+[node name="SpotLight3D4" type="OmniLight3D" parent="Corridor/OmniLight3D" unique_id=594935961]
+transform = Transform3D(1, 0, 0, 0, -1, -8.742276e-08, 0, 8.742276e-08, -1, -0.4921503, -0.31772804, 0.55322695)
+light_color = Color(0.98039216, 0.99607843, 1, 1)
+light_specular = 0.183
+omni_range = 1.929
+omni_attenuation = 10.0
+
+[node name="SpotLight3D3" type="OmniLight3D" parent="Corridor/OmniLight3D" unique_id=842906707]
+transform = Transform3D(1, 0, 0, 0, -1, -8.742276e-08, 0, 8.742276e-08, -1, -0.4921503, -0.31772804, -0.61563516)
+light_color = Color(0.98039216, 0.99607843, 1, 1)
+light_specular = 0.183
+omni_range = 1.929
+omni_attenuation = 10.0
+
+[node name="SpotLight3D5" type="OmniLight3D" parent="Corridor/OmniLight3D" unique_id=1274074082]
+transform = Transform3D(1, 0, 0, 0, -1, -8.742276e-08, 0, 8.742276e-08, -1, 0.6410389, -0.3236065, -0.632699)
+light_color = Color(0.98039216, 0.99607843, 1, 1)
+light_specular = 0.183
+omni_range = 1.929
+omni_attenuation = 10.0
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="Corridor" unique_id=1383896358]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4418964, 8.534916, 16.557373)
 light_color = Color(0.95350415, 0.97065824, 0.9999997, 1)
 light_size = 1.0
 light_specular = 0.0
+shadow_enabled = true
 omni_range = 10.653
 omni_attenuation = 0.0
 omni_shadow_mode = 0
+
+[node name="SpotLight3D2" type="OmniLight3D" parent="Corridor/OmniLight3D2" unique_id=544329295]
+transform = Transform3D(1, 0, 0, 0, -1, -8.742276e-08, 0, 8.742276e-08, -1, 0.76447535, -0.33937073, 0.44823408)
+light_color = Color(0.98039216, 0.99607843, 1, 1)
+light_specular = 0.183
+omni_range = 1.929
+omni_attenuation = 10.0
+
+[node name="SpotLight3D4" type="OmniLight3D" parent="Corridor/OmniLight3D2" unique_id=1160034748]
+transform = Transform3D(1, 0, 0, 0, -1, -8.742276e-08, 0, 8.742276e-08, -1, -0.49215078, -0.33349228, 0.55322695)
+light_color = Color(0.98039216, 0.99607843, 1, 1)
+light_specular = 0.183
+omni_range = 1.929
+omni_attenuation = 10.0
+
+[node name="SpotLight3D3" type="OmniLight3D" parent="Corridor/OmniLight3D2" unique_id=2071927723]
+transform = Transform3D(1, 0, 0, 0, -1, -8.742276e-08, 0, 8.742276e-08, -1, -0.49215078, -0.33349228, -0.61563516)
+light_color = Color(0.98039216, 0.99607843, 1, 1)
+light_specular = 0.183
+omni_range = 1.929
+omni_attenuation = 10.0
+
+[node name="SpotLight3D5" type="OmniLight3D" parent="Corridor/OmniLight3D2" unique_id=1361431501]
+transform = Transform3D(1, 0, 0, 0, -1, -8.742276e-08, 0, 8.742276e-08, -1, 0.6410389, -0.33937073, -0.632699)
+light_color = Color(0.98039216, 0.99607843, 1, 1)
+light_specular = 0.183
+omni_range = 1.929
+omni_attenuation = 10.0
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Corridor" unique_id=368955110]
 
@@ -117,6 +175,7 @@ mesh = ExtResource("4_lmsxe")
 [node name="StaticBody3D" type="StaticBody3D" parent="CorridorD1/Sign" unique_id=506921732]
 script = ExtResource("5_d7ubd")
 Nome = "Ler?"
+Owner = "Dulce Martins"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CorridorD1/Sign/StaticBody3D" unique_id=2029905551]
 shape = SubResource("ConvexPolygonShape3D_ib0fr")
@@ -137,6 +196,7 @@ mesh = ExtResource("4_lmsxe")
 [node name="StaticBody3D" type="StaticBody3D" parent="CorridorD2/Sign" unique_id=430819563]
 script = ExtResource("5_d7ubd")
 Nome = "Ler?"
+Owner = "Vicente Fonseca"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CorridorD2/Sign/StaticBody3D" unique_id=1693627327]
 shape = SubResource("ConvexPolygonShape3D_iwjl3")
@@ -157,6 +217,7 @@ mesh = ExtResource("4_lmsxe")
 [node name="StaticBody3D" type="StaticBody3D" parent="CorridorD3/Sign" unique_id=591167808]
 script = ExtResource("5_d7ubd")
 Nome = "Ler?"
+Owner = "João Brasil"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CorridorD3/Sign/StaticBody3D" unique_id=1643904300]
 shape = SubResource("ConvexPolygonShape3D_s50j0")
@@ -179,6 +240,7 @@ mesh = ExtResource("4_lmsxe")
 [node name="StaticBody3D" type="StaticBody3D" parent="CorridorD4/Sign" unique_id=164207142]
 script = ExtResource("5_d7ubd")
 Nome = "Ler?"
+Owner = "Player"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CorridorD4/Sign/StaticBody3D" unique_id=365061945]
 shape = SubResource("ConvexPolygonShape3D_ohxbd")
@@ -199,6 +261,7 @@ mesh = ExtResource("4_lmsxe")
 [node name="StaticBody3D" type="StaticBody3D" parent="CorridorD5/Sign" unique_id=763636993]
 script = ExtResource("5_d7ubd")
 Nome = "Ler?"
+Owner = "Odete Oliveira"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CorridorD5/Sign/StaticBody3D" unique_id=1482706353]
 shape = SubResource("ConvexPolygonShape3D_0jpjd")
@@ -219,6 +282,7 @@ mesh = ExtResource("4_lmsxe")
 [node name="StaticBody3D" type="StaticBody3D" parent="CorridorD6/Sign" unique_id=666712993]
 script = ExtResource("5_d7ubd")
 Nome = "Ler?"
+Owner = "Benedito Dias"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CorridorD6/Sign/StaticBody3D" unique_id=639705439]
 shape = SubResource("ConvexPolygonShape3D_v05bw")
@@ -239,6 +303,7 @@ mesh = ExtResource("4_lmsxe")
 [node name="StaticBody3D" type="StaticBody3D" parent="CorridorD7/Sign" unique_id=1315496378]
 script = ExtResource("5_d7ubd")
 Nome = "Ler?"
+Owner = "Ignácio Américo"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CorridorD7/Sign/StaticBody3D" unique_id=1396237806]
 shape = SubResource("ConvexPolygonShape3D_61fh0")
@@ -259,6 +324,7 @@ mesh = ExtResource("4_lmsxe")
 [node name="StaticBody3D" type="StaticBody3D" parent="CorridorD8/Sign" unique_id=1838199760]
 script = ExtResource("5_d7ubd")
 Nome = "Ler?"
+Owner = "Mario Gonzaga"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CorridorD8/Sign/StaticBody3D" unique_id=167254475]
 shape = SubResource("ConvexPolygonShape3D_ghf8p")

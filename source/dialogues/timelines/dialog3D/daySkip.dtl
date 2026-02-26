@@ -7,6 +7,9 @@ else:
 	set {GAME.dayPass} = false
 	[signal arg="dayCountIncrease"]
 	player: Finalmente em casa...
+	player: Que dia exaustivo hoje.
+	player: Espero que meu desempenho tenha sido agradável...
+	player: Melhor ir dormir,  terei mais afazeres no trabalho o dia todo.
 	leave player
 	[signal arg="dayPassSignal"]
 	[wait time="1.0"]

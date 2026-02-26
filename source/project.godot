@@ -22,6 +22,7 @@ GAME="*uid://bydxtt1h6f671"
 Data="*uid://rcvgswykc4fx"
 Enums="*uid://c5lj1agbxrkx2"
 Dialogic="*uid://ds2q0uclmolvu"
+AudioManager="*uid://b8smlncq2yuih"
 
 [dialogic]
 
@@ -105,8 +106,7 @@ extensions_folder="res://addons/dialogic_additions"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/mode=3
-window/stretch/mode="canvas_items"
+window/stretch/mode="viewport"
 mouse_cursor/custom_image="uid://cvbp055u81lha"
 mouse_cursor/custom_image_hotspot=Vector2(10, 0)
 

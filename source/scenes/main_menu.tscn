@@ -3,20 +3,70 @@
 [ext_resource type="Script" uid="uid://drag1sjumdgi7" path="res://scripts/main_menu.gd" id="1_ekxnf"]
 [ext_resource type="PackedScene" uid="uid://rjx1euem3aj7" path="res://scenes/office/OfficeMenu.tscn" id="2_bqqt6"]
 [ext_resource type="PackedScene" uid="uid://75o0x1mclj63" path="res://scenes/settings.tscn" id="2_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://csv3bdfcagtd3" path="res://assets/settingsPage.png" id="4_8ln24"]
+[ext_resource type="FontFile" uid="uid://calo25x5edlj" path="res://assets/fonts/Jacquard12-Regular.ttf" id="4_wu84c"]
 
 [sub_resource type="Animation" id="Animation_5p8wc"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:position")
+tracks/0/path = NodePath("SettingsPage:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0009999999),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(10, -742), Vector2(18, -709)]
+"values": [Vector2(288, 185)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../RichTextLabel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Jogar/RichTextLabel:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Options/RichTextLabel:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Fechar/RichTextLabel:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_ekxnf"]
@@ -24,20 +74,132 @@ resource_name = "fall"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:position")
+tracks/0/path = NodePath("SettingsPage:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.67, 0.98),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0.1, 1),
+"transitions": PackedFloat32Array(0.5, 0.5),
 "update": 0,
-"values": [Vector2(10, -742), Vector2(10, -49), Vector2(10, -21)]
+"values": [Vector2(960, 1460), Vector2(960, 540)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../RichTextLabel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(2, 2),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Jogar/RichTextLabel:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(2, 2),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Options/RichTextLabel:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(2, 2),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Fechar/RichTextLabel:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(2, 2),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_rtw2f"]
+resource_name = "fall_2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SettingsPage:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Vector2(960, 540), Vector2(960, 1460)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../RichTextLabel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 1),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Jogar/RichTextLabel:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1, 1),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Options/RichTextLabel:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.1, 1),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Fechar/RichTextLabel:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.1, 1),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6wm04"]
 _data = {
 &"RESET": SubResource("Animation_5p8wc"),
-&"fall": SubResource("Animation_ekxnf")
+&"fall": SubResource("Animation_ekxnf"),
+&"fall_2": SubResource("Animation_rtw2f")
 }
 
 [node name="main_menu" type="Control" unique_id=144060758]
@@ -62,36 +224,26 @@ render_target_update_mode = 4
 
 [node name="OfficeMenu" parent="SubViewportContainer/SubViewport" unique_id=410607449 instance=ExtResource("2_bqqt6")]
 
-[node name="settings" type="Control" parent="." unique_id=930456592]
-visible = false
-custom_minimum_size = Vector2(300, 300)
-layout_mode = 1
-anchors_preset = 0
-offset_left = 920.0
-offset_top = 361.0
-offset_right = 1442.0
-offset_bottom = 661.0
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1578724705]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 0.68235296)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="settings" unique_id=722218892]
-libraries/ = SubResource("AnimationLibrary_6wm04")
-
-[node name="ColorRect" type="ColorRect" parent="settings" unique_id=1901792251]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 10.0
-offset_top = -742.0
-offset_right = 10.0
-offset_bottom = -695.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.77254903, 0.77254903, 0.6862745, 1)
-
-[node name="settings" parent="settings/ColorRect" unique_id=395766283 instance=ExtResource("2_ekxnf")]
-layout_mode = 1
-grow_horizontal = 1
-grow_vertical = 1
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=968084772]
+clip_contents = false
+layout_mode = 0
+offset_left = 935.0
+offset_top = 136.0
+offset_right = 1830.0
+offset_bottom = 349.0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("4_wu84c")
+theme_override_font_sizes/normal_font_size = 212
+bbcode_enabled = true
+text = "[wave amp=90 freq=0.3]Veredictum"
+fit_content = true
+autowrap_mode = 0
 
 [node name="Jogar" type="Button" parent="." unique_id=466024853]
 layout_mode = 0
@@ -100,8 +252,20 @@ offset_top = 373.0
 offset_right = 403.0
 offset_bottom = 464.0
 theme_override_font_sizes/font_size = 60
-text = "Jogar"
 flat = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Jogar" unique_id=633866790]
+layout_mode = 0
+offset_right = 157.0
+offset_bottom = 91.0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 74
+bbcode_enabled = true
+text = "Jogar"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Options" type="Button" parent="." unique_id=1862329585]
 layout_mode = 0
@@ -110,8 +274,21 @@ offset_top = 467.0
 offset_right = 432.0
 offset_bottom = 558.0
 theme_override_font_sizes/font_size = 60
-text = "Opções"
 flat = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Options" unique_id=2016660922]
+clip_contents = false
+layout_mode = 0
+offset_right = 223.0
+offset_bottom = 91.0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 74
+bbcode_enabled = true
+text = "Opções"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Fechar" type="Button" parent="." unique_id=1682645718]
 layout_mode = 0
@@ -120,9 +297,67 @@ offset_top = 567.0
 offset_right = 436.0
 offset_bottom = 658.0
 theme_override_font_sizes/font_size = 60
-text = "Fechar"
 flat = true
 
+[node name="RichTextLabel" type="RichTextLabel" parent="Fechar" unique_id=542503118]
+layout_mode = 0
+offset_right = 223.0
+offset_bottom = 91.0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 74
+bbcode_enabled = true
+text = "Sair"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="settings" type="Control" parent="." unique_id=930456592]
+visible = false
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -547.0
+offset_right = 960.0
+offset_bottom = 535.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="settings" unique_id=722218892]
+libraries/ = SubResource("AnimationLibrary_6wm04")
+
+[node name="SettingsPage" type="Sprite2D" parent="settings" unique_id=1243360937]
+position = Vector2(288, 185)
+texture = ExtResource("4_8ln24")
+
+[node name="ColorRect" type="ColorRect" parent="settings/SettingsPage" unique_id=1901792251]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -291.77
+offset_top = -295.365
+offset_right = -1732.77
+offset_bottom = -724.98474
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.77254903, 0.77254903, 0.6862745, 1)
+
+[node name="settings" parent="settings/SettingsPage/ColorRect" unique_id=395766283 instance=ExtResource("2_ekxnf")]
+layout_mode = 1
+
+[connection signal="mouse_entered" from="Jogar" to="." method="_on_jogar_mouse_entered"]
+[connection signal="mouse_exited" from="Jogar" to="." method="_on_jogar_mouse_exited"]
 [connection signal="pressed" from="Jogar" to="." method="_on_jogar_pressed"]
+[connection signal="mouse_entered" from="Options" to="." method="_on_options_mouse_entered"]
+[connection signal="mouse_exited" from="Options" to="." method="_on_options_mouse_exited"]
 [connection signal="pressed" from="Options" to="." method="_on_options_pressed"]
+[connection signal="mouse_entered" from="Fechar" to="." method="_on_fechar_mouse_entered"]
+[connection signal="mouse_exited" from="Fechar" to="." method="_on_fechar_mouse_exited"]
 [connection signal="pressed" from="Fechar" to="." method="_on_fechar_pressed"]
+[connection signal="gui_input" from="settings" to="." method="_on_settings_gui_input"]
+[connection signal="focus_exited" from="settings/SettingsPage/ColorRect/settings" to="." method="_on_settings_focus_exited"]

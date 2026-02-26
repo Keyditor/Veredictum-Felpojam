@@ -445,6 +445,7 @@ shape = SubResource("CylinderShape3D_7172d")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=825026598]
 transform = Transform3D(2.005, 0, 0, 0, 2.83, 0, 0, 0, 2.005, 0, 3.065472, 0)
+cast_shadow = 0
 mesh = SubResource("CapsuleMesh_d5yd0")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1520136409]

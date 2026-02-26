@@ -46,4 +46,5 @@ func clockFormat(timeInSeconds: int): #Formata o tempo paara exibir no dialogo d
 
 func _on_dialogic_signal(arg):
 	if arg == "dayCountIncrease":
+		dayTimeTick = dayTimeStart
 		dayCount += 1

@@ -2,7 +2,7 @@ extends StaticBody3D
 
 @export var cena_2d: PackedScene
 @export var Nome : String
-@export var Dialogo : String
+@export var Owner : String
 #@onready var dTimer = $"../../Timer"
 
 # Called when the node enters the scene tree for the first time.
@@ -18,11 +18,15 @@ func _process(delta: float) -> void:
 
 func use(_use:bool = false):
 	if _use:
-		Dialogic.start(Dialogo)
+		if Owner == "Player":
+			Dialogic.VAR.ownerSign = GAME.playerName
+		else:
+			Dialogic.VAR.ownerSign = Owner
+		Dialogic.start("signDialog")
 	return ["none",cena_2d, "dialogo", Nome]
 	
 func _on_dialogic_signal(arg):
-	if arg == Dialogo:
+	if arg == Owner:
 		pass
 	pass
 	
