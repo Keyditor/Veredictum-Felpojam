@@ -12,9 +12,10 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 	
-func play_music(stream):
+func play_music(stream,loop:bool = false):
 	if BGM.stream == stream and BGM.playing: return
 	BGM.stream = stream
+	if loop: BGM.stream.loop = true
 	BGM.play()
 
 func play_effect(stream):

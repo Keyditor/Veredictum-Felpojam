@@ -4,7 +4,7 @@ extends Control
 @onready var animator = $settings/AnimationPlayer
 
 func _ready() -> void:
-	AudioManager.play_music(preload("res://audio/menu.ogg"))
+	AudioManager.play_music(preload("res://assets/Veredict_Solitude.mp3"),true)
 	$Jogar/RichTextLabel.text="Jogar"
 	$Options/RichTextLabel.text="Opções"
 	$Fechar/RichTextLabel.text="Sair"

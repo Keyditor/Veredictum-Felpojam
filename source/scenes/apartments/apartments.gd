@@ -3,6 +3,7 @@ extends Node3D
 var PLACEHOLDER = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	AudioManager.play_music(preload("res://assets/VS_gameplay.mp3"),true)
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	GAME.gameStart = true
 	if GAME.lastScene == "res://scenes/office/Office.tscn":

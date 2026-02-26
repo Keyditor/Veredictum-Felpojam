@@ -345,7 +345,7 @@ offset_right = -1732.77
 offset_bottom = -724.98474
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.77254903, 0.77254903, 0.6862745, 1)
+color = Color(0.77, 0.77, 0.6853, 0)
 
 [node name="settings" parent="settings/SettingsPage/ColorRect" unique_id=395766283 instance=ExtResource("2_ekxnf")]
 layout_mode = 1
