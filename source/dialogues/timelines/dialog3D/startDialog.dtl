@@ -3,7 +3,8 @@ set {GAME.on_2d} = true
 join player leftmost
 player: Minha cabeça... Dormi tão pouco por conta dessa ânsia...
 player: Vou me apressar, não posso me atrasar no primeiro dia!
+leave player
+[wait time="1.0"]
 set {GAME.on_dialog} = false
 set {GAME.on_2d} = false
-[wait time="1.0"]
 [signal arg="mouseGet"]

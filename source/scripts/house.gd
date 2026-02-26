@@ -10,7 +10,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	pass
 
 func use(_use:bool = false):
@@ -19,6 +19,6 @@ func use(_use:bool = false):
 	return ["work_table",cena_2d, "trazicao", Nome]
 	
 func _on_dialogic_signal(arg):
-	if arg == "exitOffice":
-		GAME.lastScene = "res://scenes/office/Office.tscn"
+	if arg == "daySkipSignal":
+		GAME.lastScene = "res://scenes/apartments/Apartments.tscn"
 		GAME.change_scene("res://scenes/apartments/Apartments.tscn")

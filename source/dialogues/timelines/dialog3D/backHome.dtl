@@ -4,5 +4,7 @@ join player leftmost
 player: Que dia exaustivo hoje.
 player: Espero que meu desempenho tenha sido agradável...
 player: Melhor ir dormir,  terei mais afazeres no trabalho o dia todo.
+leave player
+[wait time="1.0"]
 set {GAME.on_dialog} = false
 set {GAME.on_2d} = false

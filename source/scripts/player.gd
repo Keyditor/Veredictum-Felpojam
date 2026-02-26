@@ -8,6 +8,7 @@ extends CharacterBody3D
 @onready var fade_anim = $CanvasLayer/HUD/AnimationPlayer
 @onready var fade_rect = $CanvasLayer/HUD/ColorRect
 @onready var hud = $CanvasLayer/HUD
+#@onready var dTimer = $Timer
 var lastActionText = ""
 var timesUP = false
 
@@ -24,6 +25,8 @@ var look_dir: Vector2
 var camSense = 0.002
 
 func _ready() -> void:
+	fade_rect.modulate.a = 1.0
+	#dTimer.timeout.connect(_on_dTimer)
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	#set_process_unhandled_input(true)
 	fade_anim.play("fade_out")
@@ -36,7 +39,7 @@ func _ready() -> void:
 	actionText.visible_ratio = 0
 
 func _physics_process(delta: float) -> void:
-	debug.text = str(Dialogic.VAR.clockTime," ",GAME.dayCount)
+	debug.text = str(Dialogic.VAR.clockTime," ",GAME.dayCount," ",GAME.dayPass)
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -119,7 +122,7 @@ func _physics_process(delta: float) -> void:
 		
 	var input_dir := Input.get_vector("left", "right", "up", "down")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction and not GAME.on_2d:
+	if direction and not GAME.on_2d and not GAME.on_dialog:
 		if Input.is_action_pressed("run"):
 			var rSPEED = SPEED * RUN
 			velocity.x = direction.x * rSPEED
@@ -144,7 +147,7 @@ func _physics_process(delta: float) -> void:
 		t_bob = 0.0 
 	cam.transform.origin = cam.transform.origin.lerp(target_cam_pos, delta * 10.0)
 
-func open_overlay(id:String,packed_scene: PackedScene,_action_type = "cena"): #Instancia e torna a cena 2d visível
+func open_overlay(id:String,packed_scene: PackedScene,action_type = "cena"): #Instancia e torna a cena 2d visível
 	if not overlays.has(id):
 		if id == "work_table":
 			hud.visible = false
@@ -170,19 +173,26 @@ func close_overlay(id: String): #Torna a cena 2d invisivel
 	if id == "clock" :Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _on_dialogic_signal(arg):
+	if arg == "dayPassSignal":
+		if GAME.dayCount == 2:
+			fade_anim.play("day2")
+		elif GAME.dayCount == 3:
+			fade_anim.play("day3")
 	if arg == "mouseGet":
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		GAME.on_2d = false
 		GAME.on_dialog = false
-	if arg == "fadeIN":
-		#fade_rect.visible = true
-		fade_anim.play("fade_in")
+	if arg == "fadePass":
+		print("BTC")
+		fade_rect.visible = true
+		fade_anim.play("fadePass")
 		await fade_anim.animation_finished
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		#fade_rect.visible = false
-	elif arg == "fadeOUT":
-		#fade_rect.visible = true
-		fade_anim.play("fade_out")
+	elif arg == "fadeIN":
+		print("BTC")
+		fade_rect.visible = true
+		fade_anim.play("fade_in")
 		await fade_anim.animation_finished
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		#fade_rect.visible = false

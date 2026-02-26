@@ -30,7 +30,7 @@ func _process(_delta: float) -> void:
 
 
 
-func _on_stamp_body_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
+func _on_stamp_body_input_event(viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if event.pressed:
@@ -40,7 +40,7 @@ func _on_stamp_body_input_event(_viewport: Node, event: InputEvent, _shape_idx: 
 				is_holding = false
 			get_viewport().set_input_as_handled() # Impede que o sinal do click passe para outros elementos
 
-func _on_stamp_head_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
+func _on_stamp_head_input_event(viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if event.pressed and hited_object:
@@ -86,5 +86,5 @@ func _on_stamp_area_body_entered(body: Node2D) -> void:
 
 
 
-func _on_stamp_area_body_exited(_body: Node2D) -> void:
+func _on_stamp_area_body_exited(body: Node2D) -> void:
 	hited_object = Node2D.new()

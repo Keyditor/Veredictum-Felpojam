@@ -1,5 +1,6 @@
 set {GAME.on_dialog} = true
 set {GAME.on_2d} = true
+[wait time="3.0"]
 join player leftmost
 player: Meu segundo dia...
 player: Vou me apressar, não posso me atrasar.
