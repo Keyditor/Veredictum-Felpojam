@@ -34,6 +34,7 @@ directories/dtl_directory={
 "apartmentsExit": "res://dialogues/timelines/dialog3D/apartmentsExit.dtl",
 "backHome": "res://dialogues/timelines/dialog3D/backHome.dtl",
 "clock3dStart": "res://dialogues/timelines/dialog3D/clock3dStart.dtl",
+"daySkip": "res://dialogues/timelines/dialog3D/daySkip.dtl",
 "expedintEnd": "res://dialogues/timelines/dialog3D/expedintEnd.dtl",
 "intro": "res://dialogues/timelines/intro.dtl",
 "officeExit": "res://dialogues/timelines/dialog3D/officeExit.dtl",

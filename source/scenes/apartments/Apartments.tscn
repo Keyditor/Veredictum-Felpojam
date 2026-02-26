@@ -8,6 +8,7 @@
 [ext_resource type="ArrayMesh" uid="uid://vv56lsachbl5" path="res://assets/apartments/CorridorD4.vox" id="5_lmsxe"]
 [ext_resource type="ArrayMesh" uid="uid://d3pcl2vygpjdh" path="res://assets/apartments/CorridorD5.vox" id="6_d7ubd"]
 [ext_resource type="ArrayMesh" uid="uid://caend7777pmhp" path="res://assets/apartments/CorridorD6.vox" id="7_ihrv8"]
+[ext_resource type="Script" uid="uid://b1xj5t10umond" path="res://scripts/house.gd" id="7_uk0yu"]
 [ext_resource type="ArrayMesh" uid="uid://devcqisnvav5s" path="res://assets/apartments/CorridorD7.vox" id="8_q2i02"]
 [ext_resource type="ArrayMesh" uid="uid://b66ylmo51hfef" path="res://assets/apartments/CorridorD8.vox" id="9_53vvi"]
 [ext_resource type="ArrayMesh" uid="uid://bwt31wgihslto" path="res://assets/apartments/CorridorExit.vox" id="10_6wqgl"]
@@ -105,9 +106,10 @@ shape = SubResource("ConvexPolygonShape3D_uk0yu")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0354328, 0, -14.752758)
 mesh = ExtResource("5_lmsxe")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="CorridorD4" unique_id=1651677807]
+[node name="House" type="StaticBody3D" parent="CorridorD4" unique_id=1651677807]
+script = ExtResource("7_uk0yu")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CorridorD4/StaticBody3D" unique_id=806357059]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CorridorD4/House" unique_id=806357059]
 shape = SubResource("ConvexPolygonShape3D_lmsxe")
 
 [node name="CorridorD5" type="MeshInstance3D" parent="." unique_id=578355133]

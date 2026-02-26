@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bo7qmqc3imhj3"
-path="res://.godot/imported/linha.png-748d2baedfd34be65bfe415b0acb9473.ctex"
+path="res://.godot/imported/linha.png-1e961051d1775e795e4b8cad32d87278.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Letras da Logo/linha.png"
-dest_files=["res://.godot/imported/linha.png-748d2baedfd34be65bfe415b0acb9473.ctex"]
+source_file="res://assets/Letras_da_Logo/linha.png"
+dest_files=["res://.godot/imported/linha.png-1e961051d1775e795e4b8cad32d87278.ctex"]
 
 [params]
 

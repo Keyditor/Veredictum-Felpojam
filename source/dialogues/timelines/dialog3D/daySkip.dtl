@@ -1,0 +1,9 @@
+set {GAME.on_dialog} = true
+set {GAME.on_2d} = true
+join player leftmost
+if {GAME.dayStart} == false:
+	player: Não posso ficar em casa. Preciso do dinheiro desse emprego.
+else:
+	player: Finalmente em casa...
+set {GAME.on_dialog} = false
+set {GAME.on_2d} = false
