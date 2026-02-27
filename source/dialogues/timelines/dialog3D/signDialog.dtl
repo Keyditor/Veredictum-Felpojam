@@ -6,9 +6,9 @@ player: Ordem de despejo a pertences de [wave]{ownerSign}[/wave] em notório ób
 if {ownerSign} == {playerName}:
 	player: [tornado radius=10 freq=1 ]NOTÓRIO OBITO!?!?[/tornado]
 	player: Mas eu ainda estou...
+	[wait time="1.0"]
 	[signal arg="endGame"]
 	do GAME.change_scene("res://scenes/logos.tscn")
-	[wait time="1.0"]
 else:
 	player: [wave]{ownerSign}[/wave]...
 	player: Esse nome me parece familiar...

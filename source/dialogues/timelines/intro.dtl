@@ -14,20 +14,23 @@ leave player [animation="Slide To Left"]
 [signal arg="boss_stay_calm"]
 boss: Ah meu caro, não se preocupe.
 [signal arg="boss_index_finger"]
-boss: Vim aqui pessoalmente para lhe ajudar com isso!
+boss: Vim aqui pessoalmente para ajudar-te com isso!
 boss: Permita-me explicar qual o seu dever na nossa empresa.
-boss: Você está responsável por validar as encomendas que chegarão pela esteira a sua esquerda. Você rececberá uma variedade de itens e os colocará em um pacote. A sua função é determinar, quaisquer sejam os seus meios de dedução, o que deve ser entregue ou não.
+boss: Você está responsável por validar as encomendas que chegarão pela esteira a sua esquerda. Você rececberá uma variedade de itens e os colocará em um pacote ou envelope. A sua função é determinar, quaisquer sejam os seus meios de dedução, o que deve ser entregue ou não.
 [signal arg="boss_finger_tenting"]
 boss: Na sua mesa tens dois carimbos!
 boss: Um carimbo para [color=green][wave amp=90]Aprovar[/wave][/color], com ele você macará o pacote como aprovado para ser despachado.
 boss: E um carimbo de [color=red][wave amp=90]Reprovar[/wave][/color], que negará o despacho do pacote.
-boss: Após ter decidido qual carimbo usar, carimbe o pacote, colocando o carimbo em cima do mesmo e clicando e despache-o pela esteira a direita.
+boss: Para abrir ou fechar os pacotes e envelopes deves usar o [color=yellow][wave]botão esquerdo do mouse[/wave][/color] duas vezes!
+boss: Após ter decidido qual carimbo usar, carimbe o pacote, colocando o carimbo em cima do mesmo e clicando na parte redonda do carimbo. Após isso, despache-o pela esteira a direita.
+boss: Não esqueça de passar o carimbo na tinta equivalente, colocando-o em cima da tinta e usando o [color=yellow][wave]botão esquerdo do mouse[/wave][/color] na parte redonda do carimbo.
+boss: Mais uma coisa! Poderas ver mais informações sobre os pacotes e itens ao usar o [color=yellow][wave]botão direito do mouse[/wave][/color] em cima dos mesmos.
 [signal arg="boss_arms_crossed"]
 boss: Simples não? acredito que se sairá bem!
 join player leftmost [animation="Slide From Left"]
 player: Hmm... Eu não deveria ter algum método mais objetivo para decidir o que deve ser aprovado, além da minha dedução?
 leave player
-boss: Acredito que não será necessário! Eu [wave amp=2 freq=2]confio[/wave] na sua escolha.
+boss: Acredito que não será necessário! Eu [wave amp=50 freq=2]confio[/wave] na sua escolha.
 player: Certo...
 [signal arg="boss_pocket_watch"]
 boss: Bom, se você não possui mais dúvidas, retirar-me-ei! O tempo voa, não é mesmo?

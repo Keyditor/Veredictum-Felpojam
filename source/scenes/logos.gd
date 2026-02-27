@@ -7,7 +7,7 @@ func _ready() -> void:
 	if GAME.endGame:
 		print("CU")
 		creditos.play()
-		AudioManager.play_music("res://assets/Solitude1.mp3")
+		AudioManager.play_music(preload("res://assets/Solitude1.mp3"))
 	else:
 		print("CU2")
 		logos.play()
