@@ -28,7 +28,8 @@ AudioManager="*uid://b8smlncq2yuih"
 
 directories/dch_directory={
 "boss": "res://dialogues/characters/boss.dch",
-"player": "res://dialogues/characters/player.dch"
+"player": "res://dialogues/characters/player.dch",
+"prelude1": "res://dialogues/timelines/dialog3D/prelude1.dch"
 }
 directories/dtl_directory={
 "acabou_tinta": "res://dialogues/timelines/acabou_tinta.dtl",
@@ -42,6 +43,7 @@ directories/dtl_directory={
 "intro": "res://dialogues/timelines/intro.dtl",
 "molhar_com_cor_diferente": "res://dialogues/timelines/molhar_com_cor_diferente.dtl",
 "officeExit": "res://dialogues/timelines/dialog3D/officeExit.dtl",
+"prelude": "res://dialogues/timelines/dialog3D/prelude.dtl",
 "signDialog": "res://dialogues/timelines/dialog3D/signDialog.dtl",
 "startDialog": "res://dialogues/timelines/dialog3D/startDialog.dtl"
 }
@@ -51,10 +53,11 @@ layout/style_directory={
 layout/style_list=["res://dialogues/styles/visual_novel_style.tres"]
 layout/default_style=""
 variables={
-"NewVar": "",
 "clockState": "early",
 "clockTime": "08:00",
-"ownerSign": "none"
+"ownerSign": "none",
+"playerBirth": "",
+"playerName": ""
 }
 glossary/default_case_sensitive=true
 text/letter_speed=0.05

@@ -1,0 +1,12 @@
+join prelude1 center
+prelude1: Olhe, passei um bocado de tempo batendo de porta em porta, à cata de um serviço, mas a coisa andava difícil e trabalho que é bom, nada de aparecer.
+prelude1: Mas, enfim, arranjei um serviço. Agora creio que hei de pôr em ordem meus assuntos atrasados e cuidar do que ficou por acertar
+[background arg="res://assets/intro_1.png" fade="0.0"]
+prelude1: Agora só me falta preencher o papel da contratação e então tudo fica assentado.
+prelude1: Primeiro de tudo, tenho mesmo é de botar meu nome no papel, não é? Sem o nome da gente, nada fica valendo.
+[text_input text="Nome:" var="playerName" placeholder="Mateus" default="Mateus"]
+player: E agora é a vez de pôr a data em que nasci, o dia, o mês e o ano certinhos, pra não haver engano no registro.
+[text_input text="Data de Nascimento:" var="playerBirth" placeholder="DD/MM/AAA" default="19/05/1903"]
+[background arg="res://assets/intro_2.png" fade="0.0"]
+player: Agora sim, está tudo em ordem. Vou me deitar, que a noite já vai alta, e amanhã careço levantar bem cedo pra lida do dia.
+[signal arg="dayOne"]

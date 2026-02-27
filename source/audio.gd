@@ -12,6 +12,10 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 	
+
+func stop_music():
+	BGM.stop()
+
 func play_music(stream,loop:bool = false):
 	if BGM.stream == stream and BGM.playing: return
 	BGM.stream = stream

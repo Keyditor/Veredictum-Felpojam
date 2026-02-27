@@ -28,6 +28,24 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	for i in Data.sent_mail:
+		match i["name"]:
+			"Dulce Martins":
+				$CorridorD1/Sign.visible = true
+			"Vicente Fonseca":
+				$CorridorD2/Sign.visible = true
+			"João Brasil":
+				$CorridorD3/Sign.visible = true
+			"Odete Oliveira":
+				$CorridorD5/Sign.visible = true
+			"Benedito Dias":
+				$CorridorD6/Sign.visible = true
+			"Ignácio Américo":
+				$CorridorD7/Sign.visible = true
+			"Mario Gonzaga":
+				$CorridorD8/Sign.visible = true
+			GAME.playerName:
+				$CorridorD4/Sign.visible = true
 	if PLACEHOLDER:
 		$CorridorD1/Sign.visible = true
 	if PLACEHOLDER:
@@ -44,7 +62,6 @@ func _process(delta: float) -> void:
 		$CorridorD8/Sign.visible = true
 	if PLACEHOLDER:
 		$CorridorD4/Sign.visible = true
-	
 	pass
 
 func _on_dialogic_signal(arg):
@@ -53,7 +70,9 @@ func _on_dialogic_signal(arg):
 		Player.global_rotation_degrees = Vector3(0, 180, 0)
 		if GAME.dayCount == 2:
 			Dialogic.start("dayTwo")
+			AudioManager.stop_music()
 			AudioManager.play_music(preload("res://assets/VS_gameplay.mp3"),false)
 		elif GAME.dayCount == 3:
 			Dialogic.start("dayThree")
+			AudioManager.stop_music()
 			AudioManager.play_music(preload("res://assets/VS_gameplay.mp3"),false)

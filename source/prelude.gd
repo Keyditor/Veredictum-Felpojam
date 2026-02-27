@@ -1,11 +1,10 @@
-extends StaticBody3D
-
-@export var cena_2d: PackedScene
-@export var Nome : String
+extends Node2D
+@onready var anim = $AnimationPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Dialogic.signal_event.connect(_on_dialogic_signal)
+	Dialogic.start("prelude")
 	pass # Replace with function body.
 
 
@@ -13,15 +12,10 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func use(_use:bool = false):
-	if _use:
-		if GAME.dayCount == 3:
-			pass
-		else:
-			Dialogic.start("daySkip")
-	return ["work_table",cena_2d, "trazicao", Nome]
-	
 func _on_dialogic_signal(arg):
-	if arg == "daySkipSignal":
-		GAME.lastScene = "res://scenes/apartments/Apartments.tscn"
+	if arg == "dayOne":
+		GAME.playerName = Dialogic.VAR.playerName
+		GAME.playerBirth = Dialogic.VAR.playerBirth
+		anim.play("day1prelude")
+		await anim.animation_finished
 		GAME.change_scene("res://scenes/apartments/Apartments.tscn")

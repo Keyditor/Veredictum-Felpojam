@@ -1,7 +1,7 @@
 {
 "@path": "res://addons/dialogic/Resources/character.gd",
 "@subpath": NodePath(""),
-&"_translation_id": "13",
+&"_translation_id": "",
 &"color": Color(1, 1, 1, 1),
 &"custom_info": {
 "prefix": "",
@@ -10,16 +10,16 @@
 "style": "visual_novel_style",
 "suffix": ""
 },
-&"default_portrait": "idle",
+&"default_portrait": "New portrait",
 &"description": "",
-&"display_name": "{playerName}",
+&"display_name": "",
 &"mirror": false,
 &"nicknames": [""],
 &"offset": Vector2(0, 0),
 &"portraits": {
-"idle": {
+"New portrait": {
 "export_overrides": {
-"image": "\"res://assets/dialogue/portraits/protagonista_idle_face_scaled.png\""
+"image": ""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -27,5 +27,5 @@
 "scene": ""
 }
 },
-&"scale": 0.8
+&"scale": 1.0
 }

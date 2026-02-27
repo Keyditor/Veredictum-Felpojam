@@ -11,7 +11,7 @@ func _ready() -> void:
 	
 
 func _on_jogar_pressed() -> void:
-	GAME.change_scene("res://scenes/apartments/Apartments.tscn")
+	GAME.change_scene("res://scenes/prelude.tscn")
 	pass # Replace with function body.
 
 func _on_options_pressed() -> void:

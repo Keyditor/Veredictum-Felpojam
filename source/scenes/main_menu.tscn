@@ -224,6 +224,17 @@ render_target_update_mode = 4
 
 [node name="OfficeMenu" parent="SubViewportContainer/SubViewport" unique_id=410607449 instance=ExtResource("2_bqqt6")]
 
+[node name="CatsCoockies" type="RichTextLabel" parent="." unique_id=34323429]
+layout_mode = 0
+offset_left = 1526.0
+offset_top = 1039.0
+offset_right = 1910.0
+offset_bottom = 1079.0
+theme_override_font_sizes/normal_font_size = 31
+text = "Um jogo por Cats & Cookies | V 1.0"
+fit_content = true
+autowrap_mode = 0
+
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1578724705]
 layout_mode = 0
 offset_right = 1920.0
