@@ -2,9 +2,11 @@
 
 [ext_resource type="Script" uid="uid://bcku3fy8y6eoy" path="res://scripts/package.gd" id="1_116mb"]
 [ext_resource type="Texture2D" uid="uid://c455ue0qq7bg7" path="res://assets/mail/Caixas_separadas/caixa0.png" id="2_uyqbv"]
+[ext_resource type="Texture2D" uid="uid://bpq32qv1fpw54" path="res://assets/mail/Caixas_separadas/caixa1.png" id="3_wwprd"]
+[ext_resource type="Texture2D" uid="uid://cymn20u3eterx" path="res://assets/mail/Caixas_separadas/caixa2.png" id="4_s3y8c"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uyqbv"]
-size = Vector2(222, 156)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wwprd"]
+size = Vector2(232, 166)
 
 [sub_resource type="Animation" id="Animation_uyqbv"]
 length = 0.001
@@ -43,6 +45,50 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Area2D/Sprite2D:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_uyqbv")]
+}
+
+[sub_resource type="Animation" id="Animation_33hvh"]
+resource_name = "close_package"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area2D/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_uyqbv"), ExtResource("3_wwprd"), ExtResource("4_s3y8c")]
+}
+
+[sub_resource type="Animation" id="Animation_mhaf7"]
+resource_name = "open_package"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area2D/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("4_s3y8c"), ExtResource("3_wwprd"), ExtResource("2_uyqbv")]
 }
 
 [sub_resource type="Animation" id="Animation_wwprd"]
@@ -86,6 +132,32 @@ tracks/2/keys = {
 "method": &"queue_free"
 }]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Area2D/Sprite2D:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_s3y8c")]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"send_mail"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_imqj4"]
 resource_name = "pop_up"
@@ -114,6 +186,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(1e-05, 1e-05), Vector2(1, 1)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Area2D/Sprite2D:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_s3y8c")]
+}
 
 [sub_resource type="Animation" id="Animation_s3y8c"]
 resource_name = "put_inside"
@@ -134,6 +218,8 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wwprd"]
 _data = {
 &"RESET": SubResource("Animation_uyqbv"),
+&"close_package": SubResource("Animation_33hvh"),
+&"open_package": SubResource("Animation_mhaf7"),
 &"pop_out": SubResource("Animation_wwprd"),
 &"pop_up": SubResource("Animation_imqj4"),
 &"put_inside": SubResource("Animation_s3y8c")
@@ -143,7 +229,9 @@ _data = {
 self_modulate = Color(1, 1, 1, 0)
 texture_filter = 1
 scale = Vector2(1e-05, 1e-05)
+collision_mask = 25
 script = ExtResource("1_116mb")
+stamped = 2
 
 [node name="Area2D" type="Area2D" parent="." unique_id=771161108]
 z_index = 1
@@ -153,10 +241,11 @@ collision_mask = 3
 texture = ExtResource("2_uyqbv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1955260744]
-shape = SubResource("RectangleShape2D_uyqbv")
+shape = SubResource("RectangleShape2D_wwprd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=875741756]
-shape = SubResource("RectangleShape2D_uyqbv")
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_wwprd")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=67150515]
 libraries/ = SubResource("AnimationLibrary_wwprd")

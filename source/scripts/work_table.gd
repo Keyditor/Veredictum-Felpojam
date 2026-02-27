@@ -8,6 +8,11 @@ extends Node2D
 func _ready() -> void:
 	#get_tree().paused = false   # pausa o jogo 3D
 	Dialogic.signal_event.connect(on_dialogic_signal)
+	
+	if GAME.dayCount == 1:
+		animation_player.play("intro_cutscene")
+	else:
+		conveyor_desc.start_conveyor = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

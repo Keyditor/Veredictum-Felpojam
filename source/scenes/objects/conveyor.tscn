@@ -8,7 +8,7 @@ size = Vector2(222, 830)
 [node name="Conveyor" type="Area2D" unique_id=1039227752]
 collision_mask = 3
 script = ExtResource("1_ooh5n")
-time_gap = 20.0
+time_gap = 3.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1557683374]
 position = Vector2(-14, -67.5)

@@ -2,9 +2,14 @@ set {GAME.on_dialog} = true
 set {GAME.on_2d} = true
 join player leftmost
 if {GAME.dayStart} == true:
-	player: Não posso ir embora agora, /n ainda não acabou meu expediente.
+	player: Não posso sair agora.
+	Ainda estou no meu expediente.
 else:
-	player: Certo, hora de ir pra casa.
+	player: Certo, hora de ir para casa.
+	leave player
+	[wait time="1.0"]
+	[signal arg="fadeIN"]
+	set {GAME.dayPass} = true
 	[signal arg="exitOffice"]
 set {GAME.on_dialog} = false
 set {GAME.on_2d} = false

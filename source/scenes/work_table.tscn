@@ -11,7 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://c5whyik5rytbx" path="res://assets/esteira_animation/esteira animação4 - Copia.png" id="6_swmut"]
 [ext_resource type="Script" uid="uid://b1l7cf83ax6uy" path="res://scripts/camera.gd" id="7_7p044"]
 [ext_resource type="Script" uid="uid://buomknkwu85ph" path="res://scripts/information_canvas.gd" id="7_t5bnd"]
-[ext_resource type="Texture2D" uid="uid://cihctlmt35u3p" path="res://assets/work_tools/leitura_de_carta.png" id="12_x31l6"]
+[ext_resource type="PackedScene" uid="uid://db4v81ih6amoa" path="res://scenes/objects/ink.tscn" id="9_swmut"]
+[ext_resource type="Texture2D" uid="uid://bm03yyccayhyj" path="res://assets/work_tools/Detail_Dulce.png" id="13_swmut"]
 
 [sub_resource type="Gradient" id="Gradient_imci4"]
 offsets = PackedFloat32Array(1)
@@ -39,6 +40,9 @@ animations = [{
 "name": &"default",
 "speed": 4.0
 }]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_poale"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_imci4"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -77,7 +81,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1007, 646), Vector2(1007, 1375)]
+"values": [Vector2(44, 2), Vector2(44, 910)]
 }
 
 [sub_resource type="Animation" id="Animation_hg65r"]
@@ -93,7 +97,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1007, 1375), Vector2(1007, 646)]
+"values": [Vector2(44, 910), Vector2(44, 2)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gstpo"]
@@ -164,7 +168,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+"transitions": PackedFloat32Array(-2, -2),
 "update": 0,
 "values": [Vector2(953, 570), Vector2(2545, 570)]
 }
@@ -179,7 +183,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+"transitions": PackedFloat32Array(-2, -2),
 "update": 0,
 "values": [Vector2(2545, 570), Vector2(953, 570)]
 }
@@ -194,7 +198,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+"transitions": PackedFloat32Array(-2, -2),
 "update": 0,
 "values": [Vector2(2545, 570), Vector2(2545, -512)]
 }
@@ -206,7 +210,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+"transitions": PackedFloat32Array(-2, -2),
 "update": 0,
 "values": [Vector2(0, 1099), Vector2(0, 17)]
 }
@@ -218,7 +222,7 @@ tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+"transitions": PackedFloat32Array(-2, -2),
 "update": 0,
 "values": [Vector2(1307, 1521), Vector2(1307, 439)]
 }
@@ -230,7 +234,7 @@ tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+"transitions": PackedFloat32Array(-2, -2),
 "update": 0,
 "values": [Vector2(1144, 1517), Vector2(1144, 435)]
 }
@@ -245,7 +249,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+"transitions": PackedFloat32Array(-2, -2),
 "update": 0,
 "values": [Vector2(2545, -512), Vector2(2545, 570)]
 }
@@ -257,7 +261,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+"transitions": PackedFloat32Array(-2, -2),
 "update": 0,
 "values": [Vector2(0, 17), Vector2(0, 1099)]
 }
@@ -269,7 +273,7 @@ tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+"transitions": PackedFloat32Array(-2, -2),
 "update": 0,
 "values": [Vector2(1307, 439), Vector2(1307, 1521)]
 }
@@ -281,7 +285,7 @@ tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+"transitions": PackedFloat32Array(-2, -2),
 "update": 0,
 "values": [Vector2(1144, 435), Vector2(1144, 1517)]
 }
@@ -356,11 +360,19 @@ rotation = -0.31415927
 priority = -1
 
 [node name="Walls" type="StaticBody2D" parent="Table" unique_id=2042575324]
+collision_layer = 9
 collision_mask = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Table/Walls" unique_id=444381601]
 build_mode = 1
 polygon = PackedVector2Array(236, 79, -48, 919, 239, 1006, 262, 1025, 1649, 1022, 1670, 1002, 1947, 919, 1683, 77, 1412, 80, 1409, 321, 505, 321, 498, 77)
+
+[node name="GoodInk" parent="Table" unique_id=1870441268 instance=ExtResource("9_swmut")]
+position = Vector2(1312, 524)
+
+[node name="BadInk" parent="Table" unique_id=255325333 instance=ExtResource("9_swmut")]
+position = Vector2(1146, 524)
+ink_type = 1
 
 [node name="GoodStamp" parent="." unique_id=1567015258 instance=ExtResource("5_w7jxw")]
 position = Vector2(1307, 439)
@@ -394,16 +406,27 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -913.0
 offset_top = 295.0
-offset_right = -849.0
-offset_bottom = 359.0
+offset_right = 1007.0
+offset_bottom = 1383.0
 grow_horizontal = 0
 grow_vertical = 0
 mouse_filter = 0
+texture = ExtResource("13_swmut")
 
-[node name="LeituraDeCarta" type="Sprite2D" parent="InformationCanvas/Panel/TextureRect" unique_id=1389204170]
-texture_filter = 1
-scale = Vector2(6, 6)
-texture = ExtResource("12_x31l6")
+[node name="Panel" type="Panel" parent="InformationCanvas/Panel/TextureRect" unique_id=1703728892]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -332.0
+offset_top = -337.0
+offset_right = 251.0
+offset_bottom = 420.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_poale")
 
 [node name="Button" type="Button" parent="InformationCanvas/Panel" unique_id=53904760]
 layout_mode = 1
@@ -428,7 +451,7 @@ libraries/ = SubResource("AnimationLibrary_gstpo")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1385179545]
 libraries/ = SubResource("AnimationLibrary_swmut")
-autoplay = &"intro_cutscene"
 
 [connection signal="gui_input" from="InformationCanvas/Panel" to="InformationCanvas" method="_on_panel_gui_input"]
+[connection signal="gui_input" from="InformationCanvas/Panel/TextureRect" to="InformationCanvas" method="_on_texture_rect_gui_input"]
 [connection signal="button_down" from="InformationCanvas/Panel/Button" to="InformationCanvas" method="_on_button_button_down"]

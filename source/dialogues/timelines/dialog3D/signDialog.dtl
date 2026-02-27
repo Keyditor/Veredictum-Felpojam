@@ -1,0 +1,16 @@
+set {GAME.on_dialog} = true
+set {GAME.on_2d} = true
+join player leftmost [animation="Fade In Up" wait="true"]
+player: Na placa diz...
+player: Ordem de despejo a pertences de [wave]{ownerSign}[/wave] em notório óbito.
+if {ownerSign} == "GAME.playerName":
+	player: [tornado radius=10 freq=1 ]NOTÓRIO OBITO!?!?[/tornado]
+	player: Mas eu ainda estou...
+[signal arg="endGame"]
+else:
+	player: [wave]{ownerSign}[/wave]...
+	player: Esse nome me parece familiar...
+set {GAME.on_dialog} = false
+set {GAME.on_2d} = false
+[wait time="1.0"]
+[signal arg="mouseGet"]

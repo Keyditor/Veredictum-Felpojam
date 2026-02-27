@@ -22,6 +22,7 @@ GAME="*uid://bydxtt1h6f671"
 Data="*uid://rcvgswykc4fx"
 Enums="*uid://c5lj1agbxrkx2"
 Dialogic="*uid://ds2q0uclmolvu"
+AudioManager="*uid://b8smlncq2yuih"
 
 [dialogic]
 
@@ -30,12 +31,18 @@ directories/dch_directory={
 "player": "res://dialogues/characters/player.dch"
 }
 directories/dtl_directory={
+"acabou_tinta": "res://dialogues/timelines/acabou_tinta.dtl",
 "apartmentsExit": "res://dialogues/timelines/dialog3D/apartmentsExit.dtl",
 "backHome": "res://dialogues/timelines/dialog3D/backHome.dtl",
 "clock3dStart": "res://dialogues/timelines/dialog3D/clock3dStart.dtl",
+"daySkip": "res://dialogues/timelines/dialog3D/daySkip.dtl",
+"dayThree": "res://dialogues/timelines/dialog3D/dayThree.dtl",
+"dayTwo": "res://dialogues/timelines/dialog3D/dayTwo.dtl",
 "expedintEnd": "res://dialogues/timelines/dialog3D/expedintEnd.dtl",
 "intro": "res://dialogues/timelines/intro.dtl",
+"molhar_com_cor_diferente": "res://dialogues/timelines/molhar_com_cor_diferente.dtl",
 "officeExit": "res://dialogues/timelines/dialog3D/officeExit.dtl",
+"signDialog": "res://dialogues/timelines/dialog3D/signDialog.dtl",
 "startDialog": "res://dialogues/timelines/dialog3D/startDialog.dtl"
 }
 layout/style_directory={
@@ -46,7 +53,8 @@ layout/default_style=""
 variables={
 "NewVar": "",
 "clockState": "early",
-"clockTime": "08:00"
+"clockTime": "08:00",
+"ownerSign": "none"
 }
 glossary/default_case_sensitive=true
 text/letter_speed=0.05
@@ -98,8 +106,7 @@ extensions_folder="res://addons/dialogic_additions"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/mode=3
-window/stretch/mode="canvas_items"
+window/stretch/mode="viewport"
 mouse_cursor/custom_image="uid://cvbp055u81lha"
 mouse_cursor/custom_image_hotspot=Vector2(10, 0)
 
@@ -117,6 +124,10 @@ folder_colors={
 "res://scenes/": "purple",
 "res://scripts/": "red"
 }
+
+[gui]
+
+theme/custom_font="uid://b7m86sjwktnir"
 
 [input]
 

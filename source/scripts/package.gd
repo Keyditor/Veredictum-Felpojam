@@ -3,6 +3,7 @@ extends RigidBody2D
 var is_holding: bool = false
 var is_over_box: bool = false
 var grab_offset := Vector2.ZERO
+var is_open: bool = false
 
 var is_moving: bool = false
 var is_on_conveyor: bool = true
@@ -13,7 +14,8 @@ var initial_pos: Vector2
 var final_pos: Vector2
 
 @export var mails_within: Array = []
-@export var stamped: Enum.MailTypes
+@export var stamped: Enum.StampMarks
+@export var person_detail: Texture
 
 var conveyor_orientation: Enum.ConveyorOrientation
 
@@ -24,6 +26,7 @@ var conveyor_orientation: Enum.ConveyorOrientation
 
 
 var object
+var information_canvas
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -33,6 +36,7 @@ func _ready() -> void:
 	gravity_scale = 0
 	
 	animation_player.play("pop_up")
+	information_canvas = get_tree().get_nodes_in_group("work_table")[0].get_node("InformationCanvas")
 
 
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
@@ -51,7 +55,7 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 			state.linear_velocity = state.linear_velocity.normalized() * max_speed
 			
 		if global_position == final_pos and conveyor_orientation == Enum.ConveyorOrientation.Desc:
-				state.linear_velocity = Vector2.RIGHT * 3000
+				state.linear_velocity = Vector2.RIGHT * 5000
 
 func _physics_process(delta: float) -> void:
 	if is_moving:
@@ -69,16 +73,27 @@ func stop_moving():
 	is_moving = false
 	is_on_conveyor = false
 
+func send_mail():
+	Data.add_to_in_scene_mail(mails_within[0].sender_name, stamped)
+
+
+# Mostrar detalhes com cartas
+func show_information():
+	information_canvas.get_node("Panel/TextureRect").texture = person_detail
+	information_canvas.visible = true
+
+func hide_information():
+	information_canvas.visible = false
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:	
 	if global_position == final_pos and not is_holding:
 		if conveyor_orientation == Enum.ConveyorOrientation.Asc:
-			Data.add_to_in_scene_mail(mails_within)
 			animation_player.play("pop_out")
 	if is_on_conveyor:
 		is_moving = true
 	
-	if object:
+	if object and is_open:
 		if object.is_in_group("objects") and is_over_box and not object.is_holding:
 			mails_within.append(object.mail_info)
 			object.animation_player.play("pop_out")
@@ -87,6 +102,21 @@ func _process(_delta: float) -> void:
 			object.apply_outline()
 		elif object.is_in_group("objects"):
 			object.remove_outline()
+	
+	# Para que a caixa consiga empurrar os itens quando estiver fechada
+	if object:
+		if object.is_in_group("objects"):
+			if object.mail_info:
+				if object.mail_info.mail_type == Enum.MailTypes.Item:
+					if not is_open:
+						set_collision_mask_value(2, true)
+						if object:
+							object.set_collision_mask_value(1, true)
+					else:
+						set_collision_mask_value(2, false)
+						if object:
+							object.set_collision_mask_value(1, false)
+		
 
 
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
@@ -97,8 +127,18 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 				grab_offset = get_global_mouse_position() - global_position
 				is_moving = false
 				linear_velocity = Vector2.ZERO
+				
+				# Animação de fechar a caixa/pacote
+				if event.double_click:
+					if is_open:
+						animation_player.play("close_package")
+					else:
+						animation_player.play("open_package")
+					is_open = not is_open
 			else:
 				is_holding = false
+		if event.button_index == MOUSE_BUTTON_RIGHT:
+			show_information()
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
