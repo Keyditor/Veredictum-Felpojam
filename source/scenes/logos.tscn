@@ -1,17 +1,25 @@
 [gd_scene format=3 uid="uid://bcr44223f61qu"]
 
 [ext_resource type="Script" uid="uid://c2ojkrl5fwj3y" path="res://scenes/logos.gd" id="1_7ol10"]
+[ext_resource type="VideoStream" uid="uid://c50xcabsjyy2t" path="res://assets/credits/credits1.ogv" id="2_7ol10"]
 [ext_resource type="VideoStream" uid="uid://bvadxm3itgyxv" path="res://assets/credits/Logo.ogv" id="2_owjbv"]
 
 [node name="Node2D" type="Node2D" unique_id=115857872]
 script = ExtResource("1_7ol10")
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=753871195]
+[node name="logos" type="VideoStreamPlayer" parent="." unique_id=753871195]
 offset_right = 1920.0
 offset_bottom = 1080.0
 stream = ExtResource("2_owjbv")
-autoplay = true
 expand = true
 bus = &"Music"
 
-[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
+[node name="creditos" type="VideoStreamPlayer" parent="." unique_id=1271260537]
+offset_right = 1920.0
+offset_bottom = 1080.0
+stream = ExtResource("2_7ol10")
+expand = true
+bus = &"Music"
+
+[connection signal="finished" from="logos" to="." method="_on_logos_finished"]
+[connection signal="finished" from="creditos" to="." method="_on_creditos_finished"]

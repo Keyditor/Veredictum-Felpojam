@@ -6,7 +6,7 @@ var on_dialog_last = false
 var dayStart = false
 var dayTimeLimit = 1200 # Tempo limite do dia ( 1200 = 20:00 )
 var dayTimeStart = 480 # Tempo de inicio do dia ( 480 = 08:00 )
-var dayTimeSpeed = 12 # Velocidade de incremento do tempo ( 12 minutos no jogo passão em 1 segundo)
+var dayTimeSpeed = 2 # Velocidade de incremento do tempo ( 2 minutos no jogo passão em 1 segundo)
 var dayTimeTick = dayTimeStart
 var lastScene = "Start"
 var gameStart = false
@@ -14,6 +14,7 @@ var dayCount = 1
 var dayPass = false
 var playerName = ""
 var playerBirth = ""
+var endGame = false
 
 func change_scene(path:String):
 	get_tree().change_scene_to_file(path)
@@ -50,3 +51,5 @@ func _on_dialogic_signal(arg):
 	if arg == "dayCountIncrease":
 		dayTimeTick = dayTimeStart
 		dayCount += 1
+	if arg == "endGame":
+		endGame = true

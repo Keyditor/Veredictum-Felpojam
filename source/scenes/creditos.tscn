@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://c06koiaqw7etd"]
+
+[ext_resource type="Script" uid="uid://c2ojkrl5fwj3y" path="res://scenes/logos.gd" id="1_6yhot"]
+[ext_resource type="VideoStream" uid="uid://bvadxm3itgyxv" path="res://assets/credits/Logo.ogv" id="2_jddgq"]
+[ext_resource type="VideoStream" uid="uid://c50xcabsjyy2t" path="res://assets/credits/credits1.ogv" id="3_jddgq"]
+
+[node name="Node2D" type="Node2D" unique_id=115857872]
+script = ExtResource("1_6yhot")
+
+[node name="logos" type="VideoStreamPlayer" parent="." unique_id=753871195]
+offset_right = 1920.0
+offset_bottom = 1080.0
+stream = ExtResource("2_jddgq")
+autoplay = true
+expand = true
+bus = &"Music"
+
+[node name="creditos" type="VideoStreamPlayer" parent="." unique_id=1911197086]
+offset_right = 1920.0
+offset_bottom = 1080.0
+stream = ExtResource("3_jddgq")
+autoplay = true
+expand = true
+bus = &"Music"
+
+[connection signal="finished" from="logos" to="." method="_on_video_stream_player_finished"]
+[connection signal="finished" from="creditos" to="." method="_on_video_stream_player_finished"]

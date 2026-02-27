@@ -3,6 +3,16 @@ extends Node3D
 var PLACEHOLDER = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+
+	$CorridorD1/Sign.visible = false
+	$CorridorD2/Sign.visible = false
+	$CorridorD3/Sign.visible = false
+	$CorridorD5/Sign.visible = false
+	$CorridorD6/Sign.visible = false
+	$CorridorD7/Sign.visible = false
+	$CorridorD8/Sign.visible = false
+	$CorridorD4/Sign.visible = false
+
 	AudioManager.play_music(preload("res://assets/VS_gameplay.mp3"),false)
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	GAME.gameStart = true
@@ -31,36 +41,41 @@ func _process(delta: float) -> void:
 	for i in Data.sent_mail:
 		match i["name"]:
 			"Dulce Martins":
-				$CorridorD1/Sign.visible = true
+				if i["state"] == Enum.StampMarks.Good:
+					$CorridorD1/Sign.visible = true
+				else:
+					$CorridorD1/Sign.visible = false
 			"Vicente Fonseca":
-				$CorridorD2/Sign.visible = true
+				if i["state"] == Enum.StampMarks.Good:
+					$CorridorD2/Sign.visible = true
+				else:
+					$CorridorD2/Sign.visible = false
 			"João Brasil":
-				$CorridorD3/Sign.visible = true
+				if i["state"] == Enum.StampMarks.Good:
+					$CorridorD3/Sign.visible = true
+				else:
+					$CorridorD3/Sign.visible = false
 			"Odete Oliveira":
-				$CorridorD5/Sign.visible = true
+				if i["state"] == Enum.StampMarks.Good:
+					$CorridorD5/Sign.visible = true
+				else:
+					$CorridorD5/Sign.visible = false
 			"Benedito Dias":
-				$CorridorD6/Sign.visible = true
+				if i["state"] == Enum.StampMarks.Good:
+					$CorridorD6/Sign.visible = true
+				else:
+					$CorridorD6/Sign.visible = false
 			"Ignácio Américo":
-				$CorridorD7/Sign.visible = true
+				if i["state"] == Enum.StampMarks.Good:
+					$CorridorD7/Sign.visible = true
+				else:
+					$CorridorD7/Sign.visible = false
 			"Mario Gonzaga":
-				$CorridorD8/Sign.visible = true
-			GAME.playerName:
-				$CorridorD4/Sign.visible = true
-	if PLACEHOLDER:
-		$CorridorD1/Sign.visible = true
-	if PLACEHOLDER:
-		$CorridorD2/Sign.visible = true
-	if PLACEHOLDER:
-		$CorridorD3/Sign.visible = true
-	if PLACEHOLDER:
-		$CorridorD5/Sign.visible = true
-	if PLACEHOLDER:
-		$CorridorD6/Sign.visible = true
-	if PLACEHOLDER:
-		$CorridorD7/Sign.visible = true
-	if PLACEHOLDER:
-		$CorridorD8/Sign.visible = true
-	if PLACEHOLDER:
+				if i["state"] == Enum.StampMarks.Good:
+					$CorridorD8/Sign.visible = true
+				else:
+					$CorridorD8/Sign.visible = false
+	if GAME.dayCount == 3 and GAME.dayPass:
 		$CorridorD4/Sign.visible = true
 	pass
 
