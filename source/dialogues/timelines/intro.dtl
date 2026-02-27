@@ -24,7 +24,7 @@ boss: E um carimbo de [color=red][wave amp=90]Reprovar[/wave][/color], que negar
 boss: Para abrir ou fechar os pacotes e envelopes deves usar o [color=yellow][wave]botão esquerdo do mouse[/wave][/color] duas vezes!
 boss: Após ter decidido qual carimbo usar, carimbe o pacote, colocando o carimbo em cima do mesmo e clicando na parte redonda do carimbo. Após isso, despache-o pela esteira a direita.
 boss: Não esqueça de passar o carimbo na tinta equivalente, colocando-o em cima da tinta e usando o [color=yellow][wave]botão esquerdo do mouse[/wave][/color] na parte redonda do carimbo.
-boss: Mais uma coisa! Poderas ver mais informações sobre os pacotes e itens ao usar o [color=yellow][wave]botão direito do mouse[/wave][/color] em cima dos mesmos.
+boss: Mais uma coisa! Poderas ver mais informações sobre os pacotes ao usar o [color=yellow][wave]botão direito do mouse[/wave][/color] em cima dos mesmos. E caso queira se levantar um pouco, basta afastar a cadeira para trás com [color=yellow][wave]tecla S[/wave][/color].
 [signal arg="boss_arms_crossed"]
 boss: Simples não? acredito que se sairá bem!
 join player leftmost [animation="Slide From Left"]

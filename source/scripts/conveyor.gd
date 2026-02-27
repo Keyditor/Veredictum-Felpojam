@@ -23,7 +23,7 @@ func _ready() -> void:
 			Data.person_count = 3
 			limiter = 6
 		3: 
-			Data.person_count = 7
+			Data.person_count = 6
 			limiter = 9
 
 

@@ -9,6 +9,7 @@ extends CharacterBody3D
 @onready var fade_rect = $CanvasLayer/HUD/ColorRect
 @onready var hud = $CanvasLayer/HUD
 #@onready var dTimer = $Timer
+var expEnd = false
 var lastActionText = ""
 var timesUP = false
 
@@ -40,6 +41,12 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	debug.text = str(Dialogic.VAR.clockTime," ",GAME.dayCount," ",GAME.dayPass)
+	if GAME.dayTimeTick >= GAME.dayTimeLimit and not expEnd:
+		if overlays.has("work_table"):
+			close_overlay("work_table")
+		Dialogic.start("expedientEnd")
+		expEnd = true
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
