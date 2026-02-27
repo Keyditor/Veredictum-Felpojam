@@ -1,0 +1,12 @@
+Em nosso jogo foram utilizadas 2 fonts open source da livraria de fonts open source do Google.
+
+São elas:
+jacquard 12 - https://github.com/scfried/soft-type-jacquard
+jersey 15 - https://github.com/scfried/soft-type-jersey
+
+Seus respectivos arquivos de licença estão na pasta /source/assets/fonts junto aos arquipos .ttf das fonts.
+
+Foram também utilizados dois plugins para o Godot sendo eles:
+
+Dialogic - https://github.com/dialogic-godot/dialogic
+MagicaVoxel Importer with extensions++ - https://godotengine.org/asset-library/asset/1580

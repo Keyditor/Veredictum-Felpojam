@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Felporimbo"
-run/main_scene="uid://ddv4vc2m8hsmj"
+run/main_scene="uid://bcr44223f61qu"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 <<<<<<<Updatedupstreamrun/main_scene="uid://bbu80t1tk5ch"
