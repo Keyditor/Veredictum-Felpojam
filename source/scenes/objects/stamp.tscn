@@ -75,6 +75,7 @@ stream = ExtResource("3_lrdi1")
 
 [node name="carimbo_pesado" type="AudioStreamPlayer2D" parent="." unique_id=1117815398]
 stream = ExtResource("4_gaoin")
+volume_db = 1.0
 
 [connection signal="input_event" from="StampBody" to="." method="_on_stamp_body_input_event"]
 [connection signal="input_event" from="StampButton" to="." method="_on_stamp_head_input_event"]
