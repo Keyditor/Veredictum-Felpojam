@@ -15,7 +15,7 @@ var limiter
 func _ready() -> void:
 	spawn_point = asc_marker.global_position
 	
-	match 2:
+	match GAME.dayCount:
 		1:
 			Data.person_count = 0
 			limiter = 3
