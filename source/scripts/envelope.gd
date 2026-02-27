@@ -79,7 +79,7 @@ func show_information():
 	information_canvas.visible = true
 
 func send_mail():
-	if mails_within[0]:
+	if mails_within.size()>0:
 		Data.add_to_in_scene_mail(mails_within[0].sender_name, stamped)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
