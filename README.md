@@ -1,7 +1,7 @@
 # Veredictum
 
 **Veredictum** é um jogo criado para a FelpoJam usando o Godot Engine.  
-Desenvolvido com foco em criatividade, diversão e entrega rápida, o jogo apresenta mecânicas inspiradas e únicas dentro do tema da jam.
+Desenvolvido com foco em criatividade, diversão e entrega rápida, o jogo apresenta mecânicas inspiradas dentro do tema da jam.
 
 ---
 
