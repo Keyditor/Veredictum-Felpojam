@@ -6,8 +6,12 @@ var ink_count: int
 
 @export var stamp_mark_kind: Enum.StampMarks
 
+@onready var carimbo_leve=$carimbo_leve
+@onready var carimbo_pesado=$carimbo_pesado
 @onready var good_stamp: Sprite2D = $GoodStamp
 @onready var bad_stamp: Sprite2D = $BadStamp
+
+
 
 var stamp_mark_load
 
@@ -70,6 +74,7 @@ func set_stamp_mark(mark: Node2D, parent_object: Node2D, pos: Vector2, StampMark
 		
 		# Diminuir a quantidade de tinta no carimbo
 		ink_count -= 1
+		carimbo_pesado.play()
 	
 	elif parent_object.is_in_group("mails") and ink_count <= 0:
 		# Pequeno diálogo para ajudar o jogador a entender que deve sempre recarregar de tinta
@@ -79,6 +84,7 @@ func set_stamp_mark(mark: Node2D, parent_object: Node2D, pos: Vector2, StampMark
 		print("Ink object")
 		if parent_object.ink_type == stamp_mark_kind:
 			ink_count = 3
+			carimbo_leve.play()
 			print("Molhou de tinta! Pronto pra ser usado mais 3 vezes")
 		else:
 			Dialogic.start("molhar_com_cor_diferente")
