@@ -6,6 +6,8 @@ jersey 15 - https://github.com/scfried/soft-type-jersey
 
 Seus respectivos arquivos de licença estão na pasta /source/assets/fonts junto aos arquipos .ttf das fonts.
 
+Foram usados SFX CC0 para os carimbos providos por Kenney (www.kenney.nl) arquivo de licença em /source/assets/sfx
+
 Foram também utilizados dois plugins para o Godot sendo eles:
 
 Dialogic - https://github.com/dialogic-godot/dialogic
