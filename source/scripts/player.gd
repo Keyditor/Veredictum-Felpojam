@@ -71,7 +71,7 @@ func _physics_process(delta: float) -> void:
 	if target and !GAME.on_2d:
 		if target.has_method("use"):
 			var result = target.use(false)
-			actionText.text = result[3]
+			actionText.text = str(result[3]," [E]")
 			lastActionText = actionText.text
 			var i = 0
 			while i < str(actionText).length():

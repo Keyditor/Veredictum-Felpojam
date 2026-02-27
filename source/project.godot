@@ -39,6 +39,7 @@ directories/dtl_directory={
 "daySkip": "res://dialogues/timelines/dialog3D/daySkip.dtl",
 "dayThree": "res://dialogues/timelines/dialog3D/dayThree.dtl",
 "dayTwo": "res://dialogues/timelines/dialog3D/dayTwo.dtl",
+"endDay": "res://dialogues/timelines/dialog3D/endDay.dtl",
 "expedintEnd": "res://dialogues/timelines/dialog3D/expedintEnd.dtl",
 "intro": "res://dialogues/timelines/intro.dtl",
 "molhar_com_cor_diferente": "res://dialogues/timelines/molhar_com_cor_diferente.dtl",

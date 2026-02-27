@@ -1,0 +1,6 @@
+set {GAME.on_dialog} = true
+set {GAME.on_2d} = true
+join player leftmost
+player: Minha porta não quer abrir... E colocaram uma placa pendurada? O que está acontecendo?
+set {GAME.on_dialog} = false
+set {GAME.on_2d} = false

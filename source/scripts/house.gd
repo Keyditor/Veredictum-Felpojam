@@ -16,6 +16,7 @@ func _process(delta: float) -> void:
 func use(_use:bool = false):
 	if _use:
 		if GAME.dayCount == 3:
+			Dialogic.start("endDay")
 			pass
 		else:
 			Dialogic.start("daySkip")

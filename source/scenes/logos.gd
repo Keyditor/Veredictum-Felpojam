@@ -5,11 +5,11 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if GAME.endGame:
-		print("CU")
+		#print("CU")
 		creditos.play()
 		AudioManager.play_music(preload("res://assets/Solitude1.mp3"))
 	else:
-		print("CU2")
+		#print("CU2")
 		logos.play()
 
 
