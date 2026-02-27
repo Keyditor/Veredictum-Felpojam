@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="MailItem" format=3 uid="uid://7kxd17rg5rur"]
+
+[ext_resource type="Script" uid="uid://kejexgcvkqyk" path="res://resources/mail_item.gd" id="2_utsvn"]
+[ext_resource type="Texture2D" uid="uid://b5r8grqsdw5xp" path="res://assets/mail/carta_aberta.png" id="3_8bgi8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yvqck"]
+size = Vector2(147, 146)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_31shh"]
+load_path = "res://.godot/imported/Odetes_Letter.png-273b994febeca90b0dd508e0f8bb11a8.ctex"
+
+[resource]
+script = ExtResource("2_utsvn")
+mail_type = 1
+sender_name = "Odete Oliveira"
+receiver_name = "Mãe"
+texture = ExtResource("3_8bgi8")
+collider_shape = SubResource("RectangleShape2D_yvqck")
+info = SubResource("CompressedTexture2D_31shh")
+metadata/_custom_type_script = "uid://kejexgcvkqyk"

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="MailItem" format=3 uid="uid://btgtnv8usfigo"]
+
+[ext_resource type="Script" uid="uid://kejexgcvkqyk" path="res://resources/mail_item.gd" id="1_jcdt8"]
+[ext_resource type="Texture2D" uid="uid://dsbv4dn6coey4" path="res://assets/mail/par_de_sapatos.png" id="2_t4csi"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b613k"]
+radius = 57.0
+height = 178.0
+
+[resource]
+script = ExtResource("1_jcdt8")
+mail_type = 2
+sender_name = "Odete Oliveira"
+receiver_name = "Mãe"
+texture = ExtResource("2_t4csi")
+collider_position = Vector2(0, 12)
+collider_shape = SubResource("CapsuleShape2D_b613k")
+rotation = 1.5707964
+metadata/_custom_type_script = "uid://kejexgcvkqyk"

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="MailItem" format=3 uid="uid://os04rfn8qs08"]
+
+[ext_resource type="Script" uid="uid://kejexgcvkqyk" path="res://resources/mail_item.gd" id="1_n6ckp"]
+[ext_resource type="Texture2D" uid="uid://46vdbedypre4" path="res://assets/mail/vinho.png" id="2_3gq03"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b613k"]
+size = Vector2(55, 153.25002)
+
+[resource]
+script = ExtResource("1_n6ckp")
+mail_type = 2
+sender_name = "Antônio Menezes"
+texture = ExtResource("2_3gq03")
+collider_position = Vector2(0, 3.6249998)
+collider_shape = SubResource("RectangleShape2D_b613k")
+metadata/_custom_type_script = "uid://kejexgcvkqyk"

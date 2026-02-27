@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="MailItem" format=3 uid="uid://cws38uo1vgw7e"]
+
+[ext_resource type="Script" uid="uid://kejexgcvkqyk" path="res://resources/mail_item.gd" id="1_cjxhf"]
+[ext_resource type="Texture2D" uid="uid://47xxxfigqb36" path="res://assets/mail/tenaz.png" id="2_hdd4n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dpo5u"]
+size = Vector2(77, 167.00002)
+
+[resource]
+script = ExtResource("1_cjxhf")
+mail_type = 2
+sender_name = "Vicente Fonseca"
+receiver_name = "Januário"
+texture = ExtResource("2_hdd4n")
+collider_shape = SubResource("RectangleShape2D_dpo5u")
+metadata/_custom_type_script = "uid://kejexgcvkqyk"

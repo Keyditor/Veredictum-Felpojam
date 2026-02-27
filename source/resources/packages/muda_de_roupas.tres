@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="MailItem" format=3 uid="uid://0v08mmyt47h5"]
+
+[ext_resource type="Script" uid="uid://kejexgcvkqyk" path="res://resources/mail_item.gd" id="1_i4qul"]
+[ext_resource type="Texture2D" uid="uid://br6nwea2b45sh" path="res://assets/mail/muda_de_roupa.png" id="2_5t0u6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fd6jj"]
+size = Vector2(161, 81.00001)
+
+[resource]
+script = ExtResource("1_i4qul")
+mail_type = 2
+sender_name = "Vicente Fonseca"
+receiver_name = "Januário"
+texture = ExtResource("2_5t0u6")
+collider_shape = SubResource("RectangleShape2D_fd6jj")
+metadata/_custom_type_script = "uid://kejexgcvkqyk"

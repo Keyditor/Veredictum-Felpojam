@@ -16,11 +16,64 @@ const nights = [
 	},
 	{
 		"Mail": [
+			"res://resources/packages/tenaz.tres", 
+			"res://resources/packages/muda_de_roupas.tres",
+			"res://resources/Letters/letter_vicente.tres",
+			"res://scenes/objects/envelope.tscn",
+			"res://scenes/objects/package.tscn"
+		],
+		"person_detail": "res://assets/work_tools/Detail_Vicente.png"
+	},
+	{
+		"Mail": [
+			"res://resources/packages/vinho.tres",
+			"res://scenes/objects/package.tscn"
+		],
+		"person_detail": "res://assets/work_tools/Detail_Antonio.png"
+	},
+	{
+		"Mail": [
+			"res://resources/Letters/letter_odete.tres",
+			"res://resources/packages/par_de_sapatos.tres",
+			"res://scenes/objects/envelope.tscn",
+			"res://scenes/objects/package.tscn"
+		],
+		"person_detail": "res://assets/work_tools/Detail_Odete.png"
+	},
+	{
+		"Mail": [
+			"res://resources/packages/martelo.tres",
 			"res://resources/packages/caixa_pregos.tres",
+			"res://resources/Letters/letter_brasil.tres",
+			"res://scenes/objects/envelope.tscn",
+			"res://scenes/objects/package.tscn"
+		],
+		"person_detail": "res://assets/work_tools/Detail_Brasil.png"
+	},
+	{
+		"Mail": [
+			"res://resources/packages/formao.tres",
 			"res://resources/packages/cavalo_madeira.tres",
 			"res://scenes/objects/package.tscn"
 		],
-		"person_detail": "res://assets/work_tools/Detail_Dulce.png"
+		"person_detail": "res://assets/work_tools/Detail_Mario.png"
+	},
+	{
+		"Mail": [
+			"res://resources/packages/par_de_gazuas.tres",
+			"res://resources/packages/colar_joias.tres",
+			"res://resources/Letters/letter_benedito.tres",
+			"res://scenes/objects/envelope.tscn",
+			"res://scenes/objects/package.tscn"
+		],
+		"person_detail": "res://assets/work_tools/Detail_Benedito.png"
+	},
+	{
+		"Mail": [
+			"res://resources/packages/kit_medico.tres",
+			"res://scenes/objects/package.tscn"
+		],
+		"person_detail": "res://assets/work_tools/Detail_Ignacio.png"
 	}
 ]
 

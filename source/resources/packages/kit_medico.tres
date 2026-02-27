@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="MailItem" format=3 uid="uid://w08ss4jkqald"]
+
+[ext_resource type="Script" uid="uid://kejexgcvkqyk" path="res://resources/mail_item.gd" id="1_6hjpf"]
+[ext_resource type="Texture2D" uid="uid://dx1npn7ebecyc" path="res://assets/mail/kit_medico.png" id="2_3ekju"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b613k"]
+radius = 70.0
+height = 187.99928
+
+[resource]
+script = ExtResource("1_6hjpf")
+sender_name = "Ignácio Américo"
+texture = ExtResource("2_3ekju")
+collider_shape = SubResource("CapsuleShape2D_b613k")
+skew = 0.61086524
+metadata/_custom_type_script = "uid://kejexgcvkqyk"

@@ -1,11 +1,13 @@
 [gd_resource type="Resource" script_class="MailItem" format=3 uid="uid://drjbof1tvyrib"]
 
-[ext_resource type="Texture2D" uid="uid://bm03yyccayhyj" path="res://assets/work_tools/Detail_Dulce.png" id="1_7xjh5"]
 [ext_resource type="Script" uid="uid://kejexgcvkqyk" path="res://resources/mail_item.gd" id="1_m57c6"]
 [ext_resource type="Texture2D" uid="uid://b5r8grqsdw5xp" path="res://assets/mail/carta_aberta.png" id="3_7xjh5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yvqck"]
 size = Vector2(147, 146)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lgok5"]
+load_path = "res://.godot/imported/Dulces_Letter.png-0a73d9c9f54250daae8a68d9671d332f.ctex"
 
 [resource]
 script = ExtResource("1_m57c6")
@@ -14,5 +16,5 @@ sender_name = "Dulce Martins"
 receiver_name = "Bento"
 texture = ExtResource("3_7xjh5")
 collider_shape = SubResource("RectangleShape2D_yvqck")
-info = ExtResource("1_7xjh5")
+info = SubResource("CompressedTexture2D_lgok5")
 metadata/_custom_type_script = "uid://kejexgcvkqyk"

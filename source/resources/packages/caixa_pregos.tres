@@ -1,6 +1,5 @@
 [gd_resource type="Resource" script_class="MailItem" format=3 uid="uid://c6wxfop367lmb"]
 
-[ext_resource type="Texture2D" uid="uid://qxcu0teixdn1" path="res://assets/paleta_dois.png" id="1_el7op"]
 [ext_resource type="Script" uid="uid://kejexgcvkqyk" path="res://resources/mail_item.gd" id="2_6c4g3"]
 [ext_resource type="Texture2D" uid="uid://cuf8yubhbfv4d" path="res://assets/mail/caixa_de_pregos.png" id="3_el7op"]
 
@@ -11,12 +10,10 @@ height = 140.0
 [resource]
 script = ExtResource("2_6c4g3")
 mail_type = 2
-sender_name = "Antônio"
-receiver_name = "Eduarda LIma"
+sender_name = "João Brasil"
 texture = ExtResource("3_el7op")
 collider_position = Vector2(0.99999976, 2.0000005)
 collider_shape = SubResource("CapsuleShape2D_b613k")
 skew = 0.69115037
 scale = Vector2(1.015, 1.015)
-info = ExtResource("1_el7op")
 metadata/_custom_type_script = "uid://kejexgcvkqyk"

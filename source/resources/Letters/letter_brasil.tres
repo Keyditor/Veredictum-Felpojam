@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="MailItem" format=3 uid="uid://dmdg87q66xseq"]
+
+[ext_resource type="Script" uid="uid://kejexgcvkqyk" path="res://resources/mail_item.gd" id="2_qv6uf"]
+[ext_resource type="Texture2D" uid="uid://b5r8grqsdw5xp" path="res://assets/mail/carta_aberta.png" id="3_qphsi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yvqck"]
+size = Vector2(147, 146)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_abfbi"]
+load_path = "res://.godot/imported/Brasils_Letter.png-d9985cdb974c2bc668c9948e8b245fee.ctex"
+
+[resource]
+script = ExtResource("2_qv6uf")
+mail_type = 1
+sender_name = "João Brasil"
+texture = ExtResource("3_qphsi")
+collider_shape = SubResource("RectangleShape2D_yvqck")
+info = SubResource("CompressedTexture2D_abfbi")
+metadata/_custom_type_script = "uid://kejexgcvkqyk"

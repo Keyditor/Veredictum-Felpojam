@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="MailItem" format=3 uid="uid://bx82qgnfoxrbo"]
+
+[ext_resource type="Script" uid="uid://kejexgcvkqyk" path="res://resources/mail_item.gd" id="1_5ubru"]
+[ext_resource type="Texture2D" uid="uid://b5r8grqsdw5xp" path="res://assets/mail/carta_aberta.png" id="2_2ntkw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yvqck"]
+size = Vector2(147, 146)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5ubru"]
+load_path = "res://.godot/imported/Benedito_Letter.png-c5471de607ae439516ddb4a122fdaeb8.ctex"
+
+[resource]
+script = ExtResource("1_5ubru")
+mail_type = 1
+sender_name = "Benedito Dias"
+texture = ExtResource("2_2ntkw")
+collider_shape = SubResource("RectangleShape2D_yvqck")
+info = SubResource("CompressedTexture2D_5ubru")
+metadata/_custom_type_script = "uid://kejexgcvkqyk"

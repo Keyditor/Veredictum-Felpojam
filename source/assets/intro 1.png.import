@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsbv4dn6coey4"
-path="res://.godot/imported/par de sapatos.png-6235b7bf8dd27c64fc2b8413acc3461d.ctex"
+uid="uid://dyt1s8bryavwc"
+path="res://.godot/imported/intro 1.png-7f8278c5bb4330c2453976625bea9913.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/mail/par de sapatos.png"
-dest_files=["res://.godot/imported/par de sapatos.png-6235b7bf8dd27c64fc2b8413acc3461d.ctex"]
+source_file="res://assets/intro 1.png"
+dest_files=["res://.godot/imported/intro 1.png-7f8278c5bb4330c2453976625bea9913.ctex"]
 
 [params]
 
