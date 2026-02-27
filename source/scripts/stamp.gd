@@ -74,6 +74,7 @@ func set_stamp_mark(mark: Node2D, parent_object: Node2D, pos: Vector2, StampMark
 		
 		# Diminuir a quantidade de tinta no carimbo
 		ink_count -= 1
+		carimbo_pesado.volume_linear=2
 		carimbo_pesado.play()
 	
 	elif parent_object.is_in_group("mails") and ink_count <= 0:
@@ -84,6 +85,7 @@ func set_stamp_mark(mark: Node2D, parent_object: Node2D, pos: Vector2, StampMark
 		print("Ink object")
 		if parent_object.ink_type == stamp_mark_kind:
 			ink_count = 3
+			carimbo_leve.volume_linear=2
 			carimbo_leve.play()
 			print("Molhou de tinta! Pronto pra ser usado mais 3 vezes")
 		else:

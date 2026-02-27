@@ -72,10 +72,11 @@ region_rect = Rect2(37, 3, 14, 17)
 
 [node name="carimbo_leve" type="AudioStreamPlayer2D" parent="." unique_id=1617056399]
 stream = ExtResource("3_lrdi1")
+bus = &"Sounds"
 
 [node name="carimbo_pesado" type="AudioStreamPlayer2D" parent="." unique_id=1117815398]
 stream = ExtResource("4_gaoin")
-volume_db = 1.0
+bus = &"Sounds"
 
 [connection signal="input_event" from="StampBody" to="." method="_on_stamp_body_input_event"]
 [connection signal="input_event" from="StampButton" to="." method="_on_stamp_head_input_event"]
