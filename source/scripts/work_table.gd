@@ -4,20 +4,24 @@ extends Node2D
 @onready var boss: Node2D = $Boss
 @onready var conveyor_desc: Area2D = $Table/Conveyors/Conveyor
 
+var local_person_count: int
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#get_tree().paused = false   # pausa o jogo 3D
 	Dialogic.signal_event.connect(on_dialogic_signal)
 	
-	if GAME.dayCount == 1:
+	# Aqui tá funcionando todas as outras pessoas do jogo:
+	if Data.person_count == 0:
 		animation_player.play("intro_cutscene")
-	else:
+	else: 
 		conveyor_desc.start_conveyor = true
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-		pass
+	pass
+
+func turn_off_conveyor():
+	conveyor_desc.start_conveyor = false
 
 func play_animation(animation_name: String):
 	animation_player.play(animation_name)

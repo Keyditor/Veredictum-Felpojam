@@ -5,6 +5,8 @@ const StampsMarks = {
 	Enum.StampMarks.Bad: "res://scenes/objects/stamp_marks/bad_stamp_mark.tscn"
 }
 
+var person_count: int = 0
+
 # Em cada posição desse array ficam as noites, dentro fica as correspondências e cada correspondência aponta para um resource específico. 
 const nights = [
 	{
@@ -79,9 +81,12 @@ const nights = [
 
 var sent_mail = []
 
+var has_spawning_started: bool = false
+
 # Função que spawna as correspondências na esteira
 func spawn_mail(night_index: int, spawn_point: Vector2, spawn_gap_time: float):
 	var first = true
+	has_spawning_started = true
 	for mail in nights[night_index]["Mail"]:
 		# Para que ele tenha um delay mais curto na primeira iteração
 		if first:
@@ -100,7 +105,8 @@ func spawn_mail(night_index: int, spawn_point: Vector2, spawn_gap_time: float):
 				print(mail)
 				# criação em si da correspondência
 				create_mail_object(mail, spawn_point, spawn_gap_time)
-		
+	person_count += 1
+
 func create_mail_object(resource: String, spawn_point: Vector2, spawn_gap_time: float):
 	# lógica para spawnar as correspondências
 	
