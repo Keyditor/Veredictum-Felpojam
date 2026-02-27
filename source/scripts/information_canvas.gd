@@ -22,6 +22,8 @@ func _process(delta: float) -> void:
 func _on_button_button_down() -> void:
 	canvas_animation_player.play("hide_information")
 	await canvas_animation_player.animation_finished
+	canvas_animation_player.play("hide_player_documentation")
+	await canvas_animation_player.animation_finished
 	hide()
 
 
@@ -30,6 +32,7 @@ func _on_button_button_down() -> void:
 func _on_panel_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		canvas_animation_player.play("hide_information")
+		await canvas_animation_player.animation_finished
 		canvas_animation_player.play("hide_player_documentation")
 		await canvas_animation_player.animation_finished
 		hide()
@@ -38,6 +41,7 @@ func _on_panel_gui_input(event: InputEvent) -> void:
 func _on_texture_rect_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		canvas_animation_player.play("hide_information")
+		await canvas_animation_player.animation_finished
 		canvas_animation_player.play("hide_player_documentation")
 		await canvas_animation_player.animation_finished
 		hide()
