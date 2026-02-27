@@ -3,7 +3,7 @@ set {GAME.on_2d} = true
 join player leftmost
 if {GAME.dayStart} == true:
 	player: Não posso sair agora.
-	Ainda estou no meu expediente.
+	player: Ainda estou no meu expediente.
 else:
 	player: Certo, hora de ir para casa.
 	leave player
