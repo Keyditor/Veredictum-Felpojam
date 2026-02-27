@@ -76,6 +76,13 @@ const nights = [
 			"res://scenes/objects/package.tscn"
 		],
 		"person_detail": "res://assets/work_tools/Detail_Ignacio.png"
+	},
+	{
+		"Mail": [
+			"res://resources/Letters/letter_player.tres",
+			"res://scenes/objects/envelope.tscn"
+		],
+		"person_detail": "res://assets/work_tools/Detail_Player.png"
 	}
 ]
 

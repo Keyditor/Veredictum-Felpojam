@@ -82,9 +82,22 @@ func stop_moving():
 
 
 func show_information():
-	information_canvas.get_node("Panel/TextureRect").texture = mail_info.info
-	information_canvas.visible = true
+	if mail_info.sender_name != "Player":
+		information_canvas.get_node("Panel/TextureRect").texture = mail_info.info
+		information_canvas.visible = true
+	else:
+		information_canvas.get_node("Panel/TextureRect").visible = false
+		information_canvas.visible = true
+		information_canvas.get_node("Panel/PlayerDocumentation").visible = true
+		show_player_documentation()
 
+# Mostrar a própria ficha do jogador
+func show_player_documentation():
+	
+	information_canvas.canvas_animation_player.play("show_player_documentation")
+
+func hide_player_documentation():
+	information_canvas.canvas_animation_player.play("hide_player_documentation")
 func hide_information():
 	information_canvas.visible = false
 

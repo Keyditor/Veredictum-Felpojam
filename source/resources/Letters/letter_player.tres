@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="MailItem" format=3 uid="uid://bo1tnh3ml3hby"]
+
+[ext_resource type="Script" uid="uid://kejexgcvkqyk" path="res://resources/mail_item.gd" id="1_cxqb6"]
+[ext_resource type="Texture2D" uid="uid://b5r8grqsdw5xp" path="res://assets/mail/carta_aberta.png" id="2_vijtu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yvqck"]
+size = Vector2(147, 146)
+
+[resource]
+script = ExtResource("1_cxqb6")
+mail_type = 1
+sender_name = "Player"
+texture = ExtResource("2_vijtu")
+collider_shape = SubResource("RectangleShape2D_yvqck")
+metadata/_custom_type_script = "uid://kejexgcvkqyk"

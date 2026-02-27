@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://buomknkwu85ph" path="res://scripts/information_canvas.gd" id="7_t5bnd"]
 [ext_resource type="PackedScene" uid="uid://db4v81ih6amoa" path="res://scenes/objects/ink.tscn" id="9_swmut"]
 [ext_resource type="Texture2D" uid="uid://bm03yyccayhyj" path="res://assets/work_tools/Detail_Dulce.png" id="13_swmut"]
+[ext_resource type="PackedScene" uid="uid://mwju1ll33iqe" path="res://scenes/playerDocument.tscn" id="14_poale"]
 
 [sub_resource type="Gradient" id="Gradient_imci4"]
 offsets = PackedFloat32Array(1)
@@ -67,6 +68,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(1007, 1375)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/PlayerDocumentation:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(44, 910)]
+}
 
 [sub_resource type="Animation" id="Animation_gstpo"]
 resource_name = "hide_information"
@@ -75,6 +88,22 @@ tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("Panel/TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(44, 2), Vector2(44, 910)]
+}
+
+[sub_resource type="Animation" id="Animation_dr51v"]
+resource_name = "hide_player_documentation"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel/PlayerDocumentation:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -100,11 +129,29 @@ tracks/0/keys = {
 "values": [Vector2(44, 910), Vector2(44, 2)]
 }
 
+[sub_resource type="Animation" id="Animation_2teal"]
+resource_name = "show_player_documentation"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel/PlayerDocumentation:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(44, 910), Vector2(44, 2)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gstpo"]
 _data = {
 &"RESET": SubResource("Animation_56gch"),
 &"hide_information": SubResource("Animation_gstpo"),
-&"show_information": SubResource("Animation_hg65r")
+&"hide_player_documentation": SubResource("Animation_dr51v"),
+&"show_information": SubResource("Animation_hg65r"),
+&"show_player_documentation": SubResource("Animation_2teal")
 }
 
 [sub_resource type="Animation" id="Animation_imci4"]
@@ -445,6 +492,10 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_imci4")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_x31l6")
 theme_override_styles/hover = SubResource("StyleBoxFlat_swmut")
 text = "X"
+
+[node name="PlayerDocumentation" parent="InformationCanvas/Panel" unique_id=276463029 instance=ExtResource("14_poale")]
+visible = false
+position = Vector2(44, 910)
 
 [node name="CanvasAnimationPlayer" type="AnimationPlayer" parent="InformationCanvas" unique_id=51786716]
 libraries/ = SubResource("AnimationLibrary_gstpo")
