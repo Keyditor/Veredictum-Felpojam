@@ -52,7 +52,8 @@ Desenvolvido por **Cats & Cookies** — time responsável pelo desenvolvimento c
 ## 🎵 Áudio
 
 Músicas e efeitos sonoros estão dentro da pasta `assets/`.  
-Todo áudio foi criado para uso na jam durante o periodo de desenvolvimento.
+Todas as músicas foram criado para uso na jam durante o periodo de desenvolvimento.
+Os efeitos sonoros dos carimbos foram retirados da fote CC0 www.Kenney.nl com licensa junto aos arquivos de áudio.
 
 ---
 
