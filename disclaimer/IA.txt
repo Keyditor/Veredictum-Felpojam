@@ -1,0 +1,2 @@
+Foi utilizado como pesquisa e tira duvidas o Chat GPT para funções e possibilidades para oo códiigo do jogo, que ao final foram reescritas manualmente.
+Também foi utilizado o Chat GPT para tira duvidas sobre Markdown e inspiração na confecção do README.md no dia 27/02
