@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://mwju1ll33iqe"]
+[gd_scene format=3 uid="uid://d0r4sy3ay4oob"]
 
 [ext_resource type="Texture2D" uid="uid://8ob8cdbbmj8x" path="res://assets/work_tools/Detail_Player.png" id="1_yuddr"]
 [ext_resource type="FontFile" uid="uid://calo25x5edlj" path="res://assets/fonts/Jacquard12-Regular.ttf" id="2_4r8uu"]
@@ -25,7 +25,7 @@ offset_left = 36.0
 offset_top = -250.0
 offset_right = 257.0
 offset_bottom = -210.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/default_color = Color(0.15686275, 0.16470589, 0.22352941, 1)
 theme_override_fonts/normal_font = ExtResource("2_4r8uu")
 theme_override_font_sizes/normal_font_size = 36
 text = "05/05/0505"
