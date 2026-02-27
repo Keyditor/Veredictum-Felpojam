@@ -21,7 +21,7 @@ var t_bob = 0.0             # Acumulador de tempo contínuo
 
 const SPEED = 5.0
 const RUN = 1.6
-const JUMP_VELOCITY = 4.5
+const JUMP_VELOCITY = 5.5
 var look_dir: Vector2
 var camSense = 0.002
 
