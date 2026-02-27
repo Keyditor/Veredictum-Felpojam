@@ -68,6 +68,18 @@ tracks/4/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Creditos/RichTextLabel:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_ekxnf"]
 resource_name = "fall"
@@ -131,6 +143,18 @@ tracks/4/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Creditos/RichTextLabel:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.91),
+"transitions": PackedFloat32Array(2, 2),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_rtw2f"]
 resource_name = "fall_2"
@@ -190,6 +214,18 @@ tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0.1, 1),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Creditos/RichTextLabel:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.11, 1),
 "transitions": PackedFloat32Array(0.5, 0.5),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -267,7 +303,8 @@ flat = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Jogar" unique_id=633866790]
 layout_mode = 0
-offset_right = 157.0
+offset_left = -4.0
+offset_right = 153.0
 offset_bottom = 91.0
 mouse_filter = 2
 theme_override_font_sizes/normal_font_size = 74
@@ -301,12 +338,38 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Creditos" type="Button" parent="." unique_id=774585075]
+layout_mode = 0
+offset_left = 201.0
+offset_top = 546.0
+offset_right = 437.0
+offset_bottom = 637.0
+theme_override_font_sizes/font_size = 60
+flat = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Creditos" unique_id=1886662815]
+modulate = Color(1, 1, 1, 0)
+clip_contents = false
+layout_mode = 0
+offset_left = -10.0
+offset_top = 11.0
+offset_right = 244.0
+offset_bottom = 102.0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 74
+bbcode_enabled = true
+text = "Créditos"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Fechar" type="Button" parent="." unique_id=1682645718]
 layout_mode = 0
 offset_left = 213.0
-offset_top = 567.0
+offset_top = 654.0
 offset_right = 436.0
-offset_bottom = 658.0
+offset_bottom = 745.0
 theme_override_font_sizes/font_size = 60
 flat = true
 
@@ -367,6 +430,9 @@ layout_mode = 1
 [connection signal="mouse_entered" from="Options" to="." method="_on_options_mouse_entered"]
 [connection signal="mouse_exited" from="Options" to="." method="_on_options_mouse_exited"]
 [connection signal="pressed" from="Options" to="." method="_on_options_pressed"]
+[connection signal="mouse_entered" from="Creditos" to="." method="_on_creditos_mouse_entered"]
+[connection signal="mouse_exited" from="Creditos" to="." method="_on_creditos_mouse_exited"]
+[connection signal="pressed" from="Creditos" to="." method="_on_creditos_pressed"]
 [connection signal="mouse_entered" from="Fechar" to="." method="_on_fechar_mouse_entered"]
 [connection signal="mouse_exited" from="Fechar" to="." method="_on_fechar_mouse_exited"]
 [connection signal="pressed" from="Fechar" to="." method="_on_fechar_pressed"]

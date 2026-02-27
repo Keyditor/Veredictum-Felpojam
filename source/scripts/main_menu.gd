@@ -62,3 +62,15 @@ func _on_settings_gui_input(event: InputEvent) -> void:
 		animator.play("fall_2")
 		await animator.animation_finished
 		settings.hide()
+
+
+func _on_creditos_pressed() -> void:
+	GAME.change_scene("res://scenes/creditos.tscn")
+
+
+func _on_creditos_mouse_entered() -> void:
+	$Creditos/RichTextLabel.text="[wave amp=50]Créditos[/wave]"
+
+
+func _on_creditos_mouse_exited() -> void:
+	$Creditos/RichTextLabel.text="Créditos"

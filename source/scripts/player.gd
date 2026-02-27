@@ -55,7 +55,7 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 	if Input.is_action_just_pressed("pause") and not GAME.on_2d:
 		#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		#GAME.dayTimeTick = GAME.dayTimeLimit - 24
+		GAME.dayTimeTick = GAME.dayTimeLimit - 24
 		pass
 	#if Input.is_action_just_pressed("pause") and not GAME.on_2d:
 		#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -79,8 +79,12 @@ func _physics_process(delta: float) -> void:
 	if target and !GAME.on_2d:
 		if target.has_method("use"):
 			var result = target.use(false)
-			actionText.text = str(result[3]," [E]")
-			lastActionText = actionText.text
+			if result[3] != "":
+				actionText.text = str(result[3]," [E]")
+				lastActionText = actionText.text
+			else:
+				actionText.text = ""
+				lastActionText = actionText.text
 			var i = 0
 			while i < str(actionText).length():
 				actionText.visible_ratio += 0.001
@@ -101,7 +105,7 @@ func _physics_process(delta: float) -> void:
 			i += 1
 		actionText.text = ""
 	
-	if Input.is_action_just_pressed("action") and not GAME.on_2d: #Tecla de Uso
+	if Input.is_action_just_pressed("action") and not GAME.on_2d and not GAME.on_dialog: #Tecla de Uso
 		actionText.text = ""
 		if target:
 			print(target.name)

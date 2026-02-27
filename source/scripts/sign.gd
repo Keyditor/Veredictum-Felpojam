@@ -3,10 +3,12 @@ extends StaticBody3D
 @export var cena_2d: PackedScene
 @export var Nome : String
 @export var Owner : String
+var nomeStash = ""
 #@onready var dTimer = $"../../Timer"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	nomeStash = Nome
 	#dTimer.timeout.connect(_on_dTimer)
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	pass # Replace with function body.
@@ -14,6 +16,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if not GAME.endGame:
+		Nome = "Ler?"
+	else: Nome = ""
 	pass
 
 func use(_use:bool = false):

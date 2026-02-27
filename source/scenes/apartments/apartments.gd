@@ -12,6 +12,14 @@ func _ready() -> void:
 	$CorridorD7/Sign.visible = false
 	$CorridorD8/Sign.visible = false
 	$CorridorD4/Sign.visible = false
+	$CorridorD1/Sign/StaticBody3D.visible = false
+	$CorridorD2/Sign/StaticBody3D.visible = false
+	$CorridorD3/Sign/StaticBody3D.visible = false
+	$CorridorD4/Sign/StaticBody3D.visible = false
+	$CorridorD5/Sign/StaticBody3D.visible = false
+	$CorridorD6/Sign/StaticBody3D.visible = false
+	$CorridorD7/Sign/StaticBody3D.visible = false
+	$CorridorD8/Sign/StaticBody3D.visible = false
 
 	AudioManager.play_music(preload("res://assets/VS_gameplay.mp3"),false)
 	Dialogic.signal_event.connect(_on_dialogic_signal)
@@ -43,40 +51,58 @@ func _process(delta: float) -> void:
 			"Dulce Martins":
 				if i["state"] == Enum.StampMarks.Good:
 					$CorridorD1/Sign.visible = true
+					$CorridorD1/Sign/StaticBody3D.visible = true
 				else:
 					$CorridorD1/Sign.visible = false
+					$CorridorD1/Sign/StaticBody3D.visible = false
 			"Vicente Fonseca":
 				if i["state"] == Enum.StampMarks.Good:
 					$CorridorD2/Sign.visible = true
+					$CorridorD2/Sign/StaticBody3D.visible = true
 				else:
 					$CorridorD2/Sign.visible = false
+					$CorridorD2/Sign/StaticBody3D.visible = false
 			"João Brasil":
 				if i["state"] == Enum.StampMarks.Good:
 					$CorridorD3/Sign.visible = true
+					$CorridorD3/Sign/StaticBody3D.visible = true
 				else:
 					$CorridorD3/Sign.visible = false
+					$CorridorD3/Sign/StaticBody3D.visible = false
 			"Odete Oliveira":
 				if i["state"] == Enum.StampMarks.Good:
 					$CorridorD5/Sign.visible = true
+					$CorridorD5/Sign/StaticBody3D.visible = true
 				else:
 					$CorridorD5/Sign.visible = false
+					$CorridorD5/Sign/StaticBody3D.visible = false
 			"Benedito Dias":
 				if i["state"] == Enum.StampMarks.Good:
 					$CorridorD6/Sign.visible = true
+					$CorridorD6/Sign/StaticBody3D.visible = true
 				else:
 					$CorridorD6/Sign.visible = false
+					$CorridorD6/Sign/StaticBody3D.visible = false
 			"Ignácio Américo":
 				if i["state"] == Enum.StampMarks.Good:
 					$CorridorD7/Sign.visible = true
+					$CorridorD7/Sign/StaticBody3D.visible = true
 				else:
 					$CorridorD7/Sign.visible = false
+					$CorridorD7/Sign/StaticBody3D.visible = false
 			"Mario Gonzaga":
 				if i["state"] == Enum.StampMarks.Good:
 					$CorridorD8/Sign.visible = true
+					$CorridorD8/Sign/StaticBody3D.visible = true
 				else:
 					$CorridorD8/Sign.visible = false
+					$CorridorD8/Sign/StaticBody3D.visible = false
 	if GAME.dayCount == 3 and GAME.dayPass:
 		$CorridorD4/Sign.visible = true
+		$CorridorD4/Sign/StaticBody3D.visible = true
+	else:
+		$CorridorD4/Sign.visible = false
+		$CorridorD6/Sign/StaticBody3D.visible = false
 	pass
 
 func _on_dialogic_signal(arg):
