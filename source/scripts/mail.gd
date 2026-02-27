@@ -85,6 +85,7 @@ func show_information():
 	if mail_info.sender_name != "Player":
 		information_canvas.get_node("Panel/TextureRect").texture = mail_info.info
 		information_canvas.visible = true
+		information_canvas.get_node("Panel/PlayerDocumentation").visible = false
 	else:
 		information_canvas.get_node("Panel/TextureRect").visible = false
 		information_canvas.visible = true
@@ -139,4 +140,5 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 			else:
 				is_holding = false
 		if event.button_index == MOUSE_BUTTON_RIGHT:
-			show_information()
+			if mail_info.info or mail_info.sender_name == "Player":
+				show_information()

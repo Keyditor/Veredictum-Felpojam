@@ -9,6 +9,7 @@ height = 187.99928
 
 [resource]
 script = ExtResource("1_6hjpf")
+mail_type = 2
 sender_name = "Ignácio Américo"
 texture = ExtResource("2_3ekju")
 collider_shape = SubResource("CapsuleShape2D_b613k")
