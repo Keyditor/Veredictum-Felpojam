@@ -10,10 +10,11 @@ config_version=5
 
 [application]
 
-config/name="Felporimbo"
+config/name="Veredictum"
+config/version="1.0"
 run/main_scene="uid://bcr44223f61qu"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://bkuebj1xxeglx"
 <<<<<<<Updatedupstreamrun/main_scene="uid://bbu80t1tk5ch"
 
 [autoload]
