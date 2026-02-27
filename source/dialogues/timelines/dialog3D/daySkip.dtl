@@ -14,5 +14,6 @@ else:
 	[signal arg="dayPassSignal"]
 	[wait time="1.0"]
 	[signal arg="newDay"]
+	set {GAME.expEnd} = ""
 set {GAME.on_dialog} = false
 set {GAME.on_2d} = false

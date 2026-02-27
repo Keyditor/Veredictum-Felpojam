@@ -15,6 +15,7 @@ var dayPass = false
 var playerName = ""
 var playerBirth = ""
 var endGame = false
+var expEnd = false
 
 func change_scene(path:String):
 	get_tree().change_scene_to_file(path)
@@ -51,5 +52,6 @@ func _on_dialogic_signal(arg):
 	if arg == "dayCountIncrease":
 		dayTimeTick = dayTimeStart
 		dayCount += 1
+		expEnd = false
 	if arg == "endGame":
 		endGame = true

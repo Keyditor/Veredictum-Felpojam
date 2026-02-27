@@ -484,6 +484,7 @@ theme_override_font_sizes/font_size = 26
 text = "*"
 
 [node name="Debug" type="RichTextLabel" parent="CanvasLayer/HUD" unique_id=1729673347]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5

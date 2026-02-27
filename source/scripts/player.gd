@@ -9,7 +9,7 @@ extends CharacterBody3D
 @onready var fade_rect = $CanvasLayer/HUD/ColorRect
 @onready var hud = $CanvasLayer/HUD
 #@onready var dTimer = $Timer
-var expEnd = false
+
 var lastActionText = ""
 var timesUP = false
 
@@ -41,11 +41,11 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	debug.text = str(Dialogic.VAR.clockTime," ",GAME.dayCount," ",GAME.dayPass)
-	if GAME.dayTimeTick >= GAME.dayTimeLimit and not expEnd:
+	if GAME.dayTimeTick >= GAME.dayTimeLimit and not GAME.expEnd:
 		if overlays.has("work_table"):
 			close_overlay("work_table")
-		Dialogic.start("expedientEnd")
-		expEnd = true
+		Dialogic.start("expedintEnd")
+		GAME.expEnd = true
 	
 	# Add the gravity.
 	if not is_on_floor():
@@ -55,7 +55,8 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 	if Input.is_action_just_pressed("pause") and not GAME.on_2d:
 		#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		GAME.dayTimeTick = GAME.dayTimeLimit - 24
+		#GAME.dayTimeTick = GAME.dayTimeLimit - 24
+		pass
 	#if Input.is_action_just_pressed("pause") and not GAME.on_2d:
 		#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	if Input.is_action_just_pressed("down") and GAME.on_2d and not GAME.on_dialog:

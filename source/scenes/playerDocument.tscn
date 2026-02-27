@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://d0r4sy3ay4oob"]
 
+[ext_resource type="Script" uid="uid://cr71i7s5np0tb" path="res://scenes/player_document.gd" id="1_4r8uu"]
 [ext_resource type="Texture2D" uid="uid://8ob8cdbbmj8x" path="res://assets/work_tools/Detail_Player.png" id="1_yuddr"]
 [ext_resource type="FontFile" uid="uid://calo25x5edlj" path="res://assets/fonts/Jacquard12-Regular.ttf" id="2_4r8uu"]
 
 [node name="Node2D" type="Node2D" unique_id=276463029]
+script = ExtResource("1_4r8uu")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=759721413]
 position = Vector2(963, 535)
